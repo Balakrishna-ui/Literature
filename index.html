@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Dr. Rajesh Varma — Author, Literary Scholar, and Cultural Ambassador. Explore literary festivals, public readings, writing workshops, and cultural events." />
+  <title>Dr. Rajesh Varma | Author & Literary Scholar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=28" />
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <!-- ========== NAVIGATION ========== -->
+  <header class="navbar" id="navbar">
+    <a href="#home" class="navbar__brand">Dr. Rajesh Varma</a>
+    <nav class="navbar__nav" id="main-nav" aria-label="Primary">
+      <a href="#home" class="navbar__link navbar__link--active" id="nav-home" data-section="home">Home</a>
+      <a href="#inspired-by" class="navbar__link" id="nav-inspired" data-section="inspired-by">Inspired</a>
+      <a href="#about" class="navbar__link" id="nav-about" data-section="about">About</a>
+      <a href="#works" class="navbar__link" id="nav-works" data-section="works">Works</a>
+      <a href="#contact" class="navbar__link" id="nav-contact" data-section="contact">Contact</a>
+    </nav>
+    <button class="navbar__toggle" id="nav-toggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main id="main-content">
+
+    <!-- Act I — Arrival: cinematic introduction -->
+    <section class="carousel-banner page-section page-section--immersive" id="home" aria-label="Introduction">
+      <div class="carousel__track-container">
+        <ul class="carousel__track">
+          <!-- Slide 1 — banner1 -->
+          <li class="carousel__slide current-slide">
+            <div class="carousel__image carousel__image--baner1" style="background-image: url('images/baner1.jpeg');" role="img" aria-label="Banner 1"></div>
+          </li>
+          <!-- Slide 2 — banner2 -->
+          <li class="carousel__slide">
+            <div class="carousel__image carousel__image--baner2" style="background-image: url('images/baner2.jpeg');" role="img" aria-label="Banner 2"></div>
+          </li>
+          <!-- Slide 3 — banner3 -->
+          <li class="carousel__slide">
+            <div class="carousel__image carousel__image--baner3" style="background-image: url('images/baner3.jpeg');" role="img" aria-label="Banner 3"></div>
+          </li>
+          <!-- Slide 4 — banner4 -->
+          <li class="carousel__slide">
+            <div class="carousel__image carousel__image--baner4" style="background-image: url('images/baner4.jpeg');" role="img" aria-label="Banner 4"></div>
+          </li>
+          <!-- Slide 5 — banner5 -->
+          <li class="carousel__slide">
+            <div class="carousel__image carousel__image--baner5" style="background-image: url('images/baner5.jpeg');" role="img" aria-label="Banner 5"></div>
+          </li>
+          <!-- Slide 6 — banner6 -->
+          <li class="carousel__slide">
+            <div class="carousel__image carousel__image--baner6" style="background-image: url('images/baner6.jpeg');" role="img" aria-label="Banner 6"></div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Navigation Arrows -->
+      <button class="carousel__button carousel__button--left" aria-label="Previous slide">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M15 18l-6-6 6-6" />
+        </svg>
+      </button>
+      <button class="carousel__button carousel__button--right" aria-label="Next slide">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 18l6-6-6-6" />
+        </svg>
+      </button>
+
+      <!-- Pagination Indicators -->
+      <div class="carousel__nav">
+        <button class="carousel__indicator current-indicator" aria-label="Slide 1"></button>
+        <button class="carousel__indicator" aria-label="Slide 2"></button>
+        <button class="carousel__indicator" aria-label="Slide 3"></button>
+        <button class="carousel__indicator" aria-label="Slide 4"></button>
+        <button class="carousel__indicator" aria-label="Slide 5"></button>
+        <button class="carousel__indicator" aria-label="Slide 6"></button>
+      </div>
+      
+      <a href="#inspired-by" class="carousel__explore-more" aria-label="Scroll to inspirations">
+        <span class="carousel__explore-text">Explore</span>
+        <svg class="carousel__explore-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 9l6 6 6-6"/>
+        </svg>
+      </a>
+    </section>
+
+    <!-- Act II — Worldview: creative influences -->
+    <section class="hero page-section page-section--light" id="inspired-by" aria-labelledby="inspired-by-label">
+      <div class="page-section__inner">
+        <header class="section-head section-head--minimal">
+          <p class="section-head__eyebrow" id="inspired-by-label">Inspired By</p>
+        </header>
+        <div class="cards" id="cards-grid">
+
+        <article class="card" id="card-classic-literature">
+          <div class="card__image-wrap">
+            <img src="images/ins1.jpeg" alt="Classic Literature" class="card__image" loading="lazy" />
+            <div class="card__overlay"></div>
+          </div>
+          <h2 class="card__title">Classic Literature</h2>
+        </article>
+
+        <article class="card" id="card-libraries">
+          <div class="card__image-wrap">
+            <img src="images/ins2.jpeg" alt="Libraries &amp; Archives" class="card__image" loading="lazy" />
+            <div class="card__overlay"></div>
+          </div>
+          <h2 class="card__title">Libraries &amp; Archives</h2>
+        </article>
+
+        <article class="card" id="card-writers">
+          <div class="card__image-wrap">
+            <img src="images/ins3.jpeg" alt="Writers &amp; Thinkers" class="card__image" loading="lazy" />
+            <div class="card__overlay"></div>
+          </div>
+          <h2 class="card__title">Writers &amp; Thinkers</h2>
+        </article>
+
+        <article class="card" id="card-heritage">
+          <div class="card__image-wrap">
+            <img src="images/ins4.jpeg" alt="Cultural Heritage" class="card__image" loading="lazy" />
+            <div class="card__overlay"></div>
+          </div>
+          <h2 class="card__title">Cultural Heritage</h2>
+        </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Act III — Identity -->
+    <!-- ========== ABOUT SECTION ========== -->
+    <section class="about page-section page-section--light" id="about" data-section="about">
+      <div class="about__container">
+        <!-- Left: Image -->
+        <div class="about__image-wrapper">
+          <img src="images/pro.jpeg" alt="Dr. Rajesh Varma Portrait" class="about__image" loading="lazy">
+        </div>
+        
+        <!-- Right: Content -->
+        <div class="about__content">
+          <h2 class="about__title">Dr. Rajesh Varma</h2>
+          <p class="about__subtitle">Acclaimed Novelist, Poet & Literary Scholar</p>
+          <p class="about__quote">"Weaving stories that touch the soul"</p>
+          
+          <hr class="about__divider">
+          
+          <p class="about__description">
+            Dr. Rajesh Varma is an internationally acclaimed novelist, poet, and literary
+            scholar whose works have touched millions of hearts across the globe. With
+            over 30 years of literary excellence, his narratives blend timeless human
+            emotions with contemporary social themes. His profound understanding of
+            human nature and masterful storytelling have earned him numerous
+            prestigious awards and a devoted readership worldwide.
+          </p>
+          
+          <div class="about__meta">
+            <div class="about__meta-item">
+              <span class="about__meta-label">Born</span>
+              <span class="about__meta-value">1965</span>
+            </div>
+            <div class="about__meta-item">
+              <span class="about__meta-label">Birthplace</span>
+              <span class="about__meta-value">Hyderabad, Telangana, India</span>
+            </div>
+          </div>
+          
+          <a href="#works" class="btn btn--solid-brand">
+            Explore Literary Works
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn__icon">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Act IV — Authority -->
+    <!-- ========== AWARDS SECTION ========== -->
+    <section class="awards page-section page-section--dark" id="awards" data-section="awards">
+      <div class="awards__header">
+        <h2 class="awards__title">Awards & Recognition</h2>
+        <p class="awards__subtitle">Honoring decades of literary excellence and contribution to world literature</p>
+      </div>
+      
+      <div class="awards__grid">
+
+        <article class="award-card">
+          <img class="award-card__bg" src="images/aw1.jpeg" alt="" loading="lazy" />
+          <div class="award-card__overlay" aria-hidden="true"></div>
+          <span class="award-card__badge">2018 · National</span>
+          <div class="award-card__content">
+            <div class="award-card__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 21h8M12 17v4M7 4h10c1.1 0 2 .9 2 2v2c0 2.8-2.2 5-5 5H10c-2.8 0-5-2.2-5-5V6c0-1.1.9-2 2-2z"/>
+              </svg>
+            </div>
+            <h3 class="award-card__title">Sahitya Akademi Award</h3>
+            <p class="award-card__desc">India's highest literary honor for the novel <em>Echoes of Silence</em></p>
+          </div>
+        </article>
+
+        <article class="award-card">
+          <img class="award-card__bg" src="images/aw2.jpeg" alt="" loading="lazy" />
+          <div class="award-card__overlay" aria-hidden="true"></div>
+          <span class="award-card__badge">2020 · International</span>
+          <div class="award-card__content">
+            <div class="award-card__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="8" r="7"/>
+                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
+              </svg>
+            </div>
+            <h3 class="award-card__title">Booker Prize Shortlist</h3>
+            <p class="award-card__desc">Shortlisted for the masterpiece <em>Shadows of Tomorrow</em></p>
+          </div>
+        </article>
+
+        <article class="award-card">
+          <img class="award-card__bg" src="images/aw3.jpeg" alt="" loading="lazy" />
+          <div class="award-card__overlay" aria-hidden="true"></div>
+          <span class="award-card__badge">2021 · Lifetime</span>
+          <div class="award-card__content">
+            <div class="award-card__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+            </div>
+            <h3 class="award-card__title">Jnanpith Award</h3>
+            <p class="award-card__desc">For outstanding contribution to Indian literature</p>
+          </div>
+        </article>
+
+        <article class="award-card">
+          <img class="award-card__bg" src="images/ins4.jpeg" alt="" loading="lazy" />
+          <div class="award-card__overlay" aria-hidden="true"></div>
+          <span class="award-card__badge">2019 · Civilian</span>
+          <div class="award-card__content">
+            <div class="award-card__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 0 0 4.561 21h14.878a2 2 0 0 0 1.94-1.515L22 17"/>
+              </svg>
+            </div>
+            <h3 class="award-card__title">Padma Shri</h3>
+            <p class="award-card__desc">Distinguished service in literature — Government of India</p>
+          </div>
+        </article>
+
+      </div>
+      
+      <div class="awards__actions">
+        <a href="#" class="btn btn--solid-brand">
+          View All Awards & Achievements
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn__icon">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Act V — Body of work -->
+    <!-- ========== LITERARY WORKS SECTION ========== -->
+    <section class="works page-section page-section--light" id="works" data-section="works">
+      <div class="works__header">
+        <h2 class="works__title">Literary Works</h2>
+        <p class="works__subtitle">Explore a collection of novels, poetry, and essays that have touched hearts worldwide</p>
+        <button class="btn btn--translate">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn__icon">
+            <path d="M5 8l6 6"/>
+            <path d="M4 14l6-6 2-3"/>
+            <path d="M2 5h12"/>
+            <path d="M7 2h1"/>
+            <path d="M22 22l-5-10-5 10"/>
+            <path d="M14 18h6"/>
+          </svg>
+          Translate to Telugu
+        </button>
+      </div>
+
+      <div class="works__grid">
+        <!-- Book 1 -->
+        <div class="work-card">
+          <div class="work-card__image-container">
+            <img src="images/bk1.png" alt="Echoes of Silence" class="work-card__image" loading="lazy">
+            <span class="work-card__year-badge">2018</span>
+          </div>
+          <div class="work-card__content">
+            <div class="work-card__category">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              Contemporary Fiction
+            </div>
+            <h3 class="work-card__title">Echoes of Silence</h3>
+            <p class="work-card__desc">A profound exploration of human resilience and the power of unspoken emotions. This award-winning novel follows the journey of a mute artist who finds his voice...</p>
+            <div class="work-card__meta">
+              <span>432 pages</span>
+              <span>English</span>
+            </div>
+            <a href="#" class="btn btn--read-more">Read More</a>
+          </div>
+        </div>
+
+        <!-- Book 2 -->
+        <div class="work-card">
+          <div class="work-card__image-container work-card__image-container--show-name">
+            <img src="images/bk2.png" alt="Shadows of Tomorrow" class="work-card__image" loading="lazy">
+            <span class="work-card__year-badge">2020</span>
+          </div>
+          <div class="work-card__content">
+            <div class="work-card__category">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              Literary Fiction
+            </div>
+            <h3 class="work-card__title">Shadows of Tomorrow</h3>
+            <p class="work-card__desc">A gripping narrative that weaves together past and future, exploring themes of identity, memory, and the choices that define us. Shortlisted for the International...</p>
+            <div class="work-card__meta">
+              <span>512 pages</span>
+              <span>English</span>
+            </div>
+            <a href="#" class="btn btn--read-more">Read More</a>
+          </div>
+        </div>
+
+        <!-- Book 3 -->
+        <div class="work-card">
+          <div class="work-card__image-container">
+            <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&q=80&w=600" alt="Whispers of the Soul" class="work-card__image" loading="lazy">
+            <span class="work-card__year-badge">2017</span>
+          </div>
+          <div class="work-card__content">
+            <div class="work-card__category">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              Poetry Collection
+            </div>
+            <h3 class="work-card__title">Whispers of the Soul</h3>
+            <p class="work-card__desc">An exquisite collection of 100 poems that delve into love, loss, hope, and the eternal human quest for meaning. Winner of the World Poetry Prize.</p>
+            <div class="work-card__meta">
+              <span>224 pages</span>
+              <span>English</span>
+            </div>
+            <a href="#" class="btn btn--read-more">Read More</a>
+          </div>
+        </div>
+
+        <!-- Book 4 -->
+        <div class="work-card">
+          <div class="work-card__image-container">
+            <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=600" alt="The River's Memory" class="work-card__image" loading="lazy">
+            <span class="work-card__year-badge">2015</span>
+          </div>
+          <div class="work-card__content">
+            <div class="work-card__category">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              Historical Fiction
+            </div>
+            <h3 class="work-card__title">The River's Memory</h3>
+            <p class="work-card__desc">Set against the backdrop of pre-independence India, this epic tale chronicles three generations of a family and their unbreakable bond with the sacred river that shape...</p>
+            <div class="work-card__meta">
+              <span>624 pages</span>
+              <span>English</span>
+            </div>
+            <a href="#" class="btn btn--read-more">Read More</a>
+          </div>
+        </div>
+
+        <!-- Book 5 -->
+        <div class="work-card">
+          <div class="work-card__image-container">
+            <img src="https://images.unsplash.com/photo-1456615074700-1dc12aa7364d?auto=format&fit=crop&q=80&w=600" alt="Monsoon Dreams" class="work-card__image" loading="lazy">
+            <span class="work-card__year-badge">2019</span>
+          </div>
+          <div class="work-card__content">
+            <div class="work-card__category">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              Short Stories
+            </div>
+            <h3 class="work-card__title">Monsoon Dreams</h3>
+            <p class="work-card__desc">A mesmerizing collection of 15 short stories that capture the essence of Indian life, from bustling cities to serene villages, each tale a gem of literary craftsmanship.</p>
+            <div class="work-card__meta">
+              <span>288 pages</span>
+              <span>English</span>
+            </div>
+            <a href="#" class="btn btn--read-more">Read More</a>
+          </div>
+        </div>
+
+        <!-- Book 6 -->
+        <div class="work-card">
+          <div class="work-card__image-container">
+            <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&q=80&w=600" alt="Letters to My Daughter" class="work-card__image" loading="lazy">
+            <span class="work-card__year-badge">2022</span>
+          </div>
+          <div class="work-card__content">
+            <div class="work-card__category">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              Essays & Memoir
+            </div>
+            <h3 class="work-card__title">Letters to My Daughter</h3>
+            <p class="work-card__desc">An intimate collection of essays and letters exploring fatherhood, wisdom, and life lessons. A deeply personal work that resonates with readers across ages.</p>
+            <div class="work-card__meta">
+              <span>256 pages</span>
+              <span>English</span>
+            </div>
+            <a href="#" class="btn btn--read-more">Read More</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="works__actions">
+        <a href="#" class="btn btn--solid-brand">
+          Explore Complete Library
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn__icon">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- ========== TESTIMONIALS SECTION ========== -->
+    <section class="testimonials page-section page-section--dark" id="testimonials" data-section="testimonials">
+      <div class="testimonials__header">
+        <h2 class="testimonials__title">What Readers Say</h2>
+        <p class="testimonials__subtitle">Voices from the literary world sharing their thoughts and reflections</p>
+      </div>
+
+      <div class="testimonials__carousel-wrapper">
+        <!-- Prev Button -->
+        <button class="testimonials__nav-btn testimonials__nav-btn--prev" aria-label="Previous Testimonial">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15 18l-6-6 6-6" />
+          </svg>
+        </button>
+
+        <!-- Carousel Container -->
+        <div class="testimonials__carousel">
+          <ul class="testimonials__track">
+            <!-- Testimonial 1 -->
+            <li class="testimonials__slide current-slide">
+              <div class="testimonial-card">
+                <div class="testimonial-card__quote-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/>
+                    <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/>
+                  </svg>
+                </div>
+                <p class="testimonial-card__text">
+                  "Rajesh Varma's writing possesses a rare quality—it speaks directly to the heart while engaging the mind. His narratives are both timeless and urgently contemporary."
+                </p>
+                <div class="testimonial-card__author-info">
+                  <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=150" alt="Arundhati Roy" class="testimonial-card__avatar" loading="lazy">
+                  <h4 class="testimonial-card__author-name">Arundhati Roy</h4>
+                  <span class="testimonial-card__author-title">Author & Booker Prize Winner</span>
+                </div>
+              </div>
+            </li>
+            <!-- Testimonial 2 -->
+            <li class="testimonials__slide">
+              <div class="testimonial-card">
+                <div class="testimonial-card__quote-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/>
+                    <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/>
+                  </svg>
+                </div>
+                <p class="testimonial-card__text">
+                  "A masterclass in emotional storytelling. Every page is a testament to his profound understanding of the human condition."
+                </p>
+                <div class="testimonial-card__author-info">
+                  <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150" alt="Vikram Seth" class="testimonial-card__avatar" loading="lazy">
+                  <h4 class="testimonial-card__author-name">Vikram Seth</h4>
+                  <span class="testimonial-card__author-title">Novelist & Poet</span>
+                </div>
+              </div>
+            </li>
+            <!-- Testimonial 3 -->
+            <li class="testimonials__slide">
+              <div class="testimonial-card">
+                <div class="testimonial-card__quote-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/>
+                    <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/>
+                  </svg>
+                </div>
+                <p class="testimonial-card__text">
+                  "His words flow like a gentle river, carrying the reader through landscapes of complex emotions and beautiful prose."
+                </p>
+                <div class="testimonial-card__author-info">
+                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150" alt="Amitav Ghosh" class="testimonial-card__avatar" loading="lazy">
+                  <h4 class="testimonial-card__author-name">Amitav Ghosh</h4>
+                  <span class="testimonial-card__author-title">Acclaimed Author</span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Next Button -->
+        <button class="testimonials__nav-btn testimonials__nav-btn--next" aria-label="Next Testimonial">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 18l6-6-6-6" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Pagination Dots -->
+      <div class="testimonials__pagination">
+        <button class="testimonials__dot current-dot" aria-label="Go to testimonial 1"></button>
+        <button class="testimonials__dot" aria-label="Go to testimonial 2"></button>
+        <button class="testimonials__dot" aria-label="Go to testimonial 3"></button>
+      </div>
+    </section>
+
+    <!-- ========== QUOTE BANNER SECTION ========== -->
+    <section class="quote-banner page-section page-section--immersive" id="quote-banner" data-section="quote">
+      <div class="quote-banner__bg" style="background-image: url('https://images.unsplash.com/photo-1524578271613-d550eacf6090?auto=format&fit=crop&q=80&w=1600');"></div>
+      <div class="quote-banner__overlay"></div>
+      <div class="quote-banner__content">
+        <div class="quote-banner__line quote-banner__line--top"></div>
+        <blockquote class="quote-banner__text">
+          "Every story I write is a conversation with humanity—a dialogue between the past we carry and the future we dream of creating."
+        </blockquote>
+        <div class="quote-banner__divider"></div>
+        <cite class="quote-banner__author">— Dr. Rajesh Varma</cite>
+        <div class="quote-banner__line quote-banner__line--bottom"></div>
+      </div>
+    </section>
+
+    <!-- ========== NEWSLETTER / SUBSCRIBE SECTION ========== -->
+    <section class="newsletter page-section page-section--conversion" id="contact" data-section="contact">
+      <div class="newsletter__container">
+        <div class="newsletter__card">
+          <div class="newsletter__icon-wrap">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="M22 7l-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+            </svg>
+          </div>
+          <h2 class="newsletter__title">Join the Literary Journey</h2>
+          <p class="newsletter__desc">Subscribe to receive updates on new publications, upcoming events, and exclusive literary insights.</p>
+          <form class="newsletter__form" id="newsletter-form" onsubmit="return false;">
+            <input type="email" class="newsletter__input" id="newsletter-email" placeholder="Enter your email address" required aria-label="Email address" />
+            <button type="submit" class="newsletter__btn" id="newsletter-submit">
+              Subscribe
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 2L11 13"/>
+                <path d="M22 2l-7 20-4-9-9-4 20-7z"/>
+              </svg>
+            </button>
+          </form>
+          <p class="newsletter__privacy">We respect your privacy. Unsubscribe at any time.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer" id="footer">
+    <div class="site-footer__main">
+      <div class="site-footer__grid">
+
+        <div class="site-footer__col site-footer__col--profile">
+          <h2 class="site-footer__name">Dr. Rajesh Varma</h2>
+          <p class="site-footer__bio">Acclaimed novelist, poet, and literary scholar dedicated to crafting stories that touch hearts and inspire minds across generations.</p>
+          <p class="site-footer__quote">&ldquo;Weaving stories that touch the soul&rdquo;</p>
+        </div>
+
+        <nav class="site-footer__col" aria-label="Quick links">
+          <h3 class="site-footer__heading">Quick Links</h3>
+          <ul class="site-footer__links">
+            <li><a href="#home" class="site-footer__link">Home</a></li>
+            <li><a href="#about" class="site-footer__link">About</a></li>
+            <li><a href="#awards" class="site-footer__link">Awards</a></li>
+            <li><a href="#works" class="site-footer__link">Literature</a></li>
+            <li><a href="#contact" class="site-footer__link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="site-footer__col">
+          <h3 class="site-footer__heading">Contact</h3>
+          <ul class="site-footer__contact">
+            <li class="site-footer__contact-item">
+              <span class="site-footer__contact-icon" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </span>
+              <a href="mailto:contact@rajeshvarma.com" class="site-footer__link">contact@rajeshvarma.com</a>
+            </li>
+            <li class="site-footer__contact-item">
+              <span class="site-footer__contact-icon" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+              </span>
+              <a href="tel:+919876543210" class="site-footer__link">+91 98765 43210</a>
+            </li>
+            <li class="site-footer__contact-item">
+              <span class="site-footer__contact-icon" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </span>
+              <span class="site-footer__text">Literary House, Banjara Hills, Hyderabad, Telangana 500034, India</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="site-footer__col site-footer__col--connect">
+          <h3 class="site-footer__heading">Connect</h3>
+          <p class="site-footer__connect-text">Follow the literary journey on social media</p>
+          <div class="site-footer__social" aria-label="Social media">
+            <a href="#" class="site-footer__social-link" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+              </svg>
+            </a>
+            <a href="#" class="site-footer__social-link" aria-label="Twitter">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
+              </svg>
+            </a>
+            <a href="#" class="site-footer__social-link" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+              </svg>
+            </a>
+            <a href="#" class="site-footer__social-link" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                <rect x="2" y="9" width="4" height="12"/>
+                <circle cx="4" cy="4" r="2"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="site-footer__bottom">
+      <div class="site-footer__bottom-inner">
+        <p class="site-footer__copyright">&copy; 2026 Dr. Rajesh Varma. All rights reserved.</p>
+        <p class="site-footer__motto">Crafted with passion for literature and storytelling</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
