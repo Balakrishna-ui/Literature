@@ -2,7 +2,6 @@
    Dr. Rajesh Varma — Interactivity
    =================================================== */
 
-document.addEventListener('DOMContentLoaded', () => {
 
   /* ---------- Navbar scroll shadow ---------- */
   const navbar = document.getElementById('navbar');
@@ -211,5 +210,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 6000);
   }
 
-});
+  /* ---------- Persist selected book before navigation ---------- */
+  const readMoreLinks = document.querySelectorAll('.works .btn--read-more');
+  readMoreLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      const href = link.getAttribute('href') || '';
+      const match = /[?&]book=([^&]+)/.exec(href);
+      if (match?.[1]) {
+        globalThis.localStorage.setItem('selectedBookId', decodeURIComponent(match[1]));
+      }
+    });
+  });
+
 

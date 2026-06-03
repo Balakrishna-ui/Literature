@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* ===================================================
    Dr. Rajesh Varma — Literary Journey
    Design System & Styles
@@ -20,8 +24,8 @@
   --clr-overlay:      rgba(30, 20, 14, .38);
 
   /* Typography */
-  --ff-heading: 'Playfair Display', 'Georgia', serif;
-  --ff-body:    'Inter', 'Segoe UI', sans-serif;
+  --ff-heading: var(--font-playfair), 'Playfair Display', 'Georgia', serif;
+  --ff-body:    var(--font-inter), 'Inter', 'Segoe UI', sans-serif;
 
   /* Spacing */
   --space-xs:  0.5rem;
@@ -818,8 +822,8 @@ html {
    =================================================== */
 .awards {
   padding: var(--space-xl) var(--space-md);
-  background: radial-gradient(ellipse at 50% 30%, #1a0f1a 0%, #0d0608 55%, #080404 100%);
-  color: #fff;
+  background: #ffffff;
+  color: var(--clr-text);
   text-align: center;
 }
 
@@ -839,7 +843,7 @@ html {
 .awards__subtitle {
   font-family: var(--ff-body);
   font-size: 1rem;
-  color: rgba(255, 255, 255, 0.65);
+  color: var(--clr-text-muted);
 }
 
 .awards__grid {
@@ -958,7 +962,7 @@ html {
    LITERARY WORKS SECTION
    =================================================== */
 .works {
-  padding: var(--space-xl) var(--space-md);
+  padding: 0 var(--space-md) var(--space-xl);
   background-color: var(--clr-bg);
   text-align: center;
 }
@@ -1151,7 +1155,7 @@ html {
    =================================================== */
 .testimonials {
   padding: var(--space-xl) var(--space-md) var(--space-lg);
-  background: radial-gradient(ellipse at 50% 30%, #3D1E0C 0%, #1A0B04 60%, #0D0502 100%);
+  background: transparent;
   color: #fff;
   text-align: center;
   position: relative;
@@ -1334,6 +1338,151 @@ html {
   background: #F5A623;
   width: 28px;
   border-radius: 10px;
+}
+
+/* ===================================================
+   CUSTOMER TESTIMONIALS (reference layout)
+   =================================================== */
+.customer-testimonials {
+  padding: var(--space-xl) var(--space-md) var(--space-lg);
+  background: #efe7dd;
+  color: #2d2d2d;
+}
+
+.customer-testimonials__head {
+  max-width: 1240px;
+  margin: 0 auto var(--space-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.customer-testimonials__title {
+  font-family: var(--ff-body);
+  font-size: clamp(1.8rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: #333;
+}
+
+.customer-testimonials__view-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.95rem;
+  color: #2f2f2f;
+  text-decoration: underline;
+}
+
+.customer-testimonials__viewport {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 16px;
+  align-items: center;
+}
+
+.customer-testimonials__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.customer-testimonials__arrow {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.customer-testimonials__arrow--left {
+  background: #8c8c8c;
+  color: #fff;
+}
+
+.customer-testimonials__arrow--right {
+  background: #000;
+  color: #fff;
+}
+
+.customer-card {
+  background: #045f43;
+  color: #fff;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.customer-card__top {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.customer-card__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #d4d8d8;
+  color: #2c2c2c;
+  font-weight: 600;
+}
+
+.customer-card__name {
+  font-family: var(--ff-body);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.customer-card__stars {
+  font-size: 1rem;
+  color: #ffcf3f;
+}
+
+.customer-card__date {
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.customer-card__text {
+  font-size: 0.85rem;
+  line-height: 1.55;
+  margin-bottom: 8px;
+  min-height: 78px;
+}
+
+.customer-card__read {
+  font-size: 0.9rem;
+  text-decoration: underline;
+}
+
+.customer-testimonials__dots {
+  margin-top: var(--space-md);
+  display: flex;
+  justify-content: center;
+  gap: 9px;
+}
+
+.customer-testimonials__dots span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #b6ada3;
+}
+
+.customer-testimonials__dots span.is-active {
+  width: 6px;
+  height: 6px;
+  background: #333;
 }
 
 
@@ -1829,6 +1978,14 @@ html {
     display: none;
   }
 
+  .customer-testimonials__cards {
+    grid-template-columns: 1fr;
+  }
+
+  .customer-testimonials__viewport {
+    grid-template-columns: auto 1fr auto;
+  }
+
   .quote-banner {
     min-height: 380px;
   }
@@ -1923,6 +2080,20 @@ html {
     padding: var(--space-lg) var(--space-sm);
   }
 
+  .customer-testimonials__head {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .customer-testimonials__viewport {
+    grid-template-columns: 1fr;
+  }
+
+  .customer-testimonials__arrow {
+    display: none;
+  }
+
   .quote-banner {
     min-height: 340px;
   }
@@ -1967,5 +2138,330 @@ html {
 
   .site-footer__motto {
     text-align: center;
+  }
+}
+
+/* ===================================================
+   BOOKS PAGE
+   =================================================== */
+.books-page__loading {
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--ff-body);
+  color: var(--clr-text-muted);
+}
+
+.books-page {
+  background: #f0ecdf;
+  color: var(--clr-text);
+}
+
+.books-page__main {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 20px var(--space-md) var(--space-xl);
+}
+
+.book-feature {
+  background: #f6f5f1;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) minmax(320px, 1.1fr);
+}
+
+.book-feature__image-wrap {
+  position: relative;
+  background: #d6d6d6;
+}
+
+.book-feature__image {
+  width: 100%;
+  height: 100%;
+  min-height: 380px;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.book-feature__year {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  background: #8b2500;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 4px 10px;
+}
+
+.book-feature__content {
+  padding: 24px 28px;
+}
+
+.book-feature__category {
+  color: var(--clr-brand);
+  font-size: 0.72rem;
+  margin-bottom: 6px;
+}
+
+.book-feature__title {
+  font-family: var(--ff-heading);
+  font-size: clamp(1.8rem, 2.8vw, 2.7rem);
+  line-height: 1.15;
+  margin-bottom: 10px;
+}
+
+.book-feature__desc {
+  font-size: 0.9rem;
+  color: var(--clr-text-muted);
+  line-height: 1.65;
+  margin-bottom: 18px;
+}
+
+.book-feature__meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(120px, 1fr));
+  gap: 10px 20px;
+  margin-bottom: 18px;
+}
+
+.book-feature__meta-item {
+  font-size: 0.8rem;
+  color: var(--clr-text-muted);
+}
+
+.book-feature__meta-item strong {
+  display: block;
+  font-size: 1.05rem;
+  color: #1e1e1e;
+}
+
+.book-feature__actions {
+  display: flex;
+  gap: 12px;
+}
+
+.book-feature__btn {
+  flex: 1;
+  text-align: center;
+  border-radius: 8px;
+  padding: 11px 14px;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.book-feature__btn--sample {
+  background: #8b2500;
+  color: #fff;
+}
+
+.book-feature__btn--buy {
+  background: #232323;
+  color: #fff;
+}
+
+.book-catalog {
+  padding-top: 22px;
+}
+
+.book-catalog__title {
+  text-align: center;
+  font-family: var(--ff-heading);
+  font-size: clamp(2rem, 3vw, 2.4rem);
+  margin-bottom: 4px;
+}
+
+.book-catalog__count {
+  text-align: center;
+  color: var(--clr-text-muted);
+  font-size: 0.85rem;
+  margin-bottom: 16px;
+}
+
+.book-catalog__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.catalog-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border: 2px solid transparent;
+}
+
+.catalog-card--active {
+  border-color: #e08a00;
+}
+
+.catalog-card__image-wrap {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.catalog-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.catalog-card__year,
+.catalog-card__badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #8b2500;
+  color: #fff;
+  font-size: 0.62rem;
+  border-radius: 999px;
+  padding: 3px 8px;
+  font-weight: 700;
+}
+
+.catalog-card__badge {
+  left: 8px;
+  right: auto;
+}
+
+.catalog-card__content {
+  padding: 12px;
+}
+
+.catalog-card__category {
+  color: var(--clr-brand);
+  font-size: 0.7rem;
+  margin-bottom: 4px;
+}
+
+.catalog-card__title {
+  font-family: var(--ff-heading);
+  font-size: 1.45rem;
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+
+.catalog-card__desc {
+  font-size: 0.75rem;
+  color: var(--clr-text-muted);
+  line-height: 1.45;
+  margin-bottom: 8px;
+}
+
+.catalog-card__meta {
+  display: flex;
+  justify-content: space-between;
+  color: #8f8f8f;
+  font-size: 0.67rem;
+  margin-bottom: 8px;
+}
+
+.catalog-card__link {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: #f3f3f3;
+  border: none;
+  border-radius: 6px;
+  padding: 7px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: var(--ff-body);
+}
+
+@media (max-width: 960px) {
+  .book-feature {
+    grid-template-columns: 1fr;
+  }
+
+  .book-feature__image {
+    min-height: 320px;
+  }
+
+  .book-catalog__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .books-page__main {
+    padding: 14px var(--space-sm) var(--space-lg);
+  }
+
+  .book-feature__content {
+    padding: 16px;
+  }
+
+  .book-feature__actions {
+    flex-direction: column;
+  }
+
+  .book-catalog__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===================================================
+   DETAIL PAGES (about + award detail)
+   =================================================== */
+.detail-page {
+  max-width: 800px;
+  margin: 120px auto 80px;
+  padding: 0 24px;
+}
+
+.detail-page__title {
+  font-family: var(--ff-heading);
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  color: var(--clr-text);
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.detail-page__subtitle {
+  text-align: center;
+  color: var(--clr-brand);
+  margin-bottom: 32px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.detail-page__body {
+  line-height: 1.8;
+}
+
+.detail-page__desc {
+  font-size: 1.1rem;
+  color: var(--clr-text-muted);
+  margin-bottom: 20px;
+}
+
+.detail-page__back {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 10px 20px;
+  background: var(--clr-brand);
+  color: #fff;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  transition: background 0.3s ease;
+}
+
+.detail-page__back:hover {
+  background: var(--clr-brand-light);
+}
+
+@media (max-width: 640px) {
+  .detail-page {
+    margin-top: 100px;
   }
 }

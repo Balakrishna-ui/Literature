@@ -1,0 +1,6 @@
+export const BIOGRAPHY_PARAGRAPHS = [
+  'Born in 1965 in Hyderabad, Telangana, India, Dr. Rajesh Varma discovered his passion for literature at an early age. Surrounded by a rich cultural heritage and an extensive family library, his formative years were steeped in classic literature and poetry.',
+  'He pursued his higher education in Literature, ultimately earning a Ph.D. with a focus on modern South Asian narratives. Over a career spanning more than three decades, Dr. Varma has published numerous acclaimed novels, short story collections, and essays. His work frequently explores the intersection of tradition and modernity, examining how deep-rooted human emotions navigate rapidly changing social landscapes.',
+  'Among his most celebrated works are Echoes of Silence, which won the Sahitya Akademi Award, and Shadows of Tomorrow. He is known not just as a writer, but as a mentor, frequently conducting writing workshops and participating in global literary festivals to foster the next generation of storytellers.',
+  'Today, Dr. Rajesh Varma continues to write from his home in Hyderabad, dividing his time between penning his next novel and serving as a cultural ambassador for Indian literature on the world stage.',
+];
