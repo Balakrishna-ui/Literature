@@ -23,19 +23,16 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden flex flex-col justify-end items-center text-center py-12 md:py-16 pb-20 md:pb-24 min-h-[600px] w-full">
+    <section className="relative flex flex-col justify-end items-center text-center py-12 md:py-16 pb-20 md:pb-24 min-h-[350px] md:min-h-[600px] w-full bg-[#fcfaf5]">
       {/* Background Images Carousel */}
       {bannerImages.map((src, index) => (
         <div
           key={src}
-          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+          className={`absolute inset-0 bg-contain md:bg-cover bg-top md:bg-center bg-no-repeat transition-opacity duration-1000 ease-in-out ${
             index === currentImageIndex ? 'opacity-100 z-0' : 'opacity-0 -z-10'
           }`}
           style={{
             backgroundImage: `url(${src})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
           }}
         />
       ))}
