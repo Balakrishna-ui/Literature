@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Image from 'next/image';
 
 type DetailPageLayoutProps = {
   title: string;
@@ -8,6 +9,7 @@ type DetailPageLayoutProps = {
   paragraphs: string[];
   backHref: string;
   backLabel: string;
+  imageUrl?: string;
 };
 
 export default function DetailPageLayout({
@@ -16,6 +18,7 @@ export default function DetailPageLayout({
   paragraphs,
   backHref,
   backLabel,
+  imageUrl,
 }: DetailPageLayoutProps) {
   return (
     <main className="min-h-screen bg-slate-50 selection:bg-amber-200 selection:text-amber-900 font-sans">
@@ -24,6 +27,20 @@ export default function DetailPageLayout({
       <article className="detail-page">
         <h1 className="detail-page__title">{title}</h1>
         {subtitle && <p className="detail-page__subtitle">{subtitle}</p>}
+        
+        {imageUrl && (
+          <div className="detail-page__image-wrapper">
+            <Image
+              src={imageUrl}
+              alt={title}
+              width={350}
+              height={350}
+              priority
+              className="detail-page__image"
+            />
+          </div>
+        )}
+
         <div className="detail-page__body">
           {paragraphs.map((paragraph, index) => (
             <p key={index} className="detail-page__desc">

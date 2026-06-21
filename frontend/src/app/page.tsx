@@ -1,30 +1,31 @@
 import Navbar from '@/components/Navbar';
-import HeroCarousel from '@/components/HeroCarousel';
-import InspiredBy from '@/components/InspiredBy';
-import AuthorBio from '@/components/AuthorBio';
+import HeroSection from '@/components/HeroSection';
+import BiographySection from '@/components/BiographySection';
+import LiteraryJourney from '@/components/LiteraryJourney';
+import BooksPublications from '@/components/BooksPublications';
 import AwardsGrid from '@/components/AwardsGrid';
+import StagePlays from '@/components/StagePlays';
 import LiteratureGallery from '@/components/LiteratureGallery';
-import Testimonials from '@/components/Testimonials';
-import QuoteBanner from '@/components/QuoteBanner';
-import Newsletter from '@/components/Newsletter';
+import InspirationsMentors from '@/components/InspirationsMentors';
+import ValuesQualities from '@/components/ValuesQualities';
 import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
     <>
-      <a className="skip-link" href="#main-content">
+      <a className="skip-link sr-only focus:not-sr-only" href="#main-content">
         Skip to content
       </a>
       <Navbar />
       <main id="main-content">
-        <HeroCarousel />
-        <InspiredBy />
-        <AuthorBio />
-        <AwardsGrid />
+        <HeroSection />
+        <InspirationsMentors />
+        <BiographySection />
+        <LiteraryJourney />
+        <BooksPublications />
+        <StagePlays />
         <LiteratureGallery />
-        <Testimonials />
-        <QuoteBanner />
-        <Newsletter />
+        <ValuesQualities />
       </main>
       <Footer />
     </>

@@ -1,103 +1,69 @@
 import Link from 'next/link';
-import { BOOKS } from '@/lib/books';
-
-function BookCategoryIcon() {
-  return (
-    <svg
-      width="12"
-      height="12"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
-      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
-    </svg>
-  );
-}
 
 export default function LiteratureGallery() {
   return (
-    <section className="works page-section page-section--light" id="works" data-section="works">
-      <div className="works__header">
-        <h2 className="works__title">Literary Works</h2>
-        <p className="works__subtitle">
-          Explore a collection of novels, poetry, and essays that have touched hearts worldwide
-        </p>
-        <button type="button" className="btn btn--translate">
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="btn__icon"
-            aria-hidden="true"
-          >
-            <path d="M5 8l6 6" />
-            <path d="M4 14l6-6 2-3" />
-            <path d="M2 5h12" />
-            <path d="M7 2h1" />
-            <path d="M22 22l-5-10-5 10" />
-            <path d="M14 18h6" />
-          </svg>
-          Translate to Telugu
-        </button>
-      </div>
+    <section className="bg-[#fcfaf5] py-10 md:py-12">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="text-center mb-8">
+          <h2 className="font-serif text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Gallery
+          </h2>
+          <p className="text-gray-600">
+            Moments captured across a lifetime of literary achievement.
+          </p>
+        </div>
 
-      <div className="works__grid">
-        {BOOKS.map((book) => (
-          <article key={book.id} className="work-card">
-            <div
-              className={`work-card__image-container${book.imageContainerClass ? ` ${book.imageContainerClass}` : ''}`}
-            >
-              <img src={book.image} alt={book.title} className="work-card__image" loading="lazy" />
-              <span className="work-card__year-badge">{book.year}</span>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
+          {/* Main Large Image */}
+          <div className="md:col-span-2 md:row-span-2 bg-gray-200 aspect-[4/3] md:aspect-auto relative overflow-hidden group">
+            <img src="/images/baner1.jpeg" alt="Gallery Image 1" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+               <span className="text-white font-bold border border-white px-4 py-2">View</span>
+             </div>
+          </div>
+          
+          {/* Smaller Images */}
+          <div className="bg-gray-200 aspect-video md:aspect-[4/3] relative overflow-hidden group">
+            <img src="/images/baner2.jpeg" alt="Gallery Image 2" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+               <span className="text-white font-bold border border-white px-3 py-1 text-sm">View</span>
             </div>
-            <div className="work-card__content">
-              <div className="work-card__category">
-                <BookCategoryIcon />
-                {book.category}
-              </div>
-              <h3 className="work-card__title">{book.title}</h3>
-              <p className="work-card__desc">{book.shortDesc}</p>
-              <div className="work-card__meta">
-                <span>{book.pages} pages</span>
-                <span>{book.language}</span>
-              </div>
-              <Link href={`/books?book=${book.id}`} className="btn btn--read-more">
-                Read More
-              </Link>
+          </div>
+          
+          <div className="bg-gray-200 aspect-video md:aspect-[4/3] relative overflow-hidden group">
+            <img src="/images/aw1.jpeg" alt="Gallery Image 3" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+               <span className="text-white font-bold border border-white px-3 py-1 text-sm">View</span>
             </div>
-          </article>
-        ))}
-      </div>
+          </div>
+          
+          <div className="bg-gray-200 aspect-video md:aspect-[4/3] relative overflow-hidden group">
+            <img src="/images/baner3.jpeg" alt="Gallery Image 4" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+               <span className="text-white font-bold border border-white px-3 py-1 text-sm">View</span>
+            </div>
+          </div>
+          
+          <div className="bg-gray-200 aspect-video md:aspect-[4/3] relative overflow-hidden group">
+            <img src="/images/aw2.jpeg" alt="Gallery Image 5" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+               <span className="text-white font-bold border border-white px-3 py-1 text-sm">View</span>
+            </div>
+          </div>
+          
+          <div className="bg-gray-200 aspect-video md:aspect-[4/3] relative overflow-hidden group">
+            <img src="/images/aw3.jpeg" alt="Gallery Image 6" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+               <span className="text-white font-bold border border-white px-3 py-1 text-sm">View</span>
+            </div>
+          </div>
+        </div>
 
-      <div className="works__actions">
-        <Link href="/books" className="btn btn--solid-brand">
-          Explore Complete Library
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="btn__icon"
-            aria-hidden="true"
-          >
-            <path d="M5 12h14M12 5l7 7-7 7" />
-          </svg>
-        </Link>
+        <div className="text-center">
+          <Link href="/gallery" className="inline-flex items-center gap-2 bg-[#a82b2b] text-white font-bold py-3 px-8 rounded text-sm hover:bg-[#8b2424] transition-colors shadow-sm">
+            View Full Gallery <span>→</span>
+          </Link>
+        </div>
       </div>
     </section>
   );

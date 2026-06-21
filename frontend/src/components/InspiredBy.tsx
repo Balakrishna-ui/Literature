@@ -1,6 +1,4 @@
-'use client';
-
-import { useEffect, useRef } from 'react';
+import Link from 'next/link';
 
 const cards = [
   { id: 'card-classic-literature', title: 'Classic Literature', image: '/images/ins1.jpeg', alt: 'Classic Literature' },
@@ -10,34 +8,8 @@ const cards = [
 ];
 
 export default function InspiredBy() {
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
-
-    const cardEls = section.querySelectorAll('.card');
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry, i) => {
-          if (entry.isIntersecting) {
-            const el = entry.target as HTMLElement;
-            el.style.transitionDelay = `${i * 120}ms`;
-            el.classList.add('card--visible');
-            observer.unobserve(el);
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
-
-    cardEls.forEach((card) => observer.observe(card));
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <section
-      ref={sectionRef}
       className="hero page-section page-section--light"
       id="inspired-by"
       data-section="inspired-by"
@@ -51,13 +23,13 @@ export default function InspiredBy() {
         </header>
         <div className="cards" id="cards-grid">
           {cards.map((card) => (
-            <article key={card.id} className="card" id={card.id}>
+            <Link key={card.id} href={`/inspired?category=${card.id}`} className="card">
               <div className="card__image-wrap">
                 <img src={card.image} alt={card.alt} className="card__image" loading="lazy" />
                 <div className="card__overlay" />
               </div>
               <h2 className="card__title">{card.title}</h2>
-            </article>
+            </Link>
           ))}
         </div>
       </div>

@@ -5,7 +5,7 @@ export default function QuoteBanner() {
         className="quote-banner__bg"
         style={{
           backgroundImage:
-            "url('https://images.unsplash.com/photo-1524578271613-d550eacf6090?auto=format&fit=crop&q=80&w=1600')",
+            "url('/quote-banner.png')",
         }}
       ></div>
       <div className="quote-banner__overlay"></div>

@@ -1,101 +1,140 @@
 export type Book = {
   id: string;
   title: string;
-  category: string;
+  subtitle?: string;
+  category: string; // Used for tabs: 'Novel', 'Poetry Collection', 'Stage Play', 'Short Stories'
   year: string;
   pages: string;
   language: string;
+  publisher?: string;
   genre: string;
   image: string;
   desc: string;
   shortDesc: string;
-  imageContainerClass?: string;
+  isFeatured?: boolean;
 };
 
 export const BOOKS: Book[] = [
   {
-    id: 'echoes-of-silence',
-    title: 'Echoes of Silence',
-    category: 'Contemporary Fiction',
-    year: '2018',
-    pages: '432',
-    language: 'English',
-    genre: 'Contemporary Fiction',
+    id: 'aaru-velu',
+    title: 'Aaru Velu',
+    subtitle: 'Six Bows',
+    category: 'Novel',
+    year: '1978',
+    pages: '624',
+    language: 'Telugu',
+    publisher: 'Visalandhra Publishing House',
+    genre: 'Literary Fiction',
     image: '/images/bk1.png',
-    shortDesc:
-      "A profound exploration of human resilience and the power of unspoken emotions. This award-winning novel follows the journey of a mute artist who finds his voice...",
-    desc: 'A profound exploration of human resilience and the power of unspoken emotions. This award-winning novel follows the journey of a mute artist who finds his voice in colors.',
+    isFeatured: true,
+    shortDesc: 'A multigenerational epic set in the Godavari delta, following six generations of a farming family through war, partition, and social change.',
+    desc: 'A multigenerational epic set in the Godavari delta, following six generations of a farming family through war, partition, and social change.'
   },
   {
-    id: 'shadows-of-tomorrow',
-    title: 'Shadows of Tomorrow',
-    category: 'Literary Fiction',
-    year: '2020',
-    pages: '512',
-    language: 'English',
+    id: 'nadhi-theeram',
+    title: 'Nadhi Theeram',
+    subtitle: 'Riverbank',
+    category: 'Poetry Collection',
+    year: '1965',
+    pages: '142',
+    language: 'Telugu',
+    publisher: 'Sahitya Akademi',
+    genre: 'Poetry',
+    image: '/images/bk2.png',
+    isFeatured: true,
+    shortDesc: 'A collection of lyrical poems that weave together the landscapes of coastal Andhra with the inner landscapes of memory, loss, and longing.',
+    desc: 'A collection of lyrical poems that weave together the landscapes of coastal Andhra with the inner landscapes of memory, loss, and longing.'
+  },
+  {
+    id: 'raktakshi',
+    title: 'Raktakshi',
+    subtitle: 'The Red-Eyed',
+    category: 'Stage Play',
+    year: '1972',
+    pages: '128',
+    language: 'Telugu',
+    publisher: 'National Book Trust',
+    genre: 'Drama',
+    image: '/images/bk1.png',
+    isFeatured: true,
+    shortDesc: 'A searing drama about the lives of salt-pan workers on the Gujarat coast. First performed at the National School of Drama.',
+    desc: 'A searing drama about the lives of salt-pan workers on the Gujarat coast. First performed at the National School of Drama.'
+  },
+  {
+    id: 'sapta-sagaralu',
+    title: 'Sapta Sagaralu',
+    subtitle: 'Seven Oceans',
+    category: 'Poetry Collection',
+    year: '2010',
+    pages: '112',
+    language: 'Telugu',
+    publisher: 'Sahitya Akademi',
+    genre: 'Poetry',
+    image: '/images/bk2.png',
+    isFeatured: true,
+    shortDesc: 'The final major work, a profound meditation on time, mortality, and the endurance of art. Written in the classical Telugu meter.',
+    desc: 'The final major work, a profound meditation on time, mortality, and the endurance of art. Written in the classical Telugu meter.'
+  },
+  {
+    id: 'varanasi-ghat',
+    title: 'Varanasi Ghat',
+    subtitle: 'The Ghats of Varanasi',
+    category: 'Novel',
+    year: '1982',
+    pages: '384',
+    language: 'Telugu',
+    publisher: 'Navodaya Publishers',
+    genre: 'Historical Fiction',
+    image: '/images/bk1.png',
+    isFeatured: false,
+    shortDesc: 'A historical novel set during the Indian independence movement, following a young Telugu poet who travels to Varanasi seeking spiritual awakening.',
+    desc: 'A historical novel set during the Indian independence movement, following a young Telugu poet who travels to Varanasi seeking spiritual awakening.'
+  },
+  {
+    id: 'prabhata-ragalu',
+    title: 'Prabhata Ragalu',
+    subtitle: 'Morning Melodies',
+    category: 'Poetry Collection',
+    year: '1956',
+    pages: '88',
+    language: 'Telugu',
+    publisher: 'Andhra Pradesh Sahitya Akademi',
+    genre: 'Poetry',
+    image: '/images/bk2.png',
+    isFeatured: false,
+    shortDesc: 'His debut poetry collection, filled with youthful exuberance and a profound connection to the rural landscapes of his childhood.',
+    desc: 'His debut poetry collection, filled with youthful exuberance and a profound connection to the rural landscapes of his childhood.'
+  },
+  {
+    id: 'grama-kathalu',
+    title: 'Grama Kathalu',
+    subtitle: 'Village Stories',
+    category: 'Short Stories',
+    year: '1968',
+    pages: '210',
+    language: 'Telugu',
+    publisher: 'Visalandhra Publishing House',
+    genre: 'Fiction',
+    image: '/images/bk1.png',
+    isFeatured: false,
+    shortDesc: 'A brilliant collection of short fiction capturing the nuances, humor, and tragedies of rural life in mid-century Andhra Pradesh.',
+    desc: 'A brilliant collection of short fiction capturing the nuances, humor, and tragedies of rural life in mid-century Andhra Pradesh.'
+  },
+  {
+    id: 'mouna-ragam',
+    title: 'Mouna Ragam',
+    subtitle: 'The Silent Melody',
+    category: 'Novel',
+    year: '1995',
+    pages: '312',
+    language: 'Telugu',
+    publisher: 'Navodaya Publishers',
     genre: 'Literary Fiction',
     image: '/images/bk2.png',
-    imageContainerClass: 'work-card__image-container--show-name',
-    shortDesc:
-      'A gripping narrative that weaves together past and future, exploring themes of identity, memory, and the choices that define us. Shortlisted for the International...',
-    desc: 'A gripping narrative that weaves together past and future, exploring themes of identity, memory, and the choices that define us.',
-  },
-  {
-    id: 'whispers-of-the-soul',
-    title: 'Whispers of the Soul',
-    category: 'Poetry Collection',
-    year: '2017',
-    pages: '224',
-    language: 'English',
-    genre: 'Poetry Collection',
-    image:
-      'https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&q=80&w=900',
-    shortDesc:
-      'An exquisite collection of 100 poems that delve into love, loss, hope, and the eternal human quest for meaning. Winner of the World Poetry Prize.',
-    desc: 'An exquisite collection of poems that delve into love, loss, hope, and the eternal human quest for meaning.',
-  },
-  {
-    id: 'the-rivers-memory',
-    title: "The River's Memory",
-    category: 'Historical Fiction',
-    year: '2015',
-    pages: '624',
-    language: 'English',
-    genre: 'Historical Fiction',
-    image:
-      'https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=900',
-    shortDesc:
-      'Set against the backdrop of pre-independence India, this epic tale chronicles three generations of a family and their unbreakable bond with the sacred river that shape...',
-    desc: 'Set against pre-independence India, this epic tale follows three generations and their unbreakable bond with the sacred river that shapes their destiny.',
-  },
-  {
-    id: 'monsoon-dreams',
-    title: 'Monsoon Dreams',
-    category: 'Short Stories',
-    year: '2019',
-    pages: '288',
-    language: 'English',
-    genre: 'Short Stories',
-    image:
-      'https://images.unsplash.com/photo-1456615074700-1dc12aa7364d?auto=format&fit=crop&q=80&w=900',
-    shortDesc:
-      'A mesmerizing collection of 15 short stories that capture the essence of Indian life, from bustling cities to serene villages, each tale a gem of literary craftsmanship.',
-    desc: 'A mesmerizing collection of stories capturing Indian life from bustling cities to serene villages.',
-  },
-  {
-    id: 'letters-to-my-daughter',
-    title: 'Letters to My Daughter',
-    category: 'Essays & Memoir',
-    year: '2022',
-    pages: '256',
-    language: 'English',
-    genre: 'Essays & Memoir',
-    image:
-      'https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&q=80&w=900',
-    shortDesc:
-      'An intimate collection of essays and letters exploring fatherhood, wisdom, and life lessons. A deeply personal work that resonates with readers across ages.',
-    desc: 'An intimate collection of essays and letters exploring fatherhood, wisdom, and life lessons.',
-  },
+    isFeatured: false,
+    shortDesc: 'An introspective novel exploring the complex relationship between a fading classical musician and his rebellious daughter in modern Hyderabad.',
+    desc: 'An introspective novel exploring the complex relationship between a fading classical musician and his rebellious daughter in modern Hyderabad.'
+  }
 ];
 
 export function getBookById(id: string | null | undefined): Book {
