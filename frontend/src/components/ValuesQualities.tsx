@@ -18,7 +18,7 @@ export default function ValuesQualities() {
 
   return (
     <section className="bg-[#fcfaf5] py-10 md:py-12 border-t border-gray-200">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="w-[90%] md:w-[80%] mx-auto">
         <div className="text-center max-w-2xl mx-auto mb-8">
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Values & Personal Qualities

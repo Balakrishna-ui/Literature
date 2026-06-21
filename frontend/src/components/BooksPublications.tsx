@@ -42,7 +42,7 @@ export default function BooksPublications() {
 
   return (
     <section className="bg-white py-10 md:py-12">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="w-[90%] md:w-[80%] mx-auto">
         <div className="text-center max-w-2xl mx-auto mb-8">
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-gray-900 mb-3">
             Books & Publications

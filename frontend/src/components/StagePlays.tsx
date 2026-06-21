@@ -85,7 +85,7 @@ export default function StagePlays() {
 
   return (
     <section className="bg-white py-10 md:py-12 overflow-hidden">
-      <div className="max-w-6xl mx-auto px-6 relative">
+      <div className="w-[90%] md:w-[80%] mx-auto relative">
         <div className="text-center mb-8">
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-gray-900 mb-2">
             Stage Plays (Natakalu)

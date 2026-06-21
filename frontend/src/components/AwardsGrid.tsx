@@ -34,7 +34,7 @@ export default function AwardsGrid() {
 
   return (
     <section className="bg-[#a82b2b] text-white py-10 md:py-12">
-      <div className="max-w-5xl mx-auto px-6">
+      <div className="w-[90%] md:w-[80%] mx-auto">
         <div className="text-center mb-8">
           <span className="text-[#eab308] font-bold tracking-[0.2em] text-xs uppercase mb-2 block">
             Honors

@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function BiographySection() {
   return (
     <section className="bg-white py-12 md:py-16">
-      <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+      <div className="w-[90%] md:w-[80%] mx-auto grid md:grid-cols-2 gap-16 items-center">
         {/* Image Column */}
         <div className="relative group">
           <div className="absolute -inset-4 border-l-2 border-t-2 border-[#eab308]/50 z-0"></div>
