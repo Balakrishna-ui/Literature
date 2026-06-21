@@ -36,7 +36,7 @@ export default function BooksPageContent({ initialBookId }: { initialBookId?: st
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
             {featuredBooks.map(book => <BookCard key={book.id} book={book} />)}
           </div>
         </div>
@@ -75,7 +75,7 @@ export default function BooksPageContent({ initialBookId }: { initialBookId?: st
             ))}
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
             {filteredBooks.map(book => <BookCard key={book.id} book={book} />)}
           </div>
         </div>
@@ -106,27 +106,27 @@ function BookCard({ book }: { book: Book }) {
       </div>
 
       {/* Content Container */}
-      <div className="p-5 flex flex-col flex-grow">
-        <span className="text-[#eab308] font-bold text-[9px] tracking-wider uppercase mb-2 bg-[#fcfaf5] inline-block px-1.5 py-0.5 self-start border border-[#eab308]/20">
+      <div className="p-2 md:p-5 flex flex-col flex-grow">
+        <span className="text-[#eab308] font-bold text-[7px] md:text-[9px] tracking-wider uppercase mb-1 md:mb-2 bg-[#fcfaf5] inline-block px-1 md:px-1.5 py-0.5 self-start border border-[#eab308]/20">
           {book.category}
         </span>
-        <h3 className="font-serif text-xl font-bold text-gray-900 mb-1">{book.title}</h3>
+        <h3 className="font-serif text-xs md:text-xl font-bold text-gray-900 mb-0.5 md:mb-1 leading-tight">{book.title}</h3>
         {book.subtitle && (
-          <p className="text-gray-500 italic text-sm mb-3 font-serif">{book.subtitle}</p>
+          <p className="text-gray-500 italic text-[10px] md:text-sm mb-1 md:mb-3 font-serif">{book.subtitle}</p>
         )}
-        <p className="text-gray-600 text-[13px] leading-relaxed mb-4 flex-grow line-clamp-3">
+        <p className="text-gray-600 text-[9px] md:text-[13px] leading-relaxed mb-2 md:mb-4 flex-grow line-clamp-2 md:line-clamp-3">
           {book.shortDesc}
         </p>
 
         {/* Footer */}
-        <div className="border-t border-gray-100 pt-3 mt-auto flex items-center justify-between text-[11px] text-gray-400 font-medium">
-          <div className="flex items-center gap-1.5">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+        <div className="border-t border-gray-100 pt-2 md:pt-3 mt-auto flex items-center justify-between text-[9px] md:text-[11px] text-gray-400 font-medium">
+          <div className="flex items-center gap-1">
+            <svg width="10" height="10" className="md:w-3 md:h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
             {book.year}
           </div>
-          <div className="flex items-center gap-1.5">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
-            {book.pages} pages
+          <div className="flex items-center gap-1">
+            <svg width="10" height="10" className="md:w-3 md:h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+            {book.pages}p
           </div>
         </div>
       </div>

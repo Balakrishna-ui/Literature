@@ -44,22 +44,22 @@ export default function InspirationsMentors() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 mb-12">
           {mentors.map((mentor, index) => (
             <div key={index} className="bg-white border-t-4 border-[#a82b2b] shadow-sm flex flex-col overflow-hidden">
-              <div className="w-full h-48 bg-gray-50 relative p-2">
+              <div className="w-full h-32 md:h-48 bg-gray-50 relative p-1 md:p-2">
                 <img 
                   src={mentor.image} 
                   alt={mentor.name} 
                   className="w-full h-full object-contain"
                 />
               </div>
-              <div className="p-6 flex flex-col flex-grow">
-                <h3 className="font-serif text-xl font-bold text-gray-900 mb-2">{mentor.name}</h3>
-                <span className="text-[#eab308] font-bold text-[10px] tracking-wider uppercase mb-4 bg-[#fcfaf5] inline-block px-2 py-1 self-start border border-[#eab308]/20">
+              <div className="p-3 md:p-6 flex flex-col flex-grow">
+                <h3 className="font-serif text-sm md:text-xl font-bold text-gray-900 mb-1 md:mb-2 leading-tight">{mentor.name}</h3>
+                <span className="text-[#eab308] font-bold text-[8px] md:text-[10px] tracking-wider uppercase mb-2 md:mb-4 bg-[#fcfaf5] inline-block px-1 md:px-2 py-0.5 md:py-1 self-start border border-[#eab308]/20">
                   {mentor.role}
                 </span>
-                <p className="text-gray-600 text-sm leading-relaxed line-clamp-2" title={mentor.desc}>
+                <p className="text-gray-600 text-xs md:text-sm leading-relaxed line-clamp-2 md:line-clamp-3" title={mentor.desc}>
                   {mentor.desc}
                 </p>
               </div>

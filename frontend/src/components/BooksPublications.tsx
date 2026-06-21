@@ -53,7 +53,7 @@ export default function BooksPublications() {
           <div className="w-16 h-[2px] bg-[#eab308] mx-auto"></div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 mb-8">
           {books.map((book, index) => (
             <div key={index} className="bg-white border border-gray-100 shadow-md flex flex-col group overflow-hidden border-t-4 border-[#a82b2b]">
               <div className="aspect-[2/1] bg-gray-50 relative overflow-hidden flex items-center justify-center p-0">
@@ -65,15 +65,15 @@ export default function BooksPublications() {
                   </div>
                 )}
               </div>
-              <div className="p-4 flex flex-col flex-grow">
-                <span className="text-[#eab308] font-bold text-[9px] tracking-wider uppercase mb-1.5 bg-[#fcfaf5] inline-block px-1.5 py-0.5 self-start border border-[#eab308]/20">
+              <div className="p-2 md:p-4 flex flex-col flex-grow">
+                <span className="text-[#eab308] font-bold text-[7px] md:text-[9px] tracking-wider uppercase mb-1 bg-[#fcfaf5] inline-block px-1 md:px-1.5 py-0.5 self-start border border-[#eab308]/20">
                   {book.type}
                 </span>
-                <h3 className="font-serif text-base font-bold text-gray-900 mb-0.5">{book.title}</h3>
-                <h4 className="font-serif italic text-gray-500 text-sm mb-2">{book.subtitle}</h4>
-                <p className="text-gray-600 text-xs mb-4 flex-grow leading-relaxed">{book.desc}</p>
-                <div className="flex justify-between items-center text-xs text-gray-400 font-semibold border-t border-gray-100 pt-3 mt-auto">
-                  <span className="truncate mr-2">{book.publisher}</span>
+                <h3 className="font-serif text-xs md:text-base font-bold text-gray-900 mb-0.5 leading-tight">{book.title}</h3>
+                <h4 className="font-serif italic text-gray-500 text-[10px] md:text-sm mb-1 md:mb-2">{book.subtitle}</h4>
+                <p className="text-gray-600 text-[9px] md:text-xs mb-2 md:mb-4 flex-grow leading-relaxed line-clamp-3" title={book.desc}>{book.desc}</p>
+                <div className="flex justify-between items-center text-[8px] md:text-xs text-gray-400 font-semibold border-t border-gray-100 pt-2 md:pt-3 mt-auto">
+                  <span className="truncate mr-1">{book.publisher}</span>
                   <span className="text-[#a82b2b] shrink-0">{book.year}</span>
                 </div>
               </div>

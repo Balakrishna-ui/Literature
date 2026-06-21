@@ -41,21 +41,21 @@ export default function LiteraryJourney() {
           <div className="w-16 h-[2px] bg-[#eab308] mx-auto"></div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 mb-8">
           {milestones.map((item, index) => (
-            <div key={index} className="bg-white p-4 shadow-sm border-t-4 border-[#a82b2b] relative pt-8 flex flex-col">
-              <div className="absolute -top-4 left-4 bg-[#a82b2b] text-white text-xs font-bold px-3 py-1.5 flex items-center gap-2">
-                <span className="w-4 h-4 border border-white/50 rounded flex items-center justify-center text-[10px]">L</span>
+            <div key={index} className="bg-white p-2 md:p-4 shadow-sm border-t-4 border-[#a82b2b] relative pt-6 md:pt-8 flex flex-col">
+              <div className="absolute -top-3 md:-top-4 left-2 md:left-4 bg-[#a82b2b] text-white text-[10px] md:text-xs font-bold px-2 md:px-3 py-1 md:py-1.5 flex items-center gap-1 md:gap-2">
+                <span className="w-3 h-3 md:w-4 md:h-4 border border-white/50 rounded flex items-center justify-center text-[8px] md:text-[10px]">L</span>
                 {item.year}
               </div>
               <img 
                 src={item.image} 
                 alt={item.title} 
-                className="w-full h-36 rounded object-cover mb-4"
+                className="w-full h-24 md:h-36 rounded object-cover mb-2 md:mb-4"
               />
               <div className="flex-grow">
-                <h3 className="font-serif text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+                <h3 className="font-serif text-sm md:text-lg font-bold text-gray-900 mb-1 md:mb-2 leading-tight">{item.title}</h3>
+                <p className="text-gray-600 text-[10px] md:text-sm leading-relaxed line-clamp-3 md:line-clamp-none" title={item.desc}>{item.desc}</p>
               </div>
             </div>
           ))}

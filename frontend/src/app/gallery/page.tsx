@@ -24,20 +24,20 @@ const categories: Category[] = [
 ];
 
 const galleryImages = [
-  { src: '/images/pro.jpeg', category: 'Personal Photos', alt: 'Dr. Reddy Portrait' },
-  { src: '/images/baner2.jpeg', category: 'Literary Events', alt: 'Literary Event 1' },
-  { src: '/images/aw1.jpeg', category: 'Award Ceremonies', alt: 'Award Ceremony 1' },
-  { src: '/images/ins4.jpeg', category: 'Book Launches', alt: 'Book Launch Event' },
-  { src: '/images/baner1.jpeg', category: 'Natakalu Images', alt: 'Natakalu Scene' },
-  { src: '/images/ins2.jpeg', category: 'Historical Moments', alt: 'Historical Scene' },
-  { src: '/images/baner3.jpeg', category: 'Personal Photos', alt: 'Personal Memory' },
-  { src: '/images/aw2.jpeg', category: 'Award Ceremonies', alt: 'Award Ceremony 2' },
-  { src: '/images/baner6.jpeg', category: 'Natakalu Images', alt: 'Natakalu Performance' },
-  { src: '/images/aw3.jpeg', category: 'Award Ceremonies', alt: 'Award Ceremony 3' },
-  { src: '/images/ins3.jpeg', category: 'Literary Events', alt: 'Literary Event 2' },
-  { src: '/images/baner4.jpeg', category: 'Award Ceremonies', alt: 'Award Ceremony 4' },
-  { src: '/images/baner5.jpeg', category: 'Historical Moments', alt: 'Historical Gathering' },
-  { src: '/images/ins1.jpeg', category: 'Personal Photos', alt: 'Inspiration Moment' },
+  { src: '/images/pro.jpeg', category: 'Personal Photos', alt: 'Dr. Reddy Portrait', isLarge: false },
+  { src: '/images/baner2.jpeg', category: 'Literary Events', alt: 'Literary Event 1', isLarge: true },
+  { src: '/images/aw1.jpeg', category: 'Award Ceremonies', alt: 'Award Ceremony 1', isLarge: true },
+  { src: '/images/ins4.jpeg', category: 'Book Launches', alt: 'Book Launch Event', isLarge: false },
+  { src: '/images/baner1.jpeg', category: 'Natakalu Images', alt: 'Natakalu Scene', isLarge: true },
+  { src: '/images/ins2.jpeg', category: 'Historical Moments', alt: 'Historical Scene', isLarge: false },
+  { src: '/images/baner3.jpeg', category: 'Personal Photos', alt: 'Personal Memory', isLarge: true },
+  { src: '/images/aw2.jpeg', category: 'Award Ceremonies', alt: 'Award Ceremony 2', isLarge: true },
+  { src: '/images/baner6.jpeg', category: 'Natakalu Images', alt: 'Natakalu Performance', isLarge: true },
+  { src: '/images/aw3.jpeg', category: 'Award Ceremonies', alt: 'Award Ceremony 3', isLarge: true },
+  { src: '/images/ins3.jpeg', category: 'Literary Events', alt: 'Literary Event 2', isLarge: false },
+  { src: '/images/baner4.jpeg', category: 'Award Ceremonies', alt: 'Award Ceremony 4', isLarge: true },
+  { src: '/images/baner5.jpeg', category: 'Historical Moments', alt: 'Historical Gathering', isLarge: true },
+  { src: '/images/ins1.jpeg', category: 'Personal Photos', alt: 'Inspiration Moment', isLarge: false },
 ];
 
 export default function GalleryPage() {
@@ -87,18 +87,51 @@ export default function GalleryPage() {
             ))}
           </div>
 
-          {/* Image Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Mobile Layout */}
+          <div className="md:hidden">
+            {filteredImages.length === 0 ? (
+              <div className="text-center text-gray-500 py-20">
+                No images available in this category yet.
+              </div>
+            ) : (
+              <>
+                {/* Large (landscape) images — full width */}
+                {filteredImages.filter(img => img.isLarge).length > 0 && (
+                  <div className="flex flex-col gap-3 mb-3">
+                    {filteredImages.filter(img => img.isLarge).map((img, idx) => (
+                      <div key={idx} className="relative aspect-[4/3] group overflow-hidden bg-gray-200 border border-[#d8d3c5]">
+                        <img src={img.src} alt={img.alt} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                          <div className="text-[#eab308] text-[10px] font-bold tracking-wider uppercase mb-1">{img.category}</div>
+                          <div className="text-white text-sm">{img.alt}</div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+                {/* Small (portrait/square) images — 2 per row */}
+                {filteredImages.filter(img => !img.isLarge).length > 0 && (
+                  <div className="grid grid-cols-2 gap-2">
+                    {filteredImages.filter(img => !img.isLarge).map((img, idx) => (
+                      <div key={idx} className="relative aspect-[3/4] group overflow-hidden bg-gray-200 border border-[#d8d3c5]">
+                        <img src={img.src} alt={img.alt} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-2">
+                          <div className="text-[#eab308] text-[9px] font-bold tracking-wider uppercase mb-0.5">{img.category}</div>
+                          <div className="text-white text-xs">{img.alt}</div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </>
+            )}
+          </div>
+
+          {/* Desktop Layout — 3-col grid */}
+          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredImages.map((img, idx) => (
-              <div 
-                key={idx} 
-                className="relative aspect-[4/3] group overflow-hidden bg-gray-200 border border-[#d8d3c5]"
-              >
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
+              <div key={idx} className="relative aspect-[4/3] group overflow-hidden bg-gray-200 border border-[#d8d3c5]">
+                <img src={img.src} alt={img.alt} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
                   <div className="text-[#eab308] text-[10px] font-bold tracking-wider uppercase mb-1">{img.category}</div>
                   <div className="text-white text-sm">{img.alt}</div>
@@ -106,9 +139,9 @@ export default function GalleryPage() {
               </div>
             ))}
           </div>
-          
+
           {filteredImages.length === 0 && (
-            <div className="text-center text-gray-500 py-20">
+            <div className="hidden md:block text-center text-gray-500 py-20">
               No images available in this category yet.
             </div>
           )}

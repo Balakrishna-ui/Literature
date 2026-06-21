@@ -115,11 +115,15 @@ export default function StagePlays() {
           {/* Carousel Track */}
           <div className="overflow-hidden mb-8 px-2 py-2">
             <div 
-              className="flex transition-transform duration-700 ease-in-out w-full"
+              className="flex transition-transform duration-700 ease-in-out"
               style={{ transform: `translateX(-${currentIndex * (100 / cardsToShow)}%)` }}
             >
               {plays.map((play, index) => (
-                <div key={index} className="w-full min-w-full md:min-w-[calc(33.333333%-16px)] md:w-[calc(33.333333%-16px)] mx-2 border border-gray-100 shadow-sm overflow-hidden flex flex-col flex-shrink-0 group">
+                <div 
+                  key={index} 
+                  className="border border-gray-100 shadow-sm overflow-hidden flex flex-col flex-shrink-0 group mx-2"
+                  style={{ width: `calc(${100 / cardsToShow}% - 16px)` }}
+                >
                   {/* Image Placeholder */}
                   <div className="h-40 bg-[#1c2331] relative overflow-hidden">
                     {play.image ? (
