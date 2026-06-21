@@ -132,7 +132,7 @@ export default function StagePlays() {
                   style={{ width: `calc(${100 / cardsToShow}% - 16px)` }}
                 >
                   {/* Image */}
-                  <div className="aspect-square bg-[#1c2331] relative overflow-hidden">
+                  <div className="aspect-[4/3] bg-[#1c2331] relative overflow-hidden">
                     {play.image ? (
                       <img src={play.image} alt={play.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                     ) : (
