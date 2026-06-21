@@ -10,35 +10,42 @@ export default function StagePlays() {
       title: 'Raktakshi',
       desc: 'A powerful drama about salt-pan workers, performed at the National School of Drama. It broke new ground in Indian theater with its unflinching portrayal of labor exploitation.',
       venue: 'National School of Drama, New Delhi',
-      image: ''
+      image: '/images/na1.jpeg'
     },
     {
       year: '1976',
       title: 'Matti Manishi',
       desc: 'A tragicomedy set in a drought-stricken village, exploring the resilience and humor of rural communities facing environmental catastrophe.',
       venue: 'Ravindra Bharathi, Hyderabad',
-      image: ''
+      image: '/images/na2.jpeg'
     },
     {
       year: '1980',
       title: 'Kanyasulkam',
       desc: 'A satirical play tackling the practice of bride price in rural Andhra, blending sharp social commentary with folk humor and vibrant characters.',
       venue: 'Kalabhavan, Vijayawada',
-      image: ''
+      image: '/images/na3.jpeg'
     },
     {
       year: '1985',
       title: 'Sita Agnipariksha',
       desc: 'A reimagining of the Ramayana from Sita\'s perspective, challenging patriarchal narratives and exploring themes of justice and feminine strength.',
       venue: 'Tagore Theatre, Chandigarh',
-      image: ''
+      image: '/images/na4.jpeg'
     },
     {
       year: '1990',
       title: 'Naa Desam',
       desc: 'An epic play celebrating the spirit of Telugu-speaking people through independence, exploring identity, sacrifice, and the dream of self-governance.',
       venue: 'Ravindra Bharathi, Hyderabad',
-      image: ''
+      image: '/images/na5.jpeg'
+    },
+    {
+      year: '1995',
+      title: 'Andhra Kesari',
+      desc: 'A grand historical drama tracing the lives of freedom fighters from the Andhra region, celebrating their courage and sacrifices.',
+      venue: 'Ravindra Bharathi, Hyderabad',
+      image: '/images/na6.jpeg'
     }
   ];
 
@@ -124,12 +131,12 @@ export default function StagePlays() {
                   className="border border-gray-100 shadow-sm overflow-hidden flex flex-col flex-shrink-0 group mx-2"
                   style={{ width: `calc(${100 / cardsToShow}% - 16px)` }}
                 >
-                  {/* Image Placeholder */}
-                  <div className="h-40 bg-[#1c2331] relative overflow-hidden">
+                  {/* Image */}
+                  <div className="aspect-square bg-[#1c2331] relative overflow-hidden">
                     {play.image ? (
                       <img src={play.image} alt={play.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                     ) : (
-                      <div className="w-full h-full bg-[#1c2331] flex items-center justify-center text-gray-500 text-sm transition-transform duration-500 group-hover:scale-105">
+                      <div className="w-full h-full bg-[#1c2331] flex items-center justify-center text-gray-500 text-sm">
                         Play Image
                       </div>
                     )}
