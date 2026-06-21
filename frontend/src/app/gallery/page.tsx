@@ -52,7 +52,7 @@ export default function GalleryPage() {
       <Navbar />
 
       {/* Hero Header */}
-      <section className="bg-[#a82b2b] text-white pt-24 pb-16 px-6">
+      <section className="bg-[#a82b2b] text-white pt-16 pb-8 md:pt-24 md:pb-16 px-6">
         <div className="max-w-[1200px] mx-auto">
           <span className="text-[#eab308] text-xs font-bold tracking-widest uppercase mb-2 block">
             VISUAL ARCHIVE
