@@ -5,7 +5,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { BOOKS, Book } from '@/lib/books';
 
-export default function BooksPageContent() {
+export default function BooksPageContent({ initialBookId }: { initialBookId?: string } = {}) {
   const [filter, setFilter] = useState('All Works');
   
   const categories = ['All Works', 'Novel', 'Poetry Collection', 'Stage Play', 'Short Stories'];
