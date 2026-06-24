@@ -13,9 +13,7 @@ import Footer from '@/components/Footer';
 export default function Home() {
   return (
     <>
-      <a className="skip-link sr-only focus:not-sr-only" href="#main-content">
-        Skip to content
-      </a>
+
       <Navbar />
       <main id="main-content">
         <HeroSection />

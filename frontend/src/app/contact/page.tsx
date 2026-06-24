@@ -81,21 +81,25 @@ export default function ContactPage() {
 
             <div className="space-y-6">
               {/* Email Card */}
+              {/* Phone Card */}
               <div className="bg-[#f0ece1] p-6 border border-[#d8d3c5] flex gap-4 items-start relative overflow-hidden">
-                <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#a82b2b]"></div>
-                <div className="bg-[#a82b2b] p-3 text-white">
+                <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#2563eb]"></div>
+                <div className="bg-[#2563eb] p-3 text-white">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                    <polyline points="22,6 12,13 2,6"></polyline>
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-serif font-bold text-gray-900 mb-1 text-lg">Email</h3>
-                  <p className="text-gray-600 text-[13px]">foundation@lakshminarayanreddy.org</p>
+                  <h3 className="font-serif font-bold text-gray-900 mb-1 text-lg">Phone</h3>
+                  <p className="text-gray-600 text-[13px] leading-relaxed">
+                    9866180084<br />
+                    9618065671<br />
+                    7207264240
+                  </p>
                 </div>
               </div>
 
-              {/* Address Card */}
+              {/* Address Card 1 */}
               <div className="bg-[#f0ece1] p-6 border border-[#d8d3c5] flex gap-4 items-start relative overflow-hidden">
                 <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#eab308]"></div>
                 <div className="bg-[#eab308] p-3 text-gray-900">
@@ -105,10 +109,30 @@ export default function ContactPage() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-serif font-bold text-gray-900 mb-1 text-lg">Address</h3>
-                  <p className="text-gray-600 text-[13px]">
-                    Lakshmi Narayan Reddy Foundation, 12-4-87,<br />
-                    Visakhapatnam, Andhra Pradesh, India
+                  <h3 className="font-serif font-bold text-gray-900 mb-1 text-lg">Palem Office</h3>
+                  <p className="text-gray-600 text-[13px] leading-relaxed">
+                    8-40, Sri Venkateswara Swamy Temple,<br />
+                    Palem, Bijinapally,<br />
+                    Nagarkurnool. 509215
+                  </p>
+                </div>
+              </div>
+
+              {/* Address Card 2 */}
+              <div className="bg-[#f0ece1] p-6 border border-[#d8d3c5] flex gap-4 items-start relative overflow-hidden">
+                <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#eab308]"></div>
+                <div className="bg-[#eab308] p-3 text-gray-900">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="font-serif font-bold text-gray-900 mb-1 text-lg">Jadcherla Office</h3>
+                  <p className="text-gray-600 text-[13px] leading-relaxed">
+                    7-150/3B, Pochamma Temple,<br />
+                    Kaverammapet Road, Jadcherla,<br />
+                    Mahbubnagar. 509301
                   </p>
                 </div>
               </div>
