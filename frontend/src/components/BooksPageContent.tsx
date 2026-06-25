@@ -177,21 +177,21 @@ function BookCard({ book, onReadSample }: { book: Book, onReadSample: (book: Boo
         </div>
 
         {/* Action Buttons */}
-        <div className="flex gap-2">
+        <div className="flex flex-col lg:flex-row gap-1.5 md:gap-2">
           <a 
             href="https://wa.me/917207264240"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 bg-[#a82b2b] text-white text-[10px] md:text-xs font-semibold py-2 rounded hover:bg-[#8a2222] transition-colors text-center flex items-center justify-center gap-1"
+            className="flex-1 bg-[#a82b2b] text-white text-[10px] md:text-[11px] lg:text-xs font-semibold py-1.5 md:py-2 rounded hover:bg-[#8a2222] transition-colors text-center flex items-center justify-center gap-1.5 shadow-sm"
           >
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            <svg width="12" height="12" className="md:w-3.5 md:h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
             Download
           </a>
           <button 
             onClick={() => onReadSample(book)}
-            className="flex-1 bg-[#eab308] text-gray-900 text-[10px] md:text-xs font-semibold py-2 rounded hover:bg-[#d9a307] transition-colors flex items-center justify-center gap-1"
+            className="flex-1 bg-[#eab308] text-gray-900 text-[10px] md:text-[11px] lg:text-xs font-semibold py-1.5 md:py-2 rounded hover:bg-[#d9a307] transition-colors flex items-center justify-center gap-1.5 shadow-sm"
           >
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+            <svg width="12" height="12" className="md:w-3.5 md:h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
             Read Sample
           </button>
         </div>
