@@ -155,8 +155,8 @@ export default function BooksAdminPage() {
           onChange={(e) => setFilterCat(e.target.value)}
           className="px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 text-sm"
         >
-          <option value="All">All Categories</option>
-          {CATEGORIES.map((c) => <option key={c} value={c}>{c}</option>)}
+          <option className="bg-slate-900 text-white" value="All">All Categories</option>
+          {CATEGORIES.map((c) => <option className="bg-slate-900 text-white" key={c} value={c}>{c}</option>)}
         </select>
       </div>
 
@@ -251,7 +251,7 @@ export default function BooksAdminPage() {
                   <label className="block text-slate-400 text-xs mb-1">Category</label>
                   <select value={editBook.category || 'Novel'} onChange={(e) => setEditBook({...editBook, category: e.target.value})}
                     className="w-full px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:ring-2 focus:ring-purple-500">
-                    {CATEGORIES.map((c) => <option key={c} value={c}>{c}</option>)}
+                    {CATEGORIES.map((c) => <option className="bg-slate-900 text-white" key={c} value={c}>{c}</option>)}
                   </select>
                 </div>
                 <div>
@@ -298,8 +298,8 @@ export default function BooksAdminPage() {
                   <label className="block text-slate-400 text-xs mb-1">Status</label>
                   <select value={editBook.status || 'published'} onChange={(e) => setEditBook({...editBook, status: e.target.value})}
                     className="w-full px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:ring-2 focus:ring-purple-500">
-                    <option value="published">Published</option>
-                    <option value="unpublished">Unpublished</option>
+                    <option className="bg-slate-900 text-white" value="published">Published</option>
+                    <option className="bg-slate-900 text-white" value="unpublished">Unpublished</option>
                   </select>
                 </div>
               </div>
