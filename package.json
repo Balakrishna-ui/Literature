@@ -8,6 +8,6 @@
     "lint": "npm run lint --prefix frontend"
   },
   "devDependencies": {
-    "next": "*"
+    "next": "16.2.7"
   }
 }
