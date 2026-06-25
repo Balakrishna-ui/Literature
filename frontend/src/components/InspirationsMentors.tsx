@@ -47,11 +47,11 @@ export default function InspirationsMentors() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 mb-12">
           {mentors.map((mentor, index) => (
             <div key={index} className="bg-white border-t-4 border-[#a82b2b] shadow-sm flex flex-col overflow-hidden">
-              <div className="w-full h-32 md:h-48 bg-gray-50 relative p-1 md:p-2">
+              <div className="w-full h-32 md:h-48 bg-gray-100 relative">
                 <img 
                   src={mentor.image} 
                   alt={mentor.name} 
-                  className="w-full h-full object-contain"
+                  className={`w-full h-full object-cover ${mentor.objectPosition || 'object-center'}`}
                 />
               </div>
               <div className="p-3 md:p-6 flex flex-col flex-grow">
