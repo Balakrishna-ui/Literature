@@ -24,7 +24,7 @@ export default function HeroSection() {
 
   return (
     <section className="relative w-full bg-[#111111]">
-      <div className="relative w-full h-[600px]">
+      <div className="relative w-full h-[400px] md:h-[600px]">
         {bannerImages.map((src, index) => (
           <img
             key={src}
