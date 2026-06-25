@@ -37,13 +37,13 @@ export default function HeroSection() {
         ))}
 
         {/* Desktop & Mobile Buttons Overlay */}
-        <div className="absolute inset-0 flex flex-col justify-end pb-10 md:pb-16 z-10">
+        <div className="absolute inset-0 flex flex-col justify-end pb-8 md:pb-16 z-10">
           <div className="flex flex-row gap-2 md:gap-4 justify-center items-center w-full px-4">
-            <Link href="/about" className="bg-[#f59e0b] md:bg-[#eab308] text-[#7f1d1d] md:text-[#a82b2b] font-bold py-2.5 md:py-3 px-4 md:px-8 rounded text-xs md:text-sm hover:bg-[#d97706] md:hover:bg-[#facc15] transition-colors flex items-center gap-1 md:gap-2 shadow-md whitespace-nowrap">
+            <Link href="/about" className="bg-[#f59e0b] md:bg-[#eab308] text-[#7f1d1d] md:text-[#a82b2b] font-bold py-1.5 md:py-3 px-3 md:px-8 rounded text-[11px] md:text-sm hover:bg-[#d97706] md:hover:bg-[#facc15] transition-colors flex items-center gap-1 md:gap-2 shadow-md whitespace-nowrap">
               Explore His Life <span>→</span>
             </Link>
-            <Link href="/books" className="bg-white/20 md:bg-transparent border-2 md:border border-white/80 md:border-white/30 text-white font-bold py-2.5 md:py-3 px-4 md:px-8 rounded text-xs md:text-sm hover:bg-white/40 md:hover:bg-white/10 transition-colors flex items-center gap-1 md:gap-2 backdrop-blur-md md:backdrop-blur-sm shadow-sm whitespace-nowrap">
-              <svg width="16" height="16" className="md:w-[18px] md:h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" /></svg>
+            <Link href="/books" className="bg-white/20 md:bg-transparent border md:border-2 border-white/80 md:border-white/30 text-white font-bold py-1.5 md:py-3 px-3 md:px-8 rounded text-[11px] md:text-sm hover:bg-white/40 md:hover:bg-white/10 transition-colors flex items-center gap-1 md:gap-2 backdrop-blur-md md:backdrop-blur-sm shadow-sm whitespace-nowrap">
+              <svg width="12" height="12" className="md:w-[18px] md:h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" /></svg>
               View Works
             </Link>
           </div>
