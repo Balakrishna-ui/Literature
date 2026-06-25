@@ -39,7 +39,7 @@ export default function Navbar() {
         </svg>
       </div>
 
-      <div className="w-full px-6 md:px-12 h-20 flex items-center justify-between relative z-10">
+      <div className="w-full px-6 md:px-12 h-16 flex items-center justify-between relative z-10">
         
         {/* Logo and Tagline */}
         <Link href="/" className="flex items-center gap-3">
