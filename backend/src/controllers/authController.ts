@@ -4,7 +4,10 @@ import jwt from 'jsonwebtoken';
 import prisma from '../prisma.js';
 
 const generateToken = (id: number, role: string) => {
-  return jwt.sign({ id, role }, process.env.JWT_SECRET || 'fallback_secret', {
+  if (!process.env.JWT_SECRET) {
+    throw new Error('JWT_SECRET is not defined');
+  }
+  return jwt.sign({ id, role }, process.env.JWT_SECRET as string, {
     expiresIn: '30d',
   });
 };
@@ -27,6 +30,7 @@ export const login = async (req: Request, res: Response): Promise<void> => {
       res.status(401).json({ message: 'Invalid email or password' });
     }
   } catch (error) {
+    console.error('Login Error:', error);
     res.status(500).json({ message: 'Server error' });
   }
 };

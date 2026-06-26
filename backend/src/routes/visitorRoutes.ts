@@ -9,7 +9,6 @@ const router = express.Router();
 router.post('/track', async (req: Request, res: Response) => {
   const { pageUrl, visitorIp, deviceType, browser, country } = req.body;
   
-  try {
     const visitor = await prisma.visitor.create({
       data: {
         pageUrl,
@@ -19,14 +18,10 @@ router.post('/track', async (req: Request, res: Response) => {
       }
     });
     res.status(201).json(visitor);
-  } catch (error) {
-    res.status(500).json({ message: 'Error tracking visitor' });
-  }
 });
 
 // 2. Get Analytics (Admin Route)
 router.get('/stats', protect, async (req: Request, res: Response) => {
-  try {
     const totalVisitors = await prisma.visitor.count();
     
     // Group by page URL
@@ -50,9 +45,6 @@ router.get('/stats', protect, async (req: Request, res: Response) => {
       pageTraffic,
       recentActivity
     });
-  } catch (error) {
-    res.status(500).json({ message: 'Error fetching stats' });
-  }
 });
 
 export default router;

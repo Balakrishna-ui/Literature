@@ -10,7 +10,6 @@ const router = express.Router();
 
 // Get all media files
 router.get('/', protect, adminOnly, async (req: Request, res: Response) => {
-  try {
     const uploadsDir = path.join(process.cwd(), 'public', 'uploads');
     if (!fs.existsSync(uploadsDir)) {
       res.json([]);
@@ -27,9 +26,6 @@ router.get('/', protect, adminOnly, async (req: Request, res: Response) => {
       };
     });
     res.json(files);
-  } catch {
-    res.status(500).json({ message: 'Error fetching media' });
-  }
 });
 
 // Upload media file
@@ -47,17 +43,13 @@ router.post('/', protect, adminOnly, upload.single('file'), async (req: Request,
 
 // Delete media file
 router.delete('/:filename', protect, adminOnly, async (req: Request, res: Response) => {
-  try {
-    const filePath = path.join(process.cwd(), 'public', 'uploads', req.params.filename);
+    const filePath = path.join(process.cwd(), 'public', 'uploads', req.params.filename as string);
     if (fs.existsSync(filePath)) {
       fs.unlinkSync(filePath);
       res.json({ message: 'File deleted' });
     } else {
       res.status(404).json({ message: 'File not found' });
     }
-  } catch {
-    res.status(500).json({ message: 'Error deleting file' });
-  }
 });
 
 export default router;
