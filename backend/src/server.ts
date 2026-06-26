@@ -9,7 +9,8 @@ import { notFound, errorHandler } from './middlewares/errorMiddleware.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-dotenv.config({ path: path.resolve(__dirname, '../../backend/.env') });
+// Load .env from the backend root directory (works both locally and in production)
+dotenv.config({ path: path.resolve(__dirname, '../.env') });
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -26,8 +27,19 @@ const limiter = rateLimit({
 });
 app.use('/api', limiter);
 
+const allowedOrigins = process.env.FRONTEND_URL
+  ? process.env.FRONTEND_URL.split(',').map(o => o.trim())
+  : [
+      'http://localhost:3000',
+      'http://localhost:3001',
+      'http://localhost:3002',
+      'http://localhost:3003',
+      'http://localhost:4000',
+      'https://literacture.vercel.app',
+    ];
+
 app.use(cors({
-  origin: process.env.FRONTEND_URL || ['http://localhost:3000', 'http://localhost:3001', 'http://localhost:3002', 'http://localhost:3003', 'http://localhost:4000'],
+  origin: allowedOrigins,
   credentials: true
 }));
 app.use(express.json());
