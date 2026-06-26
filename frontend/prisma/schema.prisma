@@ -1,0 +1,98 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String   @unique
+  password  String
+  role      String   @default("Super Admin")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  activities ActivityLog[]
+}
+
+model Visitor {
+  id         Int      @id @default(autoincrement())
+  pageUrl    String
+  visitorIp  String
+  visitedAt  DateTime @default(now())
+}
+
+model AboutContent {
+  id          Int      @id @default(autoincrement())
+  sectionName String   @unique
+  content     String?
+  image       String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Education {
+  id          Int      @id @default(autoincrement())
+  institution String
+  degree      String
+  year        String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model CareerTimeline {
+  id          Int      @id @default(autoincrement())
+  year        String
+  title       String
+  description String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Book {
+  id               Int      @id @default(autoincrement())
+  title            String
+  category         String
+  shortDescription String
+  fullDescription  String
+  publicationYear  Int
+  publisher        String
+  pages            Int
+  coverImage       String?
+  featured         Boolean  @default(false)
+  displayOrder     Int      @default(0)
+  status           String   @default("published")
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+model GalleryCategory {
+  id        Int            @id @default(autoincrement())
+  name      String         @unique
+  images    GalleryImage[]
+  createdAt DateTime       @default(now())
+  updatedAt DateTime       @updatedAt
+}
+
+model GalleryImage {
+  id          Int             @id @default(autoincrement())
+  categoryId  Int
+  category    GalleryCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  title       String?
+  description String?
+  imagePath   String
+  featured    Boolean         @default(false)
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+}
+
+model ActivityLog {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  action    String
+  createdAt DateTime @default(now())
+}

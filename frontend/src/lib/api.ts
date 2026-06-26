@@ -1,5 +1,5 @@
-// Centralized API utility for admin dashboard
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+// Centralized API utility - uses relative URLs (same origin) so it works on Vercel and localhost
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || '';
 
 export const getToken = () => {
   if (typeof window === 'undefined') return null;
