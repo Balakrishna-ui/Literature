@@ -1,6 +1,5 @@
 import express from 'express';
 import type { Request, Response } from 'express';
-import prisma from '../prisma.js';
 import { protect, adminOnly } from '../middlewares/authMiddleware.js';
 import upload from '../middlewares/uploadMiddleware.js';
 import fs from 'fs';

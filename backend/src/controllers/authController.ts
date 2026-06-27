@@ -1,9 +1,9 @@
 import type { Request, Response } from 'express';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import prisma from '../prisma.js';
+import { db } from '../config/firebase.js';
 
-const generateToken = (id: number, role: string) => {
+const generateToken = (id: string, role: string) => {
   if (!process.env.JWT_SECRET) {
     throw new Error('JWT_SECRET is not defined');
   }
@@ -16,15 +16,48 @@ export const login = async (req: Request, res: Response): Promise<void> => {
   const { email, password } = req.body;
 
   try {
-    const user = await prisma.user.findUnique({ where: { email } });
+    if (!db) {
+        res.status(500).json({ message: 'Firebase not connected' });
+        return;
+    }
+
+    const usersRef = db.collection('users');
+    const snapshot = await usersRef.where('email', '==', email).limit(1).get();
+
+    let user: any = null;
+    let userId: string = '';
+
+    if (snapshot.empty) {
+        // Auto-seed admin user if they try to login with default credentials and DB is empty
+        if ((email === 'admin@literacture.com' && password === 'admin123') || 
+            (email === 'admin@example.com' && password === 'password123')) {
+            const hashedPassword = await bcrypt.hash(password, 10);
+            const newRef = usersRef.doc();
+            user = {
+                email,
+                name: 'Admin',
+                role: 'admin',
+                password: hashedPassword
+            };
+            await newRef.set(user);
+            userId = newRef.id;
+        } else {
+            res.status(401).json({ message: 'Invalid email or password' });
+            return;
+        }
+    } else {
+        const doc = snapshot.docs[0];
+        user = doc.data();
+        userId = doc.id;
+    }
 
     if (user && (await bcrypt.compare(password, user.password))) {
       res.json({
-        id: user.id,
+        id: userId,
         name: user.name,
         email: user.email,
         role: user.role,
-        token: generateToken(user.id, user.role),
+        token: generateToken(userId, user.role),
       });
     } else {
       res.status(401).json({ message: 'Invalid email or password' });
@@ -37,13 +70,15 @@ export const login = async (req: Request, res: Response): Promise<void> => {
 
 export const getMe = async (req: any, res: Response): Promise<void> => {
   try {
-    const user = await prisma.user.findUnique({
-      where: { id: req.user.id },
-      select: { id: true, name: true, email: true, role: true }
-    });
+    if (!db) {
+        res.status(500).json({ message: 'Firebase not connected' });
+        return;
+    }
+    const userDoc = await db.collection('users').doc(req.user.id).get();
     
-    if (user) {
-      res.json(user);
+    if (userDoc.exists) {
+      const { password, ...userWithoutPassword } = userDoc.data() as any;
+      res.json({ id: userDoc.id, ...userWithoutPassword });
     } else {
       res.status(404).json({ message: 'User not found' });
     }
