@@ -46,7 +46,7 @@ export const login = async (req: Request, res: Response): Promise<void> => {
             return;
         }
     } else {
-        const doc = snapshot.docs[0];
+        const doc = snapshot.docs[0]!;
         user = doc.data();
         userId = doc.id;
     }

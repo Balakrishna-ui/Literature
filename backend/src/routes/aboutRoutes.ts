@@ -22,7 +22,7 @@ router.put('/content/:section', protect, adminOnly, async (req: Request, res: Re
     try {
         if (!db) return res.status(500).json({ message: 'Firebase not connected' });
         const { content, image } = req.body;
-        const sectionRef = db.collection('aboutContent').doc(req.params.section);
+        const sectionRef = db.collection('aboutContent').doc(req.params.section as string);
         await sectionRef.set({ content, image }, { merge: true });
         const updated = (await sectionRef.get()).data();
         res.json({ sectionName: req.params.section, ...updated });
@@ -60,7 +60,7 @@ router.post('/education', protect, adminOnly, async (req: Request, res: Response
 router.put('/education/:id', protect, adminOnly, async (req: Request, res: Response) => {
     try {
         if (!db) return res.status(500).json({ message: 'Firebase not connected' });
-        const eduRef = db.collection('education').doc(req.params.id);
+        const eduRef = db.collection('education').doc(req.params.id as string);
         await eduRef.update(req.body);
         const updated = (await eduRef.get()).data();
         res.json(updated);
@@ -73,7 +73,7 @@ router.put('/education/:id', protect, adminOnly, async (req: Request, res: Respo
 router.delete('/education/:id', protect, adminOnly, async (req: Request, res: Response) => {
     try {
         if (!db) return res.status(500).json({ message: 'Firebase not connected' });
-        await db.collection('education').doc(req.params.id).delete();
+        await db.collection('education').doc(req.params.id as string).delete();
         res.json({ message: 'Education deleted' });
     } catch (error) {
         res.status(500).json({ message: 'Error deleting education' });
@@ -109,7 +109,7 @@ router.post('/timeline', protect, adminOnly, async (req: Request, res: Response)
 router.put('/timeline/:id', protect, adminOnly, async (req: Request, res: Response) => {
     try {
         if (!db) return res.status(500).json({ message: 'Firebase not connected' });
-        const timeRef = db.collection('careerTimeline').doc(req.params.id);
+        const timeRef = db.collection('careerTimeline').doc(req.params.id as string);
         await timeRef.update(req.body);
         const updated = (await timeRef.get()).data();
         res.json(updated);
@@ -122,7 +122,7 @@ router.put('/timeline/:id', protect, adminOnly, async (req: Request, res: Respon
 router.delete('/timeline/:id', protect, adminOnly, async (req: Request, res: Response) => {
     try {
         if (!db) return res.status(500).json({ message: 'Firebase not connected' });
-        await db.collection('careerTimeline').doc(req.params.id).delete();
+        await db.collection('careerTimeline').doc(req.params.id as string).delete();
         res.json({ message: 'Timeline item deleted' });
     } catch (error) {
         res.status(500).json({ message: 'Error deleting timeline' });

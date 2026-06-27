@@ -35,7 +35,7 @@ router.post('/', protect, adminOnly, async (req: Request, res: Response) => {
 router.put('/:id', protect, adminOnly, async (req: Request, res: Response) => {
     try {
         if (!db) return res.status(500).json({ message: 'Firebase not connected' });
-        const bookRef = db.collection('books').doc(req.params.id);
+        const bookRef = db.collection('books').doc(req.params.id as string);
         await bookRef.update(req.body);
         const updatedBook = (await bookRef.get()).data();
         res.json(updatedBook);
@@ -48,7 +48,7 @@ router.put('/:id', protect, adminOnly, async (req: Request, res: Response) => {
 router.delete('/:id', protect, adminOnly, async (req: Request, res: Response) => {
     try {
         if (!db) return res.status(500).json({ message: 'Firebase not connected' });
-        await db.collection('books').doc(req.params.id).delete();
+        await db.collection('books').doc(req.params.id as string).delete();
         res.json({ message: 'Book deleted' });
     } catch (error) {
         res.status(500).json({ message: 'Error deleting book' });

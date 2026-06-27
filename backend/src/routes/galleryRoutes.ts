@@ -80,7 +80,7 @@ router.post('/images/bulk', protect, adminOnly, upload.array('images', 20), asyn
     try {
         if (!db) return res.status(500).json({ message: 'Firebase not connected' });
         const { categoryId } = req.body;
-        const batch = db.batch();
+        const batch = db!.batch();
         const created = req.files.map((f) => {
             const newRef = db.collection('galleryImages').doc();
             const img = {
@@ -103,7 +103,7 @@ router.post('/images/bulk', protect, adminOnly, upload.array('images', 20), asyn
 router.put('/images/:id', protect, adminOnly, async (req: Request, res: Response) => {
     try {
         if (!db) return res.status(500).json({ message: 'Firebase not connected' });
-        const imageRef = db.collection('galleryImages').doc(req.params.id);
+        const imageRef = db.collection('galleryImages').doc(req.params.id as string);
         await imageRef.update(req.body);
         const updatedImage = (await imageRef.get()).data();
         res.json(updatedImage);
@@ -116,7 +116,7 @@ router.put('/images/:id', protect, adminOnly, async (req: Request, res: Response
 router.delete('/images/:id', protect, adminOnly, async (req: Request, res: Response) => {
     try {
         if (!db) return res.status(500).json({ message: 'Firebase not connected' });
-        const imageRef = db.collection('galleryImages').doc(req.params.id);
+        const imageRef = db.collection('galleryImages').doc(req.params.id as string);
         const doc = await imageRef.get();
         if (doc.exists) {
             const image = doc.data();
