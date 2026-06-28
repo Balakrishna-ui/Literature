@@ -1,10 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { db } from '@/lib/firebase-admin';
+import { getFirebaseDb } from '@/lib/firebase-admin';
 import { requireAuth } from '@/lib/auth-server';
 
 export async function GET() {
+  let db;
+  try { db = getFirebaseDb(); } catch (e) { return NextResponse.json({ message: 'Firebase not connected' }, { status: 500 }); }
   try {
-    if (!db) return NextResponse.json({ message: 'Firebase not connected' }, { status: 500 });
+    
     const snapshot = await db.collection('aboutContent').get();
     const content = snapshot.docs.map(doc => ({ sectionName: doc.id, ...doc.data() }));
     return NextResponse.json(content);
@@ -14,10 +16,12 @@ export async function GET() {
 }
 
 export async function POST(req: NextRequest) {
+  let db;
+  try { db = getFirebaseDb(); } catch (e) { return NextResponse.json({ message: 'Firebase not connected' }, { status: 500 }); }
   try {
     const user = await requireAuth(req);
     if (!user || user.role !== 'admin') return NextResponse.json({ message: 'Not authorized' }, { status: 401 });
-    if (!db) return NextResponse.json({ message: 'Firebase not connected' }, { status: 500 });
+    
     
     const body = await req.json();
     const sectionName = body.sectionName || 'general';

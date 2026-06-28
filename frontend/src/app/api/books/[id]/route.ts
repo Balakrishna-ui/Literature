@@ -1,15 +1,17 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { db } from '@/lib/firebase-admin';
+import { getFirebaseDb } from '@/lib/firebase-admin';
 import { requireAuth } from '@/lib/auth-server';
 
 export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  let db;
+  try { db = getFirebaseDb(); } catch (e) { return NextResponse.json({ message: 'Firebase not connected' }, { status: 500 }); }
   try {
     const user = await requireAuth(req);
     if (!user || user.role !== 'admin') {
       return NextResponse.json({ message: 'Not authorized' }, { status: 401 });
     }
 
-    if (!db) return NextResponse.json({ message: 'Firebase not connected' }, { status: 500 });
+    
     
     const body = await req.json();
     const resolvedParams = await params;
@@ -24,13 +26,15 @@ export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: 
 }
 
 export async function DELETE(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  let db;
+  try { db = getFirebaseDb(); } catch (e) { return NextResponse.json({ message: 'Firebase not connected' }, { status: 500 }); }
   try {
     const user = await requireAuth(req);
     if (!user || user.role !== 'admin') {
       return NextResponse.json({ message: 'Not authorized' }, { status: 401 });
     }
 
-    if (!db) return NextResponse.json({ message: 'Firebase not connected' }, { status: 500 });
+    
     
     const resolvedParams = await params;
     await db.collection('books').doc(resolvedParams.id).delete();

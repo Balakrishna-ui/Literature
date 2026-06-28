@@ -1,11 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { db } from '@/lib/firebase-admin';
+import { getFirebaseDb } from '@/lib/firebase-admin';
 import { requireAuth } from '@/lib/auth-server';
 
 export const dynamic = 'force-dynamic';
 
 export async function GET() {
-  if (!db) return NextResponse.json({ message: 'Firebase not connected' }, { status: 500 });
+  let db;
+  try { db = getFirebaseDb(); } catch (e) { return NextResponse.json({ message: 'Firebase not connected' }, { status: 500 }); }
+  
   
   const snapshot = await db.collection('visitors').orderBy('timestamp', 'desc').get();
   const allVisitors: any[] = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import jwt from 'jsonwebtoken';
-import { db } from './firebase-admin';
+import { getFirebaseDb } from './firebase-admin';
 
 export async function requireAuth(req: NextRequest): Promise<{ id: string, role?: string, [key: string]: any } | null> {
   const authHeader = req.headers.get('authorization');
@@ -16,7 +16,7 @@ export async function requireAuth(req: NextRequest): Promise<{ id: string, role?
 
   try {
     const decoded: any = jwt.verify(token, process.env.JWT_SECRET);
-    if (!db) return null;
+    
     
     const userDoc = await db.collection('users').doc(decoded.id).get();
     if (userDoc.exists) {
