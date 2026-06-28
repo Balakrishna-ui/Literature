@@ -1,6 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { db } from '@/lib/firebase-admin';
 import { requireAuth } from '@/lib/auth-server';
+
+export const dynamic = 'force-dynamic';
+
 export async function GET() {
   if (!db) return NextResponse.json({ message: 'Firebase not connected' }, { status: 500 });
   

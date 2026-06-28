@@ -32,7 +32,7 @@ export const apiRequest = async (endpoint: string, options: RequestInit = {}) =>
     let errMessage = 'API Error';
     try {
       const err = JSON.parse(rawText);
-      errMessage = err.message || 'API Error';
+      errMessage = err.message || err.error || JSON.stringify(err);
     } catch {
       errMessage = `API Error (${res.status}): ${rawText.substring(0, 100)}`;
     }
