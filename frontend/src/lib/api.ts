@@ -34,7 +34,16 @@ export const apiRequest = async (endpoint: string, options: RequestInit = {}) =>
       const err = JSON.parse(rawText);
       errMessage = err.message || err.error || JSON.stringify(err);
     } catch {
-      errMessage = `API Error (${res.status}): ${rawText.substring(0, 100)}`;
+      // It's likely an HTML error page from Vercel or Next.js
+      console.error(`[API] Unhandled server error response (${res.status}):`, rawText);
+      
+      if (rawText.toLowerCase().includes('firebase')) {
+        errMessage = 'Server configuration error: Firebase initialization failed.';
+      } else if (rawText.includes('500') || res.status === 500) {
+        errMessage = 'Internal Server Error (500). The server encountered a critical failure.';
+      } else {
+        errMessage = `Server Error (${res.status}): Unexpected response format.`;
+      }
     }
     throw new Error(errMessage);
   }

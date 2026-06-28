@@ -7,7 +7,7 @@ import { useAuth } from '@/contexts/AuthContext';
 export default function AdminLoginPage() {
   const { login } = useAuth();
   const router = useRouter();
-  const [email, setEmail] = useState('admin@example.com');
+  const [email, setEmail] = useState('admin@literacture.com');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -57,7 +57,7 @@ export default function AdminLoginPage() {
                 onChange={(e) => setEmail(e.target.value)}
                 required
                 className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition"
-                placeholder="admin@example.com"
+                placeholder="admin@literacture.com"
               />
             </div>
             <div>
@@ -91,7 +91,7 @@ export default function AdminLoginPage() {
           <div className="mt-6 p-3 rounded-lg bg-slate-800/50 border border-slate-700/50">
             <p className="text-xs text-slate-400 text-center">
               <span className="text-slate-300 font-medium">Default credentials:</span><br/>
-              Email: admin@example.com &nbsp;|&nbsp; Password: password123
+              Email: admin@literacture.com &nbsp;|&nbsp; Password: admin123
             </p>
           </div>
         </div>
