@@ -1,5 +1,5 @@
 // Centralized API utility for admin dashboard
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+const API_BASE = '';
 
 export const getToken = () => {
   if (typeof window === 'undefined') return null;
