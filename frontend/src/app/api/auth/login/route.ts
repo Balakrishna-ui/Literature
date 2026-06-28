@@ -60,8 +60,8 @@ export async function POST(req: NextRequest) {
     } else {
       return NextResponse.json({ message: 'Invalid email or password' }, { status: 401 });
     }
-  } catch (error) {
+  } catch (error: any) {
     console.error('Login Error:', error);
-    return NextResponse.json({ message: 'Server error' }, { status: 500 });
+    return NextResponse.json({ message: 'Server error: ' + (error.message || String(error)) }, { status: 500 });
   }
 }

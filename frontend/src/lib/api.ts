@@ -28,8 +28,16 @@ export const apiRequest = async (endpoint: string, options: RequestInit = {}) =>
   });
 
   if (!res.ok) {
-    const err = await res.json().catch(() => ({ message: res.statusText }));
-    throw new Error(err.message || 'API Error');
+    const rawText = await res.text();
+    let errMessage = 'API Error';
+    try {
+      const err = JSON.parse(rawText);
+      errMessage = err.message || 'API Error';
+    } catch {
+      console.error('Vercel Raw Error HTML:', rawText);
+      errMessage = `API Error (${res.status}): ${rawText.substring(0, 100)}`;
+    }
+    throw new Error(errMessage);
   }
   return res.json();
 };
