@@ -19,7 +19,7 @@ interface Book {
 }
 
 const CATEGORIES = ['Novel', 'Poetry Collection', 'Stage Play', 'Short Stories'];
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+const API_BASE = '';
 
 const emptyBook: Omit<Book, 'id'> = {
   title: '',
@@ -317,3 +317,4 @@ export default function BooksAdminPage() {
     </div>
   );
 }
+

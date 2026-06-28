@@ -14,7 +14,7 @@ interface ApiGalleryImage {
   featured: boolean;
 }
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+const API_BASE = '';
 
 const staticGalleryImages = [
   { src: '/images/pro.jpeg', category: 'Personal Photos', alt: 'Dr. Reddy Portrait', isLarge: false },
@@ -187,3 +187,4 @@ export default function GalleryPage() {
     </main>
   );
 }
+

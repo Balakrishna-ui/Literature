@@ -3,7 +3,7 @@
 import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+const API_BASE = '';
 
 export default function VisitorTracker() {
   const pathname = usePathname();
@@ -23,3 +23,4 @@ export default function VisitorTracker() {
 
   return null;
 }
+

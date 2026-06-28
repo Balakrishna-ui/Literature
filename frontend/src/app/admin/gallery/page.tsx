@@ -19,7 +19,7 @@ interface GalleryImage {
   category: Category;
 }
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+const API_BASE = '';
 
 const PRESET_CATEGORIES = [
   'Personal Photos', 'Literary Events', 'Award Ceremonies',
@@ -279,3 +279,4 @@ export default function GalleryAdminPage() {
     </div>
   );
 }
+
