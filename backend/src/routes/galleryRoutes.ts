@@ -82,7 +82,7 @@ router.post('/images/bulk', protect, adminOnly, upload.array('images', 20), asyn
         const { categoryId } = req.body;
         const batch = db!.batch();
         const created = req.files.map((f) => {
-            const newRef = db.collection('galleryImages').doc();
+            const newRef = db!.collection('galleryImages').doc();
             const img = {
                 id: newRef.id,
                 imagePath: `/uploads/${f.filename}`,
