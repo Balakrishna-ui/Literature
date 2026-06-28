@@ -34,7 +34,6 @@ export const apiRequest = async (endpoint: string, options: RequestInit = {}) =>
       const err = JSON.parse(rawText);
       errMessage = err.message || 'API Error';
     } catch {
-      console.error('Vercel Raw Error HTML:', rawText);
       errMessage = `API Error (${res.status}): ${rawText.substring(0, 100)}`;
     }
     throw new Error(errMessage);

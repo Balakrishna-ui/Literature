@@ -33,7 +33,7 @@ export default function AnalyticsPage() {
   const [period, setPeriod] = useState<'7' | '30'>('7');
 
   useEffect(() => {
-    apiRequest('/api/visitors/stats')
+    apiRequest('/api/visitors')
       .then(setStats)
       .catch(() => {})
       .finally(() => setLoading(false));
@@ -56,13 +56,13 @@ export default function AnalyticsPage() {
 
   const chartData = buildDailyData(Number(period));
 
-  const pieData = stats?.pageTraffic.slice(0, 6).map((p, i) => ({
+  const pieData = stats?.pageTraffic?.slice(0, 6).map((p, i) => ({
     name: p.pageUrl.replace('/', '') || 'Home',
     value: p._count.pageUrl,
     color: COLORS[i % COLORS.length],
   })) || [];
 
-  const pageBarData = stats?.pageTraffic.slice(0, 8).map((p) => ({
+  const pageBarData = stats?.pageTraffic?.slice(0, 8).map((p) => ({
     page: (p.pageUrl.replace('/', '') || 'Home').substring(0, 12),
     visits: p._count.pageUrl,
   })) || [];

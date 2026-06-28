@@ -40,12 +40,12 @@ export default function AdminDashboardPage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [statsData, booksData, imagesData] = await Promise.all([
-          apiRequest('/api/visitors/stats'),
+        const [visitorsData, booksData, imagesData] = await Promise.all([
+          apiRequest('/api/visitors'),
           apiRequest('/api/books'),
           apiRequest('/api/gallery/images'),
         ]);
-        setStats(statsData);
+        setStats(visitorsData);
         setSummary({ totalBooks: booksData.length, totalImages: imagesData.length });
       } catch {
         // Stats might fail if no data yet; that's OK
@@ -72,7 +72,7 @@ export default function AdminDashboardPage() {
     return Object.entries(days).map(([date, visitors]) => ({ date, visitors }));
   })();
 
-  const pageChartData = stats?.pageTraffic.slice(0, 6).map((p) => ({
+  const pageChartData = stats?.pageTraffic?.slice(0, 6).map((p) => ({
     page: p.pageUrl.replace('/', '') || 'Home',
     visits: p._count.pageUrl,
   })) || [];

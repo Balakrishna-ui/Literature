@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { db } from '@/lib/firebase-admin';
 import { requireAuth } from '@/lib/auth-server';
 
-export async function PUT(req: NextRequest, { params }: { params: { id: string } }) {
+export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
     const user = await requireAuth(req);
     if (!user || user.role !== 'admin') {
@@ -12,7 +12,8 @@ export async function PUT(req: NextRequest, { params }: { params: { id: string }
     if (!db) return NextResponse.json({ message: 'Firebase not connected' }, { status: 500 });
     
     const body = await req.json();
-    const bookRef = db.collection('books').doc(params.id);
+    const resolvedParams = await params;
+    const bookRef = db.collection('books').doc(resolvedParams.id);
     await bookRef.update(body);
     
     const updatedBook = (await bookRef.get()).data();
@@ -22,7 +23,7 @@ export async function PUT(req: NextRequest, { params }: { params: { id: string }
   }
 }
 
-export async function DELETE(req: NextRequest, { params }: { params: { id: string } }) {
+export async function DELETE(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
     const user = await requireAuth(req);
     if (!user || user.role !== 'admin') {
@@ -31,7 +32,8 @@ export async function DELETE(req: NextRequest, { params }: { params: { id: strin
 
     if (!db) return NextResponse.json({ message: 'Firebase not connected' }, { status: 500 });
     
-    await db.collection('books').doc(params.id).delete();
+    const resolvedParams = await params;
+    await db.collection('books').doc(resolvedParams.id).delete();
     return NextResponse.json({ message: 'Book deleted' });
   } catch (error) {
     return NextResponse.json({ message: 'Error deleting book' }, { status: 500 });

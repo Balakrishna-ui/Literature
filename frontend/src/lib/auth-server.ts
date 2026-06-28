@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import jwt from 'jsonwebtoken';
 import { db } from './firebase-admin';
 
-export async function requireAuth(req: NextRequest) {
+export async function requireAuth(req: NextRequest): Promise<{ id: string, role?: string, [key: string]: any } | null> {
   const authHeader = req.headers.get('authorization');
   if (!authHeader || !authHeader.startsWith('Bearer ')) {
     return null;

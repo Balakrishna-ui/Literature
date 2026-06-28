@@ -9,6 +9,7 @@ export async function GET() {
 export async function POST(req: NextRequest) {
   const user = await requireAuth(req);
   if (!user || user.role !== 'admin') return NextResponse.json({ message: 'Not authorized' }, { status: 401 });
+  if (!db) return NextResponse.json({ message: 'Firebase not connected' }, { status: 500 });
   const body = await req.json();
   const newRef = db.collection('education').doc();
   await newRef.set({ ...body, id: newRef.id });
