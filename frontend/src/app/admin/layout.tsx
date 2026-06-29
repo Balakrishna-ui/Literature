@@ -4,10 +4,13 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { 
   LayoutDashboard, 
+  BarChart2,
+  User,
   BookOpen, 
-  Image as ImageIcon, 
-  User, 
-  LogOut 
+  Image as ImageIcon,
+  FolderOpen,
+  LogOut,
+  BookMarked
 } from 'lucide-react';
 
 export default function AdminLayout({
@@ -24,9 +27,11 @@ export default function AdminLayout({
 
   const navigation = [
     { name: 'Dashboard', href: '/admin', icon: LayoutDashboard },
+    { name: 'Analytics', href: '/admin/analytics', icon: BarChart2 },
     { name: 'About Page', href: '/admin/about', icon: User },
     { name: 'Books', href: '/admin/books', icon: BookOpen },
     { name: 'Gallery', href: '/admin/gallery', icon: ImageIcon },
+    { name: 'Media Library', href: '/admin/media', icon: FolderOpen },
   ];
 
   const handleLogout = async () => {
@@ -36,49 +41,71 @@ export default function AdminLayout({
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex">
-      <div className="w-64 bg-white shadow-md">
-        <div className="h-16 flex items-center px-6 border-b border-gray-200">
-          <h1 className="text-xl font-bold text-gray-800">Admin Panel</h1>
+    <div className="min-h-screen bg-[#020617] flex font-sans text-slate-200">
+      {/* Sidebar */}
+      <div className="w-64 bg-[#0f172a] border-r border-slate-800 flex flex-col">
+        {/* Logo Area */}
+        <div className="h-16 flex items-center px-6 border-b border-slate-800">
+          <div className="flex items-center gap-3 w-full">
+            <div className="w-8 h-8 rounded bg-gradient-to-br from-fuchsia-500 to-pink-500 flex items-center justify-center shadow-lg shadow-pink-500/20">
+              <BookMarked className="w-5 h-5 text-white" />
+            </div>
+            <h1 className="text-lg font-bold text-white tracking-wide">Literacture</h1>
+            <div className="ml-auto text-slate-500 text-xs">«</div>
+          </div>
         </div>
-        <nav className="p-4 space-y-1">
+        
+        {/* Navigation */}
+        <nav className="p-4 space-y-1.5 flex-1">
           {navigation.map((item) => {
             const isActive = pathname === item.href;
             return (
               <Link
                 key={item.name}
                 href={item.href}
-                className={`flex items-center px-4 py-3 text-sm font-medium rounded-md transition-colors ${
+                className={`flex items-center px-3 py-2.5 text-sm font-medium rounded-lg transition-all duration-200 ${
                   isActive
-                    ? 'bg-black text-white'
-                    : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                    ? 'bg-gradient-to-r from-fuchsia-600 to-pink-600 text-white shadow-md shadow-pink-900/20'
+                    : 'text-slate-400 hover:bg-slate-800/50 hover:text-slate-200'
                 }`}
               >
                 <item.icon
-                  className={`mr-3 h-5 w-5 flex-shrink-0 ${
-                    isActive ? 'text-white' : 'text-gray-400'
+                  className={`mr-3 h-4 w-4 flex-shrink-0 ${
+                    isActive ? 'text-white' : 'text-slate-400'
                   }`}
                 />
                 {item.name}
               </Link>
             );
           })}
-          
+        </nav>
+
+        {/* User Profile / Logout Area */}
+        <div className="p-4 border-t border-slate-800">
+          <div className="flex items-center gap-3 mb-4 px-2">
+            <div className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-xs font-bold border border-slate-700">
+              A
+            </div>
+            <div>
+              <div className="text-sm font-bold text-white">Admin</div>
+              <div className="text-xs text-slate-500">admin</div>
+            </div>
+          </div>
           <button
             onClick={handleLogout}
-            className="w-full flex items-center px-4 py-3 text-sm font-medium rounded-md text-red-600 hover:bg-red-50 transition-colors mt-8"
+            className="w-full flex items-center px-3 py-2 text-sm font-medium rounded-lg text-slate-400 hover:bg-slate-800 hover:text-slate-200 transition-colors"
           >
-            <LogOut className="mr-3 h-5 w-5 flex-shrink-0 text-red-500" />
-            Sign Out
+            <div className="w-8 h-8 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center mr-3">
+              <span className="text-xs font-bold">N</span>
+            </div>
+            Logout
           </button>
-        </nav>
+        </div>
       </div>
 
+      {/* Main Content */}
       <div className="flex-1 flex flex-col overflow-hidden">
-        <header className="h-16 bg-white shadow-sm flex items-center justify-end px-8">
-           <div className="text-sm font-medium text-gray-500">Welcome, Super Admin</div>
-        </header>
-        <main className="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100 p-8">
+        <main className="flex-1 overflow-x-hidden overflow-y-auto bg-[#020617] p-8">
           {children}
         </main>
       </div>
