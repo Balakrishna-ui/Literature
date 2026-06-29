@@ -1,0 +1,110 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  password  String
+  role      String   @default("CONTENT_MANAGER") // SUPER_ADMIN or CONTENT_MANAGER
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model VisitorLog {
+  id        String   @id @default(uuid())
+  ipAddress String?
+  userAgent String?
+  device    String?
+  browser   String?
+  country   String?
+  pageUrl   String
+  visitedAt DateTime @default(now())
+}
+
+model Book {
+  id               String   @id @default(uuid())
+  title            String
+  category         String   // Novel, Poetry Collection, Stage Play, Short Stories
+  shortDescription String   @db.Text
+  fullDescription  String   @db.Text
+  coverImage       String?
+  publicationYear  String?
+  publisher        String?
+  pages            Int?
+  isFeatured       Boolean  @default(false)
+  displayOrder     Int      @default(0)
+  isPublished      Boolean  @default(true)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+model GalleryImage {
+  id          String   @id @default(uuid())
+  title       String
+  description String?  @db.Text
+  imageUrl    String
+  category    String   // Personal Photos, Literary Events, etc.
+  isFeatured  Boolean  @default(false)
+  displayOrder Int     @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Education {
+  id          String   @id @default(uuid())
+  institution String
+  degree      String
+  year        String
+  createdAt   DateTime @default(now())
+}
+
+model CareerTimeline {
+  id          String   @id @default(uuid())
+  year        String
+  title       String
+  description String   @db.Text
+  createdAt   DateTime @default(now())
+}
+
+model AboutContent {
+  id                   String @id @default(uuid())
+  // Author Info
+  authorName           String @default("Dr. Rajesh Varma")
+  subtitle             String @default("Acclaimed Author & Literary Icon")
+  profileImage         String?
+  
+  // Sections
+  bioTitle             String @default("Biography")
+  bioDescription       String @db.Text
+  earlyLifeTitle       String @default("Early Life")
+  earlyLifeDescription String @db.Text
+  educationTitle       String @default("Education")
+  educationDescription String @db.Text
+  careerTitle          String @default("Career")
+  careerDescription    String @db.Text
+  awardsTitle          String @default("Awards")
+  awardsDescription    String @db.Text
+  legacyTitle          String @default("Legacy")
+  legacyDescription    String @db.Text
+
+  // Personal Info Panel
+  dateOfBirth          String?
+  placeOfBirth         String?
+  occupation           String?
+  language             String?
+  almaMater            String?
+  awardsList           String? @db.Text
+  
+  updatedAt            DateTime @updatedAt
+}
+
