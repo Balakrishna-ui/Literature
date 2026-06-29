@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
@@ -35,13 +35,39 @@ const staticGalleryImages = [
 
 export default function GalleryPage() {
   const [activeCategory, setActiveCategory] = useState<Category>('All Photos');
+  const [images, setImages] = useState<ApiGalleryImage[]>([]);
+  const [loading, setLoading] = useState(true);
   
-  // Extract unique categories from static images
-  const categories = ['All Photos', ...Array.from(new Set(staticGalleryImages.map(img => img.category)))];
+  useEffect(() => {
+    const fetchImages = async () => {
+      try {
+        const res = await fetch('/api/gallery');
+        const data = await res.json();
+        if (data.success) {
+          setImages(data.images);
+        }
+      } catch (err) {
+        console.error('Failed to fetch gallery:', err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchImages();
+  }, []);
 
-  const filteredImages = staticGalleryImages.filter(img => 
-    activeCategory === 'All Photos' || img.category === activeCategory
+  const categories = ['All Photos', 'Personal Photos', 'Literary Events', 'Award Ceremonies', 'Book Launches', 'Natakalu Images', 'Historical Moments'];
+
+  const filteredImages = images.filter(img => 
+    activeCategory === 'All Photos' || img.category.name === activeCategory
   );
+
+  // Helper to map DB images to UI properties
+  const mappedImages = filteredImages.map(img => ({
+    src: img.imagePath || (img as any).url || '/images/pro.jpeg',
+    category: img.category?.name || 'Uncategorized',
+    alt: img.title || 'Gallery Image',
+    isLarge: img.featured || false
+  }));
 
   return (
     <main className="min-h-screen bg-[#fcfaf5] font-sans">
@@ -83,62 +109,70 @@ export default function GalleryPage() {
             ))}
           </div>
 
-          <div className="md:hidden">
-            {filteredImages.length === 0 ? (
-              <div className="text-center text-gray-500 py-20">
-                No images available in this category yet.
-              </div>
-            ) : (
-              <>
-                {/* Large (landscape) images — full width */}
-                {filteredImages.filter(img => img.isLarge).length > 0 && (
-                  <div className="flex flex-col gap-3 mb-3">
-                    {filteredImages.filter(img => img.isLarge).map((img, idx) => (
-                      <div key={idx} className="relative aspect-[4/3] group overflow-hidden bg-gray-200 border border-[#d8d3c5]">
-                        <img src={img.src} alt={img.alt} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
-                          <div className="text-[#eab308] text-[10px] font-bold tracking-wider uppercase mb-1">{img.category}</div>
-                          <div className="text-white text-sm">{img.alt}</div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                )}
-                {/* Small (portrait/square) images — 2 per row */}
-                {filteredImages.filter(img => !img.isLarge).length > 0 && (
-                  <div className="grid grid-cols-2 gap-2">
-                    {filteredImages.filter(img => !img.isLarge).map((img, idx) => (
-                      <div key={idx} className="relative aspect-[3/4] group overflow-hidden bg-gray-200 border border-[#d8d3c5]">
-                        <img src={img.src} alt={img.alt} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-2">
-                          <div className="text-[#eab308] text-[9px] font-bold tracking-wider uppercase mb-0.5">{img.category}</div>
-                          <div className="text-white text-xs">{img.alt}</div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </>
-            )}
-          </div>
-
-          {/* Desktop Layout — 3-col grid */}
-          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredImages.map((img, idx) => (
-              <div key={idx} className="relative aspect-[4/3] group overflow-hidden bg-gray-200 border border-[#d8d3c5]">
-                <img src={img.src} alt={img.alt} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
-                  <div className="text-[#eab308] text-[10px] font-bold tracking-wider uppercase mb-1">{img.category}</div>
-                  <div className="text-white text-sm">{img.alt}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {filteredImages.length === 0 && (
-            <div className="hidden md:block text-center text-gray-500 py-20">
-              No images available in this category yet.
+          {loading ? (
+            <div className="flex justify-center items-center py-20">
+              <div className="w-8 h-8 border-4 border-[#a82b2b] border-t-transparent rounded-full animate-spin"></div>
             </div>
+          ) : (
+            <>
+              <div className="md:hidden">
+                {mappedImages.length === 0 ? (
+                  <div className="text-center text-gray-500 py-20">
+                    No images available in this category yet.
+                  </div>
+                ) : (
+                  <>
+                    {/* Large (landscape) images — full width */}
+                    {mappedImages.filter(img => img.isLarge).length > 0 && (
+                      <div className="flex flex-col gap-3 mb-3">
+                        {mappedImages.filter(img => img.isLarge).map((img, idx) => (
+                          <div key={idx} className="relative aspect-[4/3] group overflow-hidden bg-gray-200 border border-[#d8d3c5]">
+                            <img src={img.src} alt={img.alt} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                              <div className="text-[#eab308] text-[10px] font-bold tracking-wider uppercase mb-1">{img.category}</div>
+                              <div className="text-white text-sm">{img.alt}</div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                    {/* Small (portrait/square) images — 2 per row */}
+                    {mappedImages.filter(img => !img.isLarge).length > 0 && (
+                      <div className="grid grid-cols-2 gap-2">
+                        {mappedImages.filter(img => !img.isLarge).map((img, idx) => (
+                          <div key={idx} className="relative aspect-[3/4] group overflow-hidden bg-gray-200 border border-[#d8d3c5]">
+                            <img src={img.src} alt={img.alt} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-2">
+                              <div className="text-[#eab308] text-[9px] font-bold tracking-wider uppercase mb-0.5">{img.category}</div>
+                              <div className="text-white text-xs">{img.alt}</div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </>
+                )}
+              </div>
+
+              {/* Desktop Layout — 3-col grid */}
+              <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {mappedImages.map((img, idx) => (
+                  <div key={idx} className="relative aspect-[4/3] group overflow-hidden bg-gray-200 border border-[#d8d3c5]">
+                    <img src={img.src} alt={img.alt} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                      <div className="text-[#eab308] text-[10px] font-bold tracking-wider uppercase mb-1">{img.category}</div>
+                      <div className="text-white text-sm">{img.alt}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {mappedImages.length === 0 && (
+                <div className="hidden md:block text-center text-gray-500 py-20">
+                  No images available in this category yet.
+                </div>
+              )}
+            </>
           )}
 
         </div>
