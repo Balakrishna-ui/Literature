@@ -57,17 +57,19 @@ export default function GalleryPage() {
 
   const categories = ['All Photos', 'Personal Photos', 'Literary Events', 'Award Ceremonies', 'Book Launches', 'Natakalu Images', 'Historical Moments'];
 
-  const filteredImages = images.filter(img => 
-    activeCategory === 'All Photos' || img.category.name === activeCategory
-  );
-
   // Helper to map DB images to UI properties
-  const mappedImages = filteredImages.map(img => ({
+  const mappedImages = images.map(img => ({
     src: img.imagePath || (img as any).url || '/images/pro.jpeg',
     category: img.category?.name || 'Uncategorized',
     alt: img.title || 'Gallery Image',
     isLarge: img.featured || false
   }));
+
+  const allImages = [...staticGalleryImages, ...mappedImages];
+
+  const filteredImages = allImages.filter(img => 
+    activeCategory === 'All Photos' || img.category === activeCategory
+  );
 
   return (
     <main className="min-h-screen bg-[#fcfaf5] font-sans">
@@ -116,16 +118,16 @@ export default function GalleryPage() {
           ) : (
             <>
               <div className="md:hidden">
-                {mappedImages.length === 0 ? (
+                {filteredImages.length === 0 ? (
                   <div className="text-center text-gray-500 py-20">
                     No images available in this category yet.
                   </div>
                 ) : (
                   <>
                     {/* Large (landscape) images — full width */}
-                    {mappedImages.filter(img => img.isLarge).length > 0 && (
+                    {filteredImages.filter(img => img.isLarge).length > 0 && (
                       <div className="flex flex-col gap-3 mb-3">
-                        {mappedImages.filter(img => img.isLarge).map((img, idx) => (
+                        {filteredImages.filter(img => img.isLarge).map((img, idx) => (
                           <div key={idx} className="relative aspect-[4/3] group overflow-hidden bg-gray-200 border border-[#d8d3c5]">
                             <img src={img.src} alt={img.alt} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                             <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
@@ -137,9 +139,9 @@ export default function GalleryPage() {
                       </div>
                     )}
                     {/* Small (portrait/square) images — 2 per row */}
-                    {mappedImages.filter(img => !img.isLarge).length > 0 && (
+                    {filteredImages.filter(img => !img.isLarge).length > 0 && (
                       <div className="grid grid-cols-2 gap-2">
-                        {mappedImages.filter(img => !img.isLarge).map((img, idx) => (
+                        {filteredImages.filter(img => !img.isLarge).map((img, idx) => (
                           <div key={idx} className="relative aspect-[3/4] group overflow-hidden bg-gray-200 border border-[#d8d3c5]">
                             <img src={img.src} alt={img.alt} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                             <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-2">
@@ -156,7 +158,7 @@ export default function GalleryPage() {
 
               {/* Desktop Layout — 3-col grid */}
               <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {mappedImages.map((img, idx) => (
+                {filteredImages.map((img, idx) => (
                   <div key={idx} className="relative aspect-[4/3] group overflow-hidden bg-gray-200 border border-[#d8d3c5]">
                     <img src={img.src} alt={img.alt} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
@@ -167,7 +169,7 @@ export default function GalleryPage() {
                 ))}
               </div>
 
-              {mappedImages.length === 0 && (
+              {filteredImages.length === 0 && (
                 <div className="hidden md:block text-center text-gray-500 py-20">
                   No images available in this category yet.
                 </div>
