@@ -11,53 +11,99 @@ datasource db {
   provider = "postgresql"
 }
 
+enum Role {
+  SUPER_ADMIN
+  CONTENT_MANAGER
+}
+
 model User {
   id        String   @id @default(uuid())
   email     String   @unique
   password  String
-  role      String   @default("CONTENT_MANAGER") // SUPER_ADMIN or CONTENT_MANAGER
+  role      Role     @default(SUPER_ADMIN)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
 
 model VisitorLog {
   id        String   @id @default(uuid())
-  ipAddress String?
+  ip        String?
   userAgent String?
   device    String?
   browser   String?
+  os        String?
   country   String?
   pageUrl   String
   visitedAt DateTime @default(now())
 }
 
+enum BookCategory {
+  NOVEL
+  POETRY_COLLECTION
+  STAGE_PLAY
+  SHORT_STORIES
+}
+
 model Book {
-  id               String   @id @default(uuid())
+  id               String       @id @default(uuid())
   title            String
-  category         String   // Novel, Poetry Collection, Stage Play, Short Stories
-  shortDescription String   @db.Text
-  fullDescription  String   @db.Text
   coverImage       String?
-  publicationYear  String?
+  shortDescription String?
+  fullDescription  String?
+  category         BookCategory @default(NOVEL)
+  publishedYear    String?
   publisher        String?
   pages            Int?
-  isFeatured       Boolean  @default(false)
-  displayOrder     Int      @default(0)
-  isPublished      Boolean  @default(true)
-  createdAt        DateTime @default(now())
-  updatedAt        DateTime @updatedAt
+  buyLink          String?
+  isFeatured       Boolean      @default(false)
+  displayOrder     Int          @default(0)
+  createdAt        DateTime     @default(now())
+  updatedAt        DateTime     @updatedAt
+}
+
+model GalleryCategory {
+  id        String         @id @default(uuid())
+  name      String         @unique // "Personal Photos", "Literary Events", etc.
+  images    GalleryImage[]
+  createdAt DateTime       @default(now())
+  updatedAt DateTime       @updatedAt
 }
 
 model GalleryImage {
-  id          String   @id @default(uuid())
-  title       String
-  description String?  @db.Text
-  imageUrl    String
-  category    String   // Personal Photos, Literary Events, etc.
-  isFeatured  Boolean  @default(false)
-  displayOrder Int     @default(0)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id          String          @id @default(uuid())
+  url         String
+  title       String?
+  description String?
+  isFeatured  Boolean         @default(false)
+  uploadDate  DateTime        @default(now())
+  categoryId  String
+  category    GalleryCategory @relation(fields: [categoryId], references: [id])
+  displayOrder Int            @default(0)
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+}
+
+model AboutContent {
+  id                  String   @id @default(uuid())
+  authorName          String   @default("Balakrishna")
+  subtitle            String   @default("Author")
+  profileImage        String?
+  biography           String?
+  biographyDesc       String?
+  earlyLife           String?
+  earlyLifeDesc       String?
+  educationDesc       String?
+  careerDesc          String?
+  awardsDesc          String?
+  legacyDesc          String?
+  dob                 String?
+  placeOfBirth        String?
+  occupation          String?
+  language            String?
+  almaMater           String?
+  awardsList          String?
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
 }
 
 model Education {
@@ -76,35 +122,4 @@ model CareerTimeline {
   createdAt   DateTime @default(now())
 }
 
-model AboutContent {
-  id                   String @id @default(uuid())
-  // Author Info
-  authorName           String @default("Dr. Rajesh Varma")
-  subtitle             String @default("Acclaimed Author & Literary Icon")
-  profileImage         String?
-  
-  // Sections
-  bioTitle             String @default("Biography")
-  bioDescription       String @db.Text
-  earlyLifeTitle       String @default("Early Life")
-  earlyLifeDescription String @db.Text
-  educationTitle       String @default("Education")
-  educationDescription String @db.Text
-  careerTitle          String @default("Career")
-  careerDescription    String @db.Text
-  awardsTitle          String @default("Awards")
-  awardsDescription    String @db.Text
-  legacyTitle          String @default("Legacy")
-  legacyDescription    String @db.Text
-
-  // Personal Info Panel
-  dateOfBirth          String?
-  placeOfBirth         String?
-  occupation           String?
-  language             String?
-  almaMater            String?
-  awardsList           String? @db.Text
-  
-  updatedAt            DateTime @updatedAt
-}
 
