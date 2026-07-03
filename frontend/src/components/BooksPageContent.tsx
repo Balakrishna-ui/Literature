@@ -6,42 +6,13 @@ import Footer from '@/components/Footer';
 import { BOOKS, Book } from '@/lib/books';
 
 export default function BooksPageContent({ initialBookId }: { initialBookId?: string } = {}) {
-  const [filter, setFilter] = useState('All Works');
   const [selectedBookForSample, setSelectedBookForSample] = useState<Book | null>(null);
-  
-  const categories = ['All Works', 'Novel', 'Poetry Collection', 'Stage Play', 'Short Stories'];
-  
-  const featuredBooks = BOOKS.filter(book => book.isFeatured);
-  
-  const filteredBooks = filter === 'All Works' 
-    ? BOOKS 
-    : BOOKS.filter(book => book.category === filter);
 
   return (
     <main className="min-h-screen bg-[#fcfaf5] font-sans">
       <Navbar />
 
-      {/* Featured Works Section */}
-      <section className="bg-[#fcfaf5] py-16 md:py-20 border-b border-[#e5dfd5]">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="mb-10">
-            <div className="flex items-center gap-2 text-[#eab308] text-[10px] font-bold tracking-widest uppercase mb-2">
-              <span className="w-2 h-2 bg-[#eab308]"></span>
-              Highlights
-            </div>
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-gray-900 mb-2">
-              Featured Works
-            </h2>
-            <p className="text-gray-600 text-sm">
-              The most celebrated and influential publications.
-            </p>
-          </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
-            {featuredBooks.map(book => <BookCard key={book.id} book={book} onReadSample={setSelectedBookForSample} />)}
-          </div>
-        </div>
-      </section>
 
       {/* All Publications Section */}
       <section className="bg-[#f4efe6] py-16 md:py-20">
@@ -59,25 +30,8 @@ export default function BooksPageContent({ initialBookId }: { initialBookId?: st
             </p>
           </div>
 
-          {/* Filters */}
-          <div className="flex flex-wrap items-center gap-2 mb-10 border-b border-[#e5dfd5] pb-4">
-            {categories.map(cat => (
-              <button
-                key={cat}
-                onClick={() => setFilter(cat)}
-                className={`px-4 py-2 text-xs font-bold border transition-colors ${
-                  filter === cat 
-                    ? 'bg-[#a82b2b] border-[#a82b2b] text-white' 
-                    : 'bg-white border-gray-200 text-gray-600 hover:border-gray-300'
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
-            {filteredBooks.map(book => <BookCard key={book.id} book={book} onReadSample={setSelectedBookForSample} />)}
+            {BOOKS.map(book => <BookCard key={book.id} book={book} onReadSample={setSelectedBookForSample} />)}
           </div>
         </div>
       </section>

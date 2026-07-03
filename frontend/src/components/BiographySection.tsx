@@ -8,11 +8,11 @@ export default function BiographySection() {
         <div className="relative group">
           <div className="absolute -inset-4 border-l-2 border-t-2 border-[#eab308]/50 z-0"></div>
           <div className="absolute -inset-4 border-r-2 border-b-2 border-transparent z-0"></div>
-          <div className="relative z-10 w-full aspect-[4/5] overflow-hidden bg-gray-100 shadow-xl">
+          <div className="relative z-10 w-full h-[600px] overflow-hidden bg-gray-100 shadow-xl">
             <img 
               src="/images/pro.jpeg" 
-              alt="Dr. Lakshmi Narayan Reddy" 
-              className="w-full h-full object-cover"
+              alt="Duppalli Sri Ramulu" 
+              className="w-full h-full object-contain"
             />
           </div>
         </div>
@@ -32,14 +32,10 @@ export default function BiographySection() {
           
           <div className="space-y-6 text-gray-600 mb-8 leading-relaxed">
             <p>
-              Dr. Lakshmi Narayan Reddy was a towering figure in Indian literature whose works
-              spanned poetry, novels, and stage plays. Born into a family of scholars in coastal Andhra
-              Pradesh, he devoted his life to preserving and elevating the Telugu literary tradition while
-              fearlessly addressing social issues through his art.
+              Duppalli Sri Ramulu was a distinguished Telugu theatre artist, renowned for his mesmerizing voice, expressive acting, and soulful rendition of classical padyams. Born into a humble family in Duppalli village of Mahabubnagar district, he devoted his life to preserving and elevating the tradition of Telugu Natakam.
             </p>
             <div className="pl-4 border-l-2 border-[#eab308] py-1 text-sm text-gray-500">
-              Lakshmi Narayan Reddy was born on March 15, 1932, in the village of Amalapuram, East Godavari
-              district. His early years were spent in a household where learning was prized above all else.
+              A firm advocate of literary excellence and classical ragas, he strongly opposed unnecessary noise, excessive musical ornamentation, and lengthy performances that diminished the essence of drama. In his later years, he promoted socially relevant dramas that fostered character, moral values, and human excellence.
             </div>
           </div>
 

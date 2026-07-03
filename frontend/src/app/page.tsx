@@ -19,9 +19,9 @@ export default function Home() {
         <HeroSection />
         <InspirationsMentors />
         <BiographySection />
-        <LiteraryJourney />
         <BooksPublications />
         <StagePlays />
+        <LiteraryJourney />
         <LiteratureGallery />
         <ValuesQualities />
       </main>

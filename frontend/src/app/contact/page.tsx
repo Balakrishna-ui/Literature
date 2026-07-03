@@ -137,15 +137,6 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Follow Us */}
-              <div className="bg-[#f0ece1] p-6 border border-[#d8d3c5] mt-8">
-                <h3 className="font-serif font-bold text-gray-900 mb-4 text-lg">Follow Us</h3>
-                <div className="flex flex-wrap gap-4">
-                  <a href="#" className="border border-[#d8d3c5] bg-[#fcfaf5] px-6 py-2 text-[13px] text-gray-700 hover:bg-white transition-colors">Facebook</a>
-                  <a href="#" className="border border-[#d8d3c5] bg-[#fcfaf5] px-6 py-2 text-[13px] text-gray-700 hover:bg-white transition-colors">Instagram</a>
-                  <a href="#" className="border border-[#d8d3c5] bg-[#fcfaf5] px-6 py-2 text-[13px] text-gray-700 hover:bg-white transition-colors">Twitter</a>
-                </div>
-              </div>
             </div>
           </div>
 

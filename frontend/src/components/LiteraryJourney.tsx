@@ -33,7 +33,7 @@ export default function LiteraryJourney() {
       <div className="w-[90%] md:w-[80%] mx-auto">
         <div className="text-center max-w-2xl mx-auto mb-8">
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-gray-900 mb-2">
-            Literary Journey
+            Recognition
           </h2>
           <p className="text-gray-600 mb-4 text-sm">
             Key milestones that defined a remarkable six-decade career.
