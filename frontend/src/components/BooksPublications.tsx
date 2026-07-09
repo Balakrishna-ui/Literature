@@ -7,83 +7,111 @@ export default function BooksPublications() {
       title: 'Aaru Velu',
       subtitle: 'Six Bows',
       desc: 'A multigenerational epic set in the Godavari delta, following six generations of a farming family through war, partition, and social change.',
-      publisher: 'Visalandhra Publishing House',
       year: '1978',
-      image: '/images/bk1.png'
+      pages: '624p',
+      image: '/images/bk1.png',
+      featured: true,
     },
     {
       type: 'POETRY COLLECTION',
       title: 'Nadhi Theeram',
       subtitle: 'Riverbank',
       desc: 'A collection of lyrical poems that weave together the landscapes of coastal Andhra with the inner landscapes of memory, loss, and longing.',
-      publisher: 'Sahitya Akademi',
       year: '1965',
-      image: '/images/bk2.png'
+      pages: '142p',
+      image: '/images/bk2.png',
+      featured: true,
     },
     {
       type: 'STAGE PLAY',
       title: 'Raktakshi',
       subtitle: 'The Red-Eyed',
       desc: 'A searing drama about the lives of salt-pan workers on the Gujarat coast. First performed at the National School of Drama.',
-      publisher: 'National Book Trust',
       year: '1972',
-      image: '/images/bk1.png'
+      pages: '128p',
+      image: '/images/bk1.png',
+      featured: true,
     },
     {
-      type: 'SHORT STORIES',
-      title: 'Prabhata Ragalu',
-      subtitle: 'Morning Melodies',
-      desc: 'His debut collection of poetry that introduced a fresh voice rooted in rural Telugu life, nature, and the human condition.',
-      publisher: 'Visalandhra Publishing House',
-      year: '1956',
-      image: '/images/bk2.png'
+      type: 'POETRY COLLECTION',
+      title: 'Sapta Sagaralu',
+      subtitle: 'Seven Oceans',
+      desc: 'The final major work, a profound meditation on time, mortality, and the endurance of art. Written in the classical style.',
+      year: '2010',
+      pages: '112p',
+      image: '/images/bk2.png',
+      featured: true,
     }
   ];
 
   return (
-    <section className="bg-white py-10 md:py-12">
-      <div className="w-[90%] md:w-[80%] mx-auto">
-        <div className="text-center max-w-2xl mx-auto mb-8">
+    <section className="bg-[#f8f6f0] py-12 md:py-16">
+      <div className="w-[95%] max-w-[1400px] mx-auto">
+        <div className="text-center max-w-2xl mx-auto mb-10">
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-gray-900 mb-3">
             Books & Publications
           </h2>
-          <p className="text-gray-600 mb-4 text-sm">
+          <p className="text-gray-600 mb-4 text-sm md:text-base">
             A celebrated body of work spanning poetry, novels, plays, and short stories.
           </p>
           <div className="w-16 h-[2px] bg-[#eab308] mx-auto"></div>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-12">
           {books.map((book, index) => (
-            <div key={index} className="bg-white border border-gray-100 shadow-md flex flex-col group overflow-hidden border-t-4 border-[#a82b2b]">
-              <div className="aspect-[2/1] bg-gray-50 relative overflow-hidden flex items-center justify-center p-0">
+            <div key={index} className="bg-white shadow-lg flex flex-col group overflow-hidden rounded-sm">
+              <div className="aspect-[1.5/1] bg-gray-50 relative overflow-hidden flex items-center justify-center p-0">
+                {book.featured && (
+                  <div className="absolute top-4 left-0 bg-[#a82b2b] text-white text-[10px] md:text-xs font-bold px-3 py-1 z-10 flex items-center gap-1 shadow-md">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    Featured
+                  </div>
+                )}
                 {book.image ? (
-                  <img src={book.image} alt={book.title} className="max-w-full max-h-full object-contain drop-shadow-md" />
+                  <img src={book.image} alt={book.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 ) : (
                   <div className="absolute inset-0 bg-gray-800 flex items-center justify-center text-gray-500 text-sm">
                     Cover Image
                   </div>
                 )}
               </div>
-              <div className="p-2 md:p-4 flex flex-col flex-grow">
-                <span className="text-[#eab308] font-bold text-[7px] md:text-[9px] tracking-wider uppercase mb-1 bg-[#fcfaf5] inline-block px-1 md:px-1.5 py-0.5 self-start border border-[#eab308]/20">
+              <div className="p-5 md:p-6 flex flex-col flex-grow">
+                <span className="text-[#eab308] font-bold text-[9px] md:text-[10px] tracking-wider uppercase mb-3 bg-[#fcfaf5] inline-block px-2 py-1 self-start border border-[#eab308]/20">
                   {book.type}
                 </span>
-                <h3 className="font-serif text-xs md:text-base font-bold text-gray-900 mb-0.5 leading-tight">{book.title}</h3>
-                <h4 className="font-serif italic text-gray-500 text-[10px] md:text-sm mb-1 md:mb-2">{book.subtitle}</h4>
-                <p className="text-gray-600 text-[9px] md:text-xs mb-2 md:mb-4 flex-grow leading-relaxed line-clamp-3" title={book.desc}>{book.desc}</p>
-                <div className="flex justify-between items-center text-[8px] md:text-xs text-gray-400 font-semibold border-t border-gray-100 pt-2 md:pt-3 mt-auto">
-                  <span className="truncate mr-1">{book.publisher}</span>
-                  <span className="text-[#a82b2b] shrink-0">{book.year}</span>
+                <h3 className="font-serif text-xl md:text-2xl font-bold text-gray-900 mb-1 leading-tight">{book.title}</h3>
+                <h4 className="font-serif italic text-gray-500 text-sm md:text-base mb-3">{book.subtitle}</h4>
+                <p className="text-gray-600 text-sm mb-6 flex-grow leading-relaxed line-clamp-3" title={book.desc}>{book.desc}</p>
+                
+                <div className="flex justify-between items-center text-xs md:text-sm text-gray-400 font-semibold mb-5">
+                  <span className="flex items-center gap-1.5">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    {book.year}
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                    {book.pages}
+                  </span>
+                </div>
+
+                <div className="flex gap-2">
+                  <Link href="#" className="flex-1 bg-[#a82b2b] hover:bg-[#8a2323] text-white py-2 rounded text-xs md:text-sm font-semibold flex items-center justify-center gap-1.5 transition-colors shadow-sm">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    Download
+                  </Link>
+                  <Link href="#" className="flex-1 bg-[#eab308] hover:bg-[#dca506] text-gray-900 py-2 rounded text-xs md:text-sm font-semibold flex items-center justify-center gap-1.5 transition-colors shadow-sm">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                    Read Sample
+                  </Link>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="text-center">
-          <Link href="/books" className="inline-flex items-center gap-2 bg-[#eab308] text-gray-900 font-bold py-2.5 px-8 rounded text-sm hover:bg-[#facc15] transition-colors shadow-sm">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" /></svg>
+        <div className="text-center mt-12">
+          <Link href="/books" className="inline-flex items-center gap-2 bg-[#eab308] text-gray-900 font-bold py-3 px-8 rounded text-sm md:text-base hover:bg-[#facc15] transition-colors shadow-sm">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" /></svg>
             View All Books
           </Link>
         </div>
