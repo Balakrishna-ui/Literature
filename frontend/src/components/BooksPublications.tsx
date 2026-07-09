@@ -46,7 +46,7 @@ export default function BooksPublications() {
 
   return (
     <section className="bg-[#f8f6f0] py-6 md:py-8">
-      <div className="w-[95%] max-w-[1400px] mx-auto">
+      <div className="w-[90%] md:w-[80%] max-w-6xl mx-auto">
         <div className="text-center max-w-2xl mx-auto mb-4">
           <h2 className="font-serif text-2xl md:text-3xl font-bold text-gray-900 mb-1.5">
             Books & Publications
@@ -60,20 +60,22 @@ export default function BooksPublications() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 mb-4">
           {books.map((book, index) => (
             <div key={index} className="bg-white shadow-lg flex flex-col group overflow-hidden rounded-sm">
-              <div className="aspect-[1.8/1] bg-gray-50 relative overflow-hidden flex items-center justify-center p-0">
-                {book.featured && (
-                  <div className="absolute top-4 left-0 bg-[#a82b2b] text-white text-[10px] md:text-xs font-bold px-3 py-1 z-10 flex items-center gap-1 shadow-md">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    Featured
-                  </div>
-                )}
-                {book.image ? (
-                  <img src={book.image} alt={book.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                ) : (
-                  <div className="absolute inset-0 bg-gray-800 flex items-center justify-center text-gray-500 text-sm">
-                    Cover Image
-                  </div>
-                )}
+              <div className="aspect-[1.5/1] bg-white border-b border-gray-50 relative flex items-center justify-center p-3 md:p-4">
+                <div className="relative w-full h-full drop-shadow-md">
+                  {book.featured && (
+                    <div className="absolute top-0 left-0 bg-[#a82b2b] text-white text-[8px] md:text-[9px] font-bold px-1.5 md:px-2 py-0.5 z-10 flex items-center gap-1 shadow-sm">
+                      <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                      Featured
+                    </div>
+                  )}
+                  {book.image ? (
+                    <img src={book.image} alt={book.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]" />
+                  ) : (
+                    <div className="w-full h-full bg-gray-800 flex items-center justify-center text-gray-500 text-sm">
+                      Cover Image
+                    </div>
+                  )}
+                </div>
               </div>
               <div className="p-3 flex flex-col flex-grow">
                 <span className="text-[#eab308] font-bold text-[8px] md:text-[9px] tracking-wider uppercase mb-1.5 bg-[#fcfaf5] inline-block px-1.5 py-0.5 self-start border border-[#eab308]/20">
