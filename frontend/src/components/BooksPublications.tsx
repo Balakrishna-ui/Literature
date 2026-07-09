@@ -45,9 +45,9 @@ export default function BooksPublications() {
   ];
 
   return (
-    <section className="bg-[#f8f6f0] py-12 md:py-16">
+    <section className="bg-[#f8f6f0] py-8 md:py-10">
       <div className="w-[95%] max-w-[1400px] mx-auto">
-        <div className="text-center max-w-2xl mx-auto mb-10">
+        <div className="text-center max-w-2xl mx-auto mb-6">
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-gray-900 mb-3">
             Books & Publications
           </h2>
@@ -57,7 +57,7 @@ export default function BooksPublications() {
           <div className="w-16 h-[2px] bg-[#eab308] mx-auto"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 mb-8">
           {books.map((book, index) => (
             <div key={index} className="bg-white shadow-lg flex flex-col group overflow-hidden rounded-sm">
               <div className="aspect-[1.5/1] bg-gray-50 relative overflow-hidden flex items-center justify-center p-0">
@@ -75,15 +75,15 @@ export default function BooksPublications() {
                   </div>
                 )}
               </div>
-              <div className="p-5 md:p-6 flex flex-col flex-grow">
-                <span className="text-[#eab308] font-bold text-[9px] md:text-[10px] tracking-wider uppercase mb-3 bg-[#fcfaf5] inline-block px-2 py-1 self-start border border-[#eab308]/20">
+              <div className="p-4 flex flex-col flex-grow">
+                <span className="text-[#eab308] font-bold text-[9px] md:text-[10px] tracking-wider uppercase mb-2 bg-[#fcfaf5] inline-block px-2 py-1 self-start border border-[#eab308]/20">
                   {book.type}
                 </span>
                 <h3 className="font-serif text-xl md:text-2xl font-bold text-gray-900 mb-1 leading-tight">{book.title}</h3>
-                <h4 className="font-serif italic text-gray-500 text-sm md:text-base mb-3">{book.subtitle}</h4>
-                <p className="text-gray-600 text-sm mb-6 flex-grow leading-relaxed line-clamp-3" title={book.desc}>{book.desc}</p>
+                <h4 className="font-serif italic text-gray-500 text-sm md:text-base mb-2">{book.subtitle}</h4>
+                <p className="text-gray-600 text-sm mb-4 flex-grow leading-relaxed line-clamp-3" title={book.desc}>{book.desc}</p>
                 
-                <div className="flex justify-between items-center text-xs md:text-sm text-gray-400 font-semibold mb-5">
+                <div className="flex justify-between items-center text-xs md:text-sm text-gray-400 font-semibold mb-4">
                   <span className="flex items-center gap-1.5">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
                     {book.year}
@@ -109,7 +109,7 @@ export default function BooksPublications() {
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        <div className="text-center mt-6">
           <Link href="/books" className="inline-flex items-center gap-2 bg-[#eab308] text-gray-900 font-bold py-3 px-8 rounded text-sm md:text-base hover:bg-[#facc15] transition-colors shadow-sm">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" /></svg>
             View All Books
