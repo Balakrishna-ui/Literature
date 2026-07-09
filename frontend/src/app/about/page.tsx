@@ -11,7 +11,7 @@ const content = {
     subtitle: "Actor, Director, Playwright, and Mentor",
     contents: "Contents",
     nav: { 
-      biography: "Biography", earlyLife: "Early Life", education: "Education & Impact", 
+      biography: "Biography", earlyLife: "Early Life", education: "Impact", 
       career: "Career", awards: "Awards", legacy: "Legacy" 
     },
     intro: <span><strong>Sri Duppalli Sri Ramulu</strong> is a celebrated actor, playwright, director, and mentor in Telugu theatre. Deeply inspired by the life and ideals of Ballari Raghava, he dedicated himself to preserving the dignity and literary excellence of Telugu theatre.</span>,
@@ -105,7 +105,7 @@ const content = {
     subtitle: "నటుడు, దర్శకుడు, నాటక రచయిత మరియు గురువు",
     contents: "విషయసూచిక",
     nav: { 
-      biography: "జీవిత చరిత్ర", earlyLife: "బాల్యం", education: "విద్యాభ్యాసం & ప్రభావం", 
+      biography: "జీవిత చరిత్ర", earlyLife: "బాల్యం", education: "ప్రభావం", 
       career: "వృత్తి", awards: "పురస్కారాలు", legacy: "వారసత్వం" 
     },
     intro: <span><strong>శ్రీ దుప్పల్లి శ్రీరాములు</strong> గారు తెలుగు నాటకరంగంలో ప్రసిద్ధ నటుడు, నాటక రచయిత, దర్శకుడు మరియు మార్గదర్శకుడు. బళ్ళారి రాఘవ జీవితం మరియు ఆదర్శాలచే తీవ్రంగా ప్రభావితమైన ఆయన, తెలుగు నాటకరంగం యొక్క గౌరవాన్ని మరియు సాహిత్యపరమైన ఔన్నత్యాన్ని కాపాడటానికి తనను తాను అంకితం చేసుకున్నారు.</span>,
