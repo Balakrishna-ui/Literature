@@ -45,22 +45,22 @@ export default function BooksPublications() {
   ];
 
   return (
-    <section className="bg-[#f8f6f0] py-8 md:py-10">
+    <section className="bg-[#f8f6f0] py-6 md:py-8">
       <div className="w-[95%] max-w-[1400px] mx-auto">
-        <div className="text-center max-w-2xl mx-auto mb-6">
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+        <div className="text-center max-w-2xl mx-auto mb-4">
+          <h2 className="font-serif text-2xl md:text-3xl font-bold text-gray-900 mb-1.5">
             Books & Publications
           </h2>
-          <p className="text-gray-600 mb-4 text-sm md:text-base">
+          <p className="text-gray-600 mb-2.5 text-xs md:text-sm">
             A celebrated body of work spanning poetry, novels, plays, and short stories.
           </p>
-          <div className="w-16 h-[2px] bg-[#eab308] mx-auto"></div>
+          <div className="w-12 h-[2px] bg-[#eab308] mx-auto"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 mb-4">
           {books.map((book, index) => (
             <div key={index} className="bg-white shadow-lg flex flex-col group overflow-hidden rounded-sm">
-              <div className="aspect-[1.5/1] bg-gray-50 relative overflow-hidden flex items-center justify-center p-0">
+              <div className="aspect-[1.8/1] bg-gray-50 relative overflow-hidden flex items-center justify-center p-0">
                 {book.featured && (
                   <div className="absolute top-4 left-0 bg-[#a82b2b] text-white text-[10px] md:text-xs font-bold px-3 py-1 z-10 flex items-center gap-1 shadow-md">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -75,15 +75,15 @@ export default function BooksPublications() {
                   </div>
                 )}
               </div>
-              <div className="p-4 flex flex-col flex-grow">
-                <span className="text-[#eab308] font-bold text-[9px] md:text-[10px] tracking-wider uppercase mb-2 bg-[#fcfaf5] inline-block px-2 py-1 self-start border border-[#eab308]/20">
+              <div className="p-3 flex flex-col flex-grow">
+                <span className="text-[#eab308] font-bold text-[8px] md:text-[9px] tracking-wider uppercase mb-1.5 bg-[#fcfaf5] inline-block px-1.5 py-0.5 self-start border border-[#eab308]/20">
                   {book.type}
                 </span>
-                <h3 className="font-serif text-xl md:text-2xl font-bold text-gray-900 mb-1 leading-tight">{book.title}</h3>
-                <h4 className="font-serif italic text-gray-500 text-sm md:text-base mb-2">{book.subtitle}</h4>
-                <p className="text-gray-600 text-sm mb-4 flex-grow leading-relaxed line-clamp-3" title={book.desc}>{book.desc}</p>
+                <h3 className="font-serif text-lg md:text-xl font-bold text-gray-900 mb-0.5 leading-tight">{book.title}</h3>
+                <h4 className="font-serif italic text-gray-500 text-xs md:text-sm mb-1.5">{book.subtitle}</h4>
+                <p className="text-gray-600 text-xs mb-2.5 flex-grow leading-snug line-clamp-2" title={book.desc}>{book.desc}</p>
                 
-                <div className="flex justify-between items-center text-xs md:text-sm text-gray-400 font-semibold mb-4">
+                <div className="flex justify-between items-center text-[10px] md:text-xs text-gray-400 font-semibold mb-2.5">
                   <span className="flex items-center gap-1.5">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
                     {book.year}
@@ -95,12 +95,12 @@ export default function BooksPublications() {
                 </div>
 
                 <div className="flex gap-2">
-                  <Link href="#" className="flex-1 bg-[#a82b2b] hover:bg-[#8a2323] text-white py-2 rounded text-xs md:text-sm font-semibold flex items-center justify-center gap-1.5 transition-colors shadow-sm">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                  <Link href="#" className="flex-1 bg-[#a82b2b] hover:bg-[#8a2323] text-white py-1.5 rounded text-[11px] md:text-xs font-semibold flex items-center justify-center gap-1 transition-colors shadow-sm">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
                     Download
                   </Link>
-                  <Link href="#" className="flex-1 bg-[#eab308] hover:bg-[#dca506] text-gray-900 py-2 rounded text-xs md:text-sm font-semibold flex items-center justify-center gap-1.5 transition-colors shadow-sm">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                  <Link href="#" className="flex-1 bg-[#eab308] hover:bg-[#dca506] text-gray-900 py-1.5 rounded text-[11px] md:text-xs font-semibold flex items-center justify-center gap-1 transition-colors shadow-sm">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
                     Read Sample
                   </Link>
                 </div>
@@ -109,9 +109,9 @@ export default function BooksPublications() {
           ))}
         </div>
 
-        <div className="text-center mt-6">
-          <Link href="/books" className="inline-flex items-center gap-2 bg-[#eab308] text-gray-900 font-bold py-3 px-8 rounded text-sm md:text-base hover:bg-[#facc15] transition-colors shadow-sm">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" /></svg>
+        <div className="text-center mt-4">
+          <Link href="/books" className="inline-flex items-center gap-1.5 bg-[#eab308] text-gray-900 font-bold py-2 px-6 rounded text-xs md:text-sm hover:bg-[#facc15] transition-colors shadow-sm">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" /></svg>
             View All Books
           </Link>
         </div>
