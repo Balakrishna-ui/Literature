@@ -60,7 +60,7 @@ export default function BooksPublications() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 mb-4">
           {books.map((book, index) => (
             <div key={index} className="bg-white shadow-lg flex flex-col group overflow-hidden rounded-sm">
-              <div className="aspect-[1.25/1] bg-white border-b border-gray-50 relative flex items-center justify-center p-1.5 md:p-2">
+              <div className="aspect-[1/1] bg-white border-b border-gray-50 relative flex items-center justify-center p-1.5 md:p-2">
                 <div className="relative w-full h-full drop-shadow-md">
                   {book.featured && (
                     <div className="absolute top-0 left-0 bg-[#a82b2b] text-white text-[8px] md:text-[9px] font-bold px-1.5 md:px-2 py-0.5 z-10 flex items-center gap-1 shadow-sm">
