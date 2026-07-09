@@ -41,7 +41,7 @@ export const BOOKS: Book[] = [
     language: 'Telugu',
     publisher: 'Sahitya Akademi',
     genre: 'Poetry',
-    images: ['/images/balanatakalu.jpeg', '/images/balanatakalu1.jpeg', '/images/balanatakalu2.jpeg'],
+    images: ['/images/balanatakalu0.jpeg', '/images/balanatakalu.jpeg', '/images/balanatakalu1.jpeg', '/images/balanatakalu2.jpeg'],
     isFeatured: true,
     shortDesc: 'Bala Natikalu* is a collection of short plays written by Duppalli Sri Ramulu to nurture moral values and character among children. Drawing inspiration from the Puranas, Itihasas, and social themes, these plays encourage ethical conduct, responsibility, discipline, and compassion. Each play, ranging from 5 to 30 minutes only, is designed to be engaging, educational, and easy to perform, making the book an excellent resource for schools, cultural programs, and young theatre enthusiasts.',
     desc: 'Bala Natikalu* is a collection of short plays written by Duppalli Sri Ramulu to nurture moral values and character among children. Drawing inspiration from the Puranas, Itihasas, and social themes, these plays encourage ethical conduct, responsibility, discipline, and compassion. Each play, ranging from 5 to 30 minutes only, is designed to be engaging, educational, and easy to perform, making the book an excellent resource for schools, cultural programs, and young theatre enthusiasts.'
