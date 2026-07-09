@@ -51,7 +51,7 @@ export default function InspirationsMentors() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4 lg:gap-5 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4 lg:gap-5 mb-12">
           {mentors.map((mentor, index) => (
             <div 
               key={index} 
@@ -69,7 +69,7 @@ export default function InspirationsMentors() {
                 </p>
               </div>
 
-              <div className="w-full h-64 md:h-48 lg:h-48 bg-gray-100 relative">
+              <div className="w-full h-40 md:h-48 lg:h-48 bg-gray-100 relative">
                 <img 
                   src={mentor.image} 
                   alt={mentor.name} 
