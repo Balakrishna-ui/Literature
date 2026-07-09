@@ -2,9 +2,16 @@ import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
+import { getRateLimit } from '@/lib/rate-limit';
 
 export async function POST(request: Request) {
   try {
+    const ip = request.headers.get('x-forwarded-for') || 'unknown-ip';
+    const rateLimit = getRateLimit(ip, 5, 15 * 60 * 1000);
+
+    if (!rateLimit.success) {
+      return NextResponse.json({ error: 'Too many login attempts, please try again later.' }, { status: 429 });
+    }
     const { email, password } = await request.json();
 
     if (!email || !password) {

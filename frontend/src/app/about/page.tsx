@@ -7,27 +7,27 @@ import { Globe } from 'lucide-react';
 
 const content = {
   en: {
-    title: "Dr. Lakshmi Narayan Reddy",
-    subtitle: "Indian poet, novelist, and playwright (1932–2018)",
+    title: "Sri Duppalli Sri Ramulu",
+    subtitle: "Actor, Director, Playwright, and Mentor",
     contents: "Contents",
     nav: { 
-      biography: "Biography", earlyLife: "Early Life", education: "Education", 
+      biography: "Biography", earlyLife: "Early Life", education: "Education & Impact", 
       career: "Career", awards: "Awards", legacy: "Legacy" 
     },
-    intro: <span><strong>Dr. Lakshmi Narayan Reddy (1932–2018)</strong> was an Indian poet, novelist, and playwright who wrote primarily in Telugu. Widely regarded as one of the most influential literary voices of modern India, his works spanned six decades and earned him the Jnanpith Award, India's highest literary honor. His magnum opus, <em>Aaru Velu</em> (1978), is considered a landmark in Telugu literature.</span>,
-    bio1: "Dr. Lakshmi Narayan Reddy (1932–2018) was one of the most celebrated literary voices of modern India. Over a career spanning six decades, he published more than twenty works of poetry, fiction, and drama that earned him a place among the nation's most respected authors.",
-    bio2: "Born in the village of Konaseema in the East Godavari district of Andhra Pradesh, Reddy grew up surrounded by the rich oral traditions of Telugu storytelling. His father was a Sanskrit scholar and his mother a gifted singer of classical devotional poetry — influences that would shape his entire creative life.",
-    bio3: "After completing his education at Andhra University and later at Osmania University, Reddy began his career as a lecturer in Telugu literature. It was during these years that he started writing seriously, first poetry and then the novels and plays that would bring him national acclaim.",
-    bio4: "His writing was distinguished by its lyrical beauty, deep humanism, and unflinching engagement with the struggles of ordinary people. Whether writing about rural poverty, the dignity of labor, or the complexities of human relationships, he brought to every subject a rare combination of artistic rigor and moral passion.",
-    bio5: "In addition to his literary work, Reddy was a tireless advocate for the preservation of regional languages and cultural heritage. He served as president of the Telugu Academy and was a member of the Sahitya Akademi's governing board for many years.",
-    early1: "Lakshmi Narayan Reddy was born on March 15, 1932, in the village of Amalapuram, East Godavari district. His early years were spent in a household where learning was prized above all else.",
-    early2: "His father, Venkata Ratnam Reddy, was a respected Sanskrit pandit who ran a small school in the village. His mother, Subbalakshmi, was known throughout the region for her renditions of Annamacharya sankeertanas.",
-    early3: "From an early age, Reddy showed a remarkable gift for language. By the age of ten, he had memorized large portions of the Bhagavad Gita and the works of the Telugu poet Nannaya. His first published poem appeared in a local magazine when he was just sixteen.",
-    eduHeaders: ["Institution", "Degree", "Year"],
+    intro: <span><strong>Sri Duppalli Sri Ramulu</strong> is a celebrated actor, playwright, director, and mentor in Telugu theatre. Deeply inspired by the life and ideals of Ballari Raghava, he dedicated himself to preserving the dignity and literary excellence of Telugu theatre.</span>,
+    bio1: "Over the years, he emerged not only as a celebrated actor but also as a playwright, director, and mentor. He wrote and directed several mythological and socially relevant dramas, including Bhakta Prahlada and Markandeya.",
+    bio2: "A perfectionist by nature, Sri Ramulu strongly opposed excessive harmonium accompaniment, prolonged ragalapana, inaccurate pronunciation of padyams, poor literary standards, and inappropriate stage costumes. He firmly believed that the greatness of Telugu theatre lay in disciplined performance, meaningful literature, and artistic authenticity.",
+    bio3: "His dedication earned the respect and friendship of many distinguished personalities, including Jamuna, Kantha Rao, Gummadi Venkateswara Rao, Peesapati Narasimha Murthy, Burra Subrahmanya Shastri, Kapilavayi Lingamurthy, Vallapureddy Bucha Reddy, and Gadiyaram Ramakrishna Sharma.",
+    bio4: "With the support of cultural organizations such as Swaralahari Cultural Academy, his productions were staged at prestigious venues, including Mahathi Auditorium, Tirupati, where Halikudu was selected for performance.",
+    bio5: "In the later phase of his life, Sri Ramulu devoted himself to nurturing the next generation of theatre artists. He served as the Chief of the Nataka Vibhaga at Sri Saraswathi Vidyapeetam Shikshana Varga, training nearly 100–200 students and teachers every year.",
+    early1: "Duppalli Sri Ramulu was born in 1942 in Duppalli village, Mahabubnagar District, Telangana. His childhood was marked by hardship. He lost his father at the age of three, had no siblings, and was lovingly raised by his grandmother. Owing to severe financial constraints, he had to discontinue his education in 1952.",
+    early2: "His lifelong association with Telugu theatre began in childhood after witnessing the renowned Gayopakhyanam play in his village in 1948. Recognizing his exceptional singing talent, Sri Balija Pedabuchayya Garu and Sri Asupally Seetharam Reddy Garu offered him his first stage opportunity as Kusa in the Lavakusha drama in 1950.",
+    early3: "One of his school teachers further encouraged his talent after hearing him recite Telugu padyams, strengthening his passion for drama. In 1967, he married Smt. Govindamma, and the couple was blessed with three children—two sons and a daughter.",
+    eduHeaders: ["Institution / Activity", "Role / Details", "Impact"],
     eduRows: [
-      { inst: "Andhra University", deg: "B.A. in Telugu Literature", year: "1952" },
-      { inst: "Osmania University", deg: "M.A. in Telugu Literature", year: "1954" },
-      { inst: "University of Madras", deg: "Ph.D. in Comparative Literature", year: "1962" }
+      { inst: "450+ Government Schools in Mahabubnagar", deg: "Lecturer on Telugu Theatre & Samayasphoorthy", year: "Countless students inspired" },
+      { inst: "Sri Saraswathi Vidyapeetam Shikshana Varga", deg: "Chief of Nataka Vibhaga", year: "100–200 trained annually" },
+      { inst: "Various Shishu Mandirs", deg: "Drama Training Programs", year: "Cultural education for youth" }
     ],
     careerDesc: "Over a career spanning six decades, Reddy published more than twenty works across poetry, novels, drama, and short stories. Below is a summary of his major works and milestones:",
         careerHeaders: ["Year", "Play / Program", "Role", "Place / Details"],
@@ -74,59 +74,54 @@ const content = {
     awardsHeaders: ["Award", "Year", "Organization"],
     awardsTitle: "Awards and Recognition",
     awardsRows: [
-      { award: 'Jnanpith Award', year: '2002', org: 'Bharatiya Jnanpith' },
-      { award: 'Sahitya Akademi Award', year: '1965', org: 'Sahitya Akademi' },
-      { award: 'Padma Bhushan', year: '1995', org: 'Government of India' },
-      { award: 'Andhra Pradesh Sahitya Akademi Award', year: '1960', org: 'AP Sahitya Akademi' },
-      { award: 'Sangeet Natak Akademi Award', year: '1980', org: 'Sangeet Natak Akademi' },
-      { award: 'Raja-Lakshmi Award', year: '1988', org: 'Sri Raja-Lakshmi Foundation' },
-      { award: 'Sahitya Akademi Fellowship', year: '2005', org: 'Sahitya Akademi' },
-      { award: 'Padma Shri', year: '1982', org: 'Government of India' }
+      { award: 'Paidi Lakshmaiah Keerthi Puraskaram', year: '2004', org: 'Potti Sreeramulu Telugu University' },
+      { award: 'First Prize - Mono-acting (Mayasabha Duryodhana)', year: '1968', org: 'Presented by Adurthi Subba Rao' },
+      { award: '450+ Appreciation Certificates', year: 'Various', org: 'Government Schools, Mahabubnagar' }
     ],
-    legacy1: "Dr. Lakshmi Narayan Reddy's influence on Indian literature extends far beyond his published works. Through his teaching, mentorship, and institutional leadership, he shaped two generations of Telugu writers.",
-    legacy2: "The Lakshmi Narayan Reddy Foundation, established in 2015, continues his mission of promoting regional language literature through scholarships, translation programs, and literary festivals.",
-    legacy3: <span>His novels have been translated into more than twelve languages, including English, Hindi, Bengali, Tamil, and German. <em>Aaru Velu</em> remains a staple of university literature courses across India.</span>,
-    legacy4: <span>In the world of theater, <em>Raktakshi</em> is still performed by amateur and professional companies, its power undiminished by the passage of time. The play's influence can be seen in the socially engaged theater movement that emerged in South India during the 1980s.</span>,
-    legacy5: "Perhaps his most enduring legacy is the example he set: a life devoted entirely to literature, lived with integrity, humility, and an unwavering belief in the power of words to change the world.",
-    sidebarDesc: "Indian poet, novelist & playwright",
-    sidebarCaption: "Dr. Reddy in his study",
+    legacy1: "With decades of experience on stage as an actor, director, playwright, and mentor, his passion gradually expanded to literary writing. Determined to preserve the knowledge and heritage of Telugu theatre, he authored several books on drama, literature, and culture.",
+    legacy2: "To date, nine books have been published, while three more manuscripts are awaiting publication.",
+    legacy3: <span>Sri Ramulu's lifelong service to Telugu theatre has been recognized by numerous government bodies and cultural organizations, most notably the Paidi Lakshmaiah Keerthi Puraskaram.</span>,
+    legacy4: <span>His journey stands as a remarkable example of how dedication, discipline, and an unwavering commitment to art can transform a humble village boy into one of the respected torchbearers of Telugu theatre.</span>,
+    legacy5: "Through more than six decades of unwavering dedication, Duppalli Sri Ramulu has remained a respected actor, director, playwright, mentor, and cultural ambassador whose life continues to inspire generations of Telugu theatre enthusiasts.",
+    sidebarDesc: "Actor, Director, Playwright, and Mentor",
+    sidebarCaption: "Sri Duppalli Sri Ramulu",
     infoBorn: "Born",
-    infoBornVal: "15 March 1932\nAmalapuram, Andhra Pradesh, India",
-    infoDied: "Died",
-    infoDiedVal: "12 May 2018 (aged 86)\nHyderabad, Telangana, India",
+    infoBornVal: "1942\nDuppalli, Mahabubnagar District, Telangana",
+    infoDied: "",
+    infoDiedVal: "",
     infoOcc: "Occupation",
-    infoOccVal: "Poet, Novelist, Playwright",
+    infoOccVal: "Actor, Playwright, Director",
     infoLang: "Language",
     infoLangVal: "Telugu",
     infoAlma: "Alma mater",
-    infoAlmaVal: "Andhra University\nOsmania University\nUniversity of Madras",
-    infoWorks: "Notable works",
-    infoWorksVal: "Aaru Velu, Nadhi Theeram, Raktakshi, Sapta Sagaralu",
+    infoAlmaVal: "Self-taught / Stage Experience",
+    infoWorks: "Notable Plays",
+    infoWorksVal: "Sri Venkateswara Mahatmyam, Kurukshetram, Ashwathama, Halikudu (Pothana)",
     infoAwards: "Notable awards",
-    infoAwardsVal: "Jnanpith Award (2002)\nSahitya Akademi Award (1965)\nPadma Bhushan (1995)"
+    infoAwardsVal: "Paidi Lakshmaiah Keerthi Puraskaram (2004)"
   },
   te: {
-    title: "డా. లక్ష్మీ నారాయణ రెడ్డి",
-    subtitle: "భారతీయ కవి, నవలా రచయిత, మరియు నాటక రచయిత (1932–2018)",
+    title: "శ్రీ దుప్పల్లి శ్రీరాములు",
+    subtitle: "నటుడు, దర్శకుడు, నాటక రచయిత మరియు గురువు",
     contents: "విషయసూచిక",
     nav: { 
-      biography: "జీవిత చరిత్ర", earlyLife: "బాల్యం", education: "విద్యాభ్యాసం", 
+      biography: "జీవిత చరిత్ర", earlyLife: "బాల్యం", education: "విద్యాభ్యాసం & ప్రభావం", 
       career: "వృత్తి", awards: "పురస్కారాలు", legacy: "వారసత్వం" 
     },
-    intro: <span><strong>డా. లక్ష్మీ నారాయణ రెడ్డి (1932–2018)</strong> ప్రధానంగా తెలుగులో రచనలు చేసిన ఒక భారతీయ కవి, నవలా రచయిత, నాటక రచయిత. ఆధునిక భారతదేశ అత్యంత ప్రభావవంతమైన సాహిత్య స్వరాలలో ఒకరిగా ఆయన విస్తృతంగా పరిగణించబడతారు. ఆరు దశాబ్దాల పాటు సాగిన ఆయన రచనలు, భారతదేశ అత్యున్నత సాహిత్య పురస్కారమైన జ్ఞానపీఠ్ అవార్డును పొందాయి. ఆయన మహాకావ్యం <em>ఆరు వేలు</em> (1978) తెలుగు సాహిత్యంలో ఒక మైలురాయిగా పరిగణించబడుతుంది.</span>,
-    bio1: "డా. లక్ష్మీ నారాయణ రెడ్డి (1932–2018) ఆధునిక భారతదేశం యొక్క అత్యంత ప్రసిద్ధ సాహిత్య స్వరాలలో ఒకరు. ఆరు దశాబ్దాల సుదీర్ఘ కెరీర్లో, ఆయన కవిత్వం, కల్పన మరియు నాటకాలకు సంబంధించి ఇరవైకి పైగా రచనలను ప్రచురించారు, ఇవి దేశంలోని అత్యంత గౌరవనీయమైన రచయితలలో ఆయనకు ఒక స్థానాన్ని సంపాదించిపెట్టాయి.",
-    bio2: "ఆంధ్రప్రదేశ్ తూర్పు గోదావరి జిల్లాలోని కోనసీమ గ్రామంలో జన్మించిన రెడ్డి గారు, తెలుగు కథన సంప్రదాయాల మధ్య పెరిగారు. ఆయన తండ్రి సంస్కృత పండితుడు మరియు తల్లి క్లాసికల్ భక్తి కవిత్వంలో నిష్ణాతురాలైన గాయని — ఈ ప్రభావాలు ఆయన సృజనాత్మక జీవితాన్ని రూపొందించాయి.",
-    bio3: "ఆంధ్రా విశ్వవిద్యాలయం మరియు తరువాత ఉస్మానియా విశ్వవిద్యాలయంలో తన విద్యను పూర్తి చేసిన తరువాత, రెడ్డి గారు తెలుగు సాహిత్యంలో అధ్యాపకుడిగా తన వృత్తిని ప్రారంభించారు. ఈ సంవత్సరాల్లోనే ఆయన తీవ్రంగా రాయడం ప్రారంభించారు. మొదట కవిత్వం, ఆ తరువాత జాతీయ ఖ్యాతి తెచ్చిన నవలలు మరియు నాటకాలు రాశారు.",
-    bio4: "ఆయన రచనలు భావకవిత్వం, లోతైన మానవత్వం మరియు సామాన్య ప్రజల పోరాటాలతో ఎనలేని నిబద్ధతతో ప్రత్యేకంగా నిలిచాయి. గ్రామీణ పేదరికం, కార్మికుల గౌరవం లేదా మానవ సంబంధాల సంక్లిష్టతల గురించి రాసినా, ఆయన ప్రతి అంశానికి కళాత్మకత మరియు నైతిక అభిరుచి కలగలిపారు.",
-    bio5: "తన సాహిత్య పనులతో పాటు, ప్రాంతీయ భాషలు మరియు సాంస్కృతిక వారసత్వ పరిరక్షణ కోసం రెడ్డి గారు అవిశ్రాంతంగా పోరాడారు. ఆయన తెలుగు అకాడమీ అధ్యక్షుడిగా పనిచేశారు మరియు అనేక సంవత్సరాలు సాహిత్య అకాడమీ పాలక మండలి సభ్యుడిగా ఉన్నారు.",
-    early1: "లక్ష్మీ నారాయణ రెడ్డి 1932 మార్చి 15న తూర్పు గోదావరి జిల్లా అమలాపురం గ్రామంలో జన్మించారు. ఆయన బాల్యం చదువుకు ఎంతో ప్రాధాన్యతనిచ్చే ఇంట్లో గడిచింది.",
-    early2: "ఆయన తండ్రి వెంకట రత్నం రెడ్డి ఆ ఊరిలో చిన్న పాఠశాలను నడుపుతున్న గౌరవనీయ సంస్కృత పండితుడు. ఆయన తల్లి సుబ్బలక్ష్మి, అన్నమాచార్య సంకీర్తనలు పాడటంలో ఆ ప్రాంతమంతా ప్రసిద్ధి చెందింది.",
-    early3: "చిన్న వయస్సు నుండే, రెడ్డి గారు భాష పట్ల అసాధారణమైన ప్రతిభ కనబరిచారు. పదేళ్ల వయసులో భగవద్గీత, నన్నయ రచనల్లోని పెద్ద భాగాలను కంఠస్థం చేశారు. ఆయనకు పదహారేళ్ల వయసులో ఆయన మొదటి కవిత స్థానిక పత్రికలో ప్రచురితమైంది.",
-    eduHeaders: ["సంస్థ", "డిగ్రీ", "సంవత్సరం"],
+    intro: <span><strong>శ్రీ దుప్పల్లి శ్రీరాములు</strong> గారు తెలుగు నాటకరంగంలో ప్రసిద్ధ నటుడు, నాటక రచయిత, దర్శకుడు మరియు మార్గదర్శకుడు. బళ్ళారి రాఘవ జీవితం మరియు ఆదర్శాలచే తీవ్రంగా ప్రభావితమైన ఆయన, తెలుగు నాటకరంగం యొక్క గౌరవాన్ని మరియు సాహిత్యపరమైన ఔన్నత్యాన్ని కాపాడటానికి తనను తాను అంకితం చేసుకున్నారు.</span>,
+    bio1: "గడచిన సంవత్సరాల్లో, ఆయన ప్రసిద్ధ నటుడిగానే కాకుండా నాటక రచయితగా, దర్శకుడిగా మరియు గురువుగా ఎదిగారు. భక్త ప్రహ్లాద మరియు మార్కండేయతో సహా అనేక పౌరాణిక మరియు సామాజిక సంబంధిత నాటకాలను ఆయన రాసి, దర్శకత్వం వహించారు.",
+    bio2: "ఆయన స్వతహాగా పరిపూర్ణత కోరుకునేవారు (perfectionist). నాటకాలలో మితిమీరిన హార్మోనియం వాడకం, సుదీర్ఘమైన రాగాలాపన, పద్యాల తప్పు ఉచ్చారణ, పేలవమైన సాహిత్య ప్రమాణాలు మరియు తగని వేషధారణలను ఆయన తీవ్రంగా వ్యతిరేకించారు. క్రమశిక్షణతో కూడిన నటన, అర్థవంతమైన సాహిత్యం, మరియు ప్రామాణికమైన కళలోనే తెలుగు నాటకరంగ గొప్పతనం ఉందని ఆయన దృఢంగా విశ్వసించారు.",
+    bio3: "ఆయన అంకితభావం జమున, కాంతారావు, గుమ్మడి వెంకటేశ్వర రావు, పీసపాటి నరసింహ మూర్తి, బుర్రా సుబ్రహ్మణ్య శాస్త్రి, కపిలవాయి లింగమూర్తి, వల్లపురెడ్డి బుచ్చా రెడ్డి మరియు గడియారం రామకృష్ణ శర్మ వంటి అనేక మంది ప్రముఖుల గౌరవాన్ని మరియు స్నేహాన్ని సంపాదించిపెట్టింది.",
+    bio4: "స్వరలహరి కల్చరల్ అకాడమీ వంటి సాంస్కృతిక సంస్థల మద్దతుతో, ఆయన నిర్మించిన నాటకాలు తిరుపతిలోని మహతి ఆడిటోరియంతో సహా అనేక ప్రతిష్టాత్మక వేదికల వద్ద ప్రదర్శించబడ్డాయి, అక్కడ హాలికుడు నాటకం ప్రదర్శనకు ఎంపిక చేయబడింది.",
+    bio5: "తన జీవితపు మలిదశలో, తదుపరి తరం నాటక కళాకారులను తీర్చిదిద్దడానికి శ్రీరాములు తనను తాను అంకితం చేసుకున్నారు. ఆయన శ్రీ సరస్వతీ విద్యాపీఠం శిక్షణా వర్గంలో నాటక విభాగానికి అధ్యక్షుడిగా పనిచేశారు, ప్రతి సంవత్సరం దాదాపు 100-200 మంది విద్యార్థులు మరియు ఉపాధ్యాయులకు శిక్షణ ఇచ్చారు.",
+    early1: "దుప్పల్లి శ్రీరాములు గారు తెలంగాణలోని మహబూబ్ నగర్ జిల్లా దుప్పల్లి గ్రామంలో 1942లో జన్మించారు. ఆయన బాల్యం కష్టాలతో ముడిపడి ఉంది. మూడేళ్ల వయసులోనే తండ్రిని కోల్పోయారు. తోబుట్టువులు ఎవరూ లేకపోవడంతో తన నానమ్మ వద్ద అల్లారుముద్దుగా పెరిగారు. తీవ్రమైన ఆర్థిక ఇబ్బందుల కారణంగా, ఆయన 1952లో తన చదువును ఆపేయవలసి వచ్చింది.",
+    early2: "తెలుగు నాటకరంగంతో ఆయనకు ఉన్న సుదీర్ఘ అనుబంధం చిన్నతనంలోనే అంటే 1948లో తన గ్రామంలో ప్రసిద్ధ గయోపాఖ్యానం నాటకం చూసిన తర్వాత మొదలైంది. ఆయనలోని అసాధారణమైన గాన ప్రతిభను గుర్తించిన శ్రీ బలిజ పెదబుచ్చయ్య గారు మరియు శ్రీ ఆసుపల్లి సీతారాం రెడ్డి గారు, 1950లో లవకుశ నాటకంలో కుశుడిగా ఆయనకు మొట్టమొదటి రంగస్థల అవకాశాన్ని అందించారు.",
+    early3: "ఆయన తెలుగు పద్యాలు పాడటం విన్న పాఠశాల ఉపాధ్యాయులలో ఒకరు ఆయన ప్రతిభను మరింత ప్రోత్సహించారు, నాటకాలపై ఆయనకున్న మక్కువను బలోపేతం చేశారు. 1967లో, ఆయన శ్రీమతి గోవిందమ్మ గారిని వివాహం చేసుకున్నారు, వీరికి ముగ్గురు పిల్లలు—ఇద్దరు కుమారులు మరియు ఒక కుమార్తె ఉన్నారు.",
+    eduHeaders: ["సంస్థ / కార్యక్రమం", "పాత్ర / వివరాలు", "ప్రభావం"],
     eduRows: [
-      { inst: "ఆంధ్రా యూనివర్సిటీ", deg: "బి.ఎ. (తెలుగు సాహిత్యం)", year: "1952" },
-      { inst: "ఉస్మానియా యూనివర్సిటీ", deg: "ఎం.ఎ. (తెలుగు సాహిత్యం)", year: "1954" },
-      { inst: "మద్రాస్ యూనివర్సిటీ", deg: "పిహెచ్.డి. (తులనాత్మక సాహిత్యం)", year: "1962" }
+      { inst: "మహబూబ్ నగర్ లోని 450+ ప్రభుత్వ పాఠశాలలు", deg: "తెలుగు నాటకరంగం & సమయస్ఫూర్తిపై ఉపన్యాసకుడు", year: "ఎంతో మంది విద్యార్థులకు స్ఫూర్తి" },
+      { inst: "శ్రీ సరస్వతీ విద్యాపీఠం శిక్షణా వర్గం", deg: "నాటక విభాగ అధ్యక్షుడు", year: "ఏటా 100-200 మందికి శిక్షణ" },
+      { inst: "వివిధ శిశు మందిరాలు", deg: "నాటక శిక్షణా కార్యక్రమాలు", year: "యువతకు సాంస్కృతిక విద్య" }
     ],
     careerDesc: "ఆరు దశాబ్దాల తన వృత్తి జీవితంలో, రెడ్డి గారు కవిత్వం, నవలలు, నాటకాలు మరియు చిన్న కథలలో ఇరవైకి పైగా రచనలను ప్రచురించారు. ఆయన ప్రధాన రచనలు మరియు మైలురాళ్ల సారాంశం క్రింద ఉంది:",
         careerHeaders: ["సంవత్సరం", "నాటకం / కార్యక్రమం", "పాత్ర", "స్థలం / విశేషం"],
@@ -173,36 +168,31 @@ const content = {
     awardsHeaders: ["పురస్కారం", "సంవత్సరం", "సంస్థ"],
     awardsTitle: "పురస్కారాలు మరియు గుర్తింపు",
     awardsRows: [
-      { award: 'జ్ఞానపీఠ్ అవార్డు', year: '2002', org: 'భారతీయ జ్ఞానపీఠ్' },
-      { award: 'సాహిత్య అకాడమీ అవార్డు', year: '1965', org: 'సాహిత్య అకాడమీ' },
-      { award: 'పద్మ భూషణ్', year: '1995', org: 'భారత ప్రభుత్వం' },
-      { award: 'ఏపీ సాహిత్య అకాడమీ అవార్డు', year: '1960', org: 'ఏపీ సాహిత్య అకాడమీ' },
-      { award: 'సంగీత నాటక అకాడమీ అవార్డు', year: '1980', org: 'సంగీత నాటక అకాడమీ' },
-      { award: 'రాజాలక్ష్మి అవార్డు', year: '1988', org: 'శ్రీ రాజాలక్ష్మి ఫౌండేషన్' },
-      { award: 'సాహిత్య అకాడమీ ఫెలోషిప్', year: '2005', org: 'సాహిత్య అకాడమీ' },
-      { award: 'పద్మశ్రీ', year: '1982', org: 'భారత ప్రభుత్వం' }
+      { award: 'పైడి లక్ష్మయ్య కీర్తి పురస్కారం', year: '2004', org: 'పొట్టి శ్రీరాములు తెలుగు విశ్వవిద్యాలయం' },
+      { award: 'ప్రథమ బహుమతి - ఏకపాత్రాభినయం (మాయాసభ దుర్యోధన)', year: '1968', org: 'ఆదుర్తి సుబ్బా రావు గారిచే ప్రదానం' },
+      { award: '450+ ప్రశంసా పత్రాలు', year: 'వివిధ సంవత్సరాలు', org: 'ప్రభుత్వ పాఠశాలలు, మహబూబ్ నగర్' }
     ],
-    legacy1: "భారతీయ సాహిత్యంపై డాక్టర్ లక్ష్మీ నారాయణ రెడ్డి ప్రభావం ఆయన ప్రచురించిన రచనలకు మించి విస్తరించింది. ఆయన తన బోధన మరియు మార్గదర్శకత్వం ద్వారా, రెండు తరాల తెలుగు రచయితలను తీర్చిదిద్దారు.",
-    legacy2: "2015లో స్థాపించబడిన లక్ష్మీ నారాయణ రెడ్డి ఫౌండేషన్, స్కాలర్‌షిప్‌లు, అనువాద కార్యక్రమాలు మరియు సాహిత్య ఉత్సవాల ద్వారా ప్రాంతీయ భాషా సాహిత్యాన్ని ప్రోత్సహించే ఆయన లక్ష్యాన్ని కొనసాగిస్తోంది.",
-    legacy3: <span>ఆయన నవలలు ఆంగ్లం, హిందీ, బెంగాలీ, తమిళం మరియు జర్మన్ భాషలతో సహా పన్నెండుకు పైగా భాషల్లోకి అనువదించబడ్డాయి. <em>ఆరు వేలు</em> భారతదేశవ్యాప్తంగా యూనివర్సిటీ సాహిత్య కోర్సుల్లో ఒక ప్రధాన అంశంగా మిగిలిపోయింది.</span>,
-    legacy4: <span>నాటక ప్రపంచంలో, <em>రక్తాక్షి</em> ఇప్పటికీ అనేక సంస్థలచే ప్రదర్శించబడుతుంది. 1980లలో దక్షిణ భారతదేశంలో ఉద్భవించిన సామాజిక నాటక ఉద్యమంలో ఈ నాటకం యొక్క ప్రభావాన్ని చూడవచ్చు.</span>,
-    legacy5: "బహుశా ఆయన మిగిల్చిన అత్యంత శాశ్వతమైన వారసత్వం ఆయన నెలకొల్పిన ఉదాహరణ: సాహిత్యం కోసం పూర్తిగా అంకితమైన జీవితం, సమగ్రత, వినయం మరియు ప్రపంచాన్ని మార్చగల పదాల శక్తిపై అచంచలమైన విశ్వాసంతో జీవించిన జీవితం.",
-    sidebarDesc: "భారతీయ కవి, నవలా రచయిత & నాటక రచయిత",
-    sidebarCaption: "డా. రెడ్డి తన స్టడీ రూమ్ లో",
+    legacy1: "నటుడిగా, దర్శకుడిగా, నాటక రచయితగా మరియు గురువుగా వేదికపై దశాబ్దాల అనుభవంతో, ఆయన అభిరుచి క్రమంగా సాహిత్య రచన వైపు విస్తరించింది. తెలుగు నాటకరంగ వారసత్వాన్ని మరియు జ్ఞానాన్ని భవిష్యత్ తరాలకు అందించాలనే ఉద్దేశ్యంతో, ఆయన నాటకం, సాహిత్యం మరియు సంస్కృతిపై అనేక పుస్తకాలను రచించారు.",
+    legacy2: "ఇప్పటి వరకు తొమ్మిది పుస్తకాలు ప్రచురితమయ్యాయి, మరో మూడు ప్రచురణకు సిద్ధంగా ఉన్నాయి.",
+    legacy3: <span>తెలుగు నాటకరంగానికి శ్రీరాములు గారు చేసిన జీవితకాల సేవలను అనేక ప్రభుత్వ సంస్థలు మరియు సాంస్కృతిక సంస్థలు గుర్తించాయి. ముఖ్యంగా ఆయన పొందిన పైడి లక్ష్మయ్య కీర్తి పురస్కారం దీంట్లో ఎంతో ప్రతిష్టాత్మకమైనది.</span>,
+    legacy4: <span>కళ పట్ల అంకితభావం, క్రమశిక్షణ మరియు చెక్కుచెదరని నిబద్ధత ఒక సాధారణ గ్రామపు బాలుడిని తెలుగు నాటకరంగంలో అత్యంత గౌరవనీయమైన మార్గదర్శకులలో ఒకరిగా ఎలా మార్చగలదో ఆయన జీవన ప్రయాణం ఒక అద్భుతమైన ఉదాహరణగా నిలుస్తుంది.</span>,
+    legacy5: "ఆరు దశాబ్దాలకు పైగా ఎనలేని అంకితభావంతో, దుప్పల్లి శ్రీరాములు గారు గౌరవనీయమైన నటుడిగా, దర్శకుడిగా, నాటక రచయితగా, గురువుగా మరియు సాంస్కృతిక రాయబారిగా మిగిలిపోయారు. ఆయన జీవితం తెలుగు నాటక అభిమానుల తరాలకు స్ఫూర్తినిస్తూనే ఉంటుంది.",
+    sidebarDesc: "నటుడు, దర్శకుడు, నాటక రచయిత మరియు గురువు",
+    sidebarCaption: "శ్రీ దుప్పల్లి శ్రీరాములు",
     infoBorn: "జననం",
-    infoBornVal: "15 మార్చి 1932\nఅమలాపురం, ఆంధ్రప్రదేశ్, ఇండియా",
-    infoDied: "మరణం",
-    infoDiedVal: "12 మే 2018 (వయస్సు 86)\nహైదరాబాద్, తెలంగాణ, ఇండియా",
+    infoBornVal: "1942\nదుప్పల్లి, మహబూబ్ నగర్ జిల్లా, తెలంగాణ",
+    infoDied: "",
+    infoDiedVal: "",
     infoOcc: "వృత్తి",
-    infoOccVal: "కవి, నవలా రచయిత, నాటక రచయిత",
+    infoOccVal: "నటుడు, నాటక రచయిత, దర్శకుడు",
     infoLang: "భాష",
     infoLangVal: "తెలుగు",
     infoAlma: "విద్యా సంస్థలు",
-    infoAlmaVal: "ఆంధ్రా యూనివర్సిటీ\nఉస్మానియా యూనివర్సిటీ\nమద్రాస్ యూనివర్సిటీ",
-    infoWorks: "ప్రముఖ రచనలు",
-    infoWorksVal: "ఆరు వేలు, నదీ తీరం, రక్తాక్షి, సప్త సాగరాలు",
+    infoAlmaVal: "స్వీయ-అభ్యాసం / రంగస్థల అనుభవం",
+    infoWorks: "ప్రముఖ నాటకాలు",
+    infoWorksVal: "శ్రీ వేంకటేశ్వర మహాత్మ్యం, కురుక్షేత్రం, అశ్వత్థామ, హాలికుడు (పోతన)",
     infoAwards: "ప్రముఖ పురస్కారాలు",
-    infoAwardsVal: "జ్ఞానపీఠ్ అవార్డు (2002)\nసాహిత్య అకాడమీ అవార్డు (1965)\nపద్మ భూషణ్ (1995)"
+    infoAwardsVal: "పైడి లక్ష్మయ్య కీర్తి పురస్కారం (2004)"
   }
 };
 
@@ -399,14 +389,16 @@ export default function AboutPage() {
                   ))}
                 </td>
               </tr>
-              <tr className="border-t border-[#d8d3c5]">
-                <th className="py-2 pr-2 font-bold text-gray-600 align-top">{t.infoDied}</th>
-                <td className="py-2 align-top">
-                  {t.infoDiedVal.split('\n').map((line, i) => (
-                     <div key={i} className={i === 1 ? "text-gray-600" : ""}>{line}</div>
-                  ))}
-                </td>
-              </tr>
+              {t.infoDied && (
+                <tr className="border-t border-[#d8d3c5]">
+                  <th className="py-2 pr-2 font-bold text-gray-600 align-top">{t.infoDied}</th>
+                  <td className="py-2 align-top">
+                    {t.infoDiedVal.split('\n').map((line, i) => (
+                       <div key={i} className={i === 1 ? "text-gray-600" : ""}>{line}</div>
+                    ))}
+                  </td>
+                </tr>
+              )}
               <tr className="border-t border-[#d8d3c5]">
                 <th className="py-2 pr-2 font-bold text-gray-600 align-top">{t.infoOcc}</th>
                 <td className="py-2 align-top">{t.infoOccVal}</td>
