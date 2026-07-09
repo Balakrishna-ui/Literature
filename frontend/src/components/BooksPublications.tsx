@@ -77,7 +77,7 @@ export default function BooksPublications() {
                   )}
                 </div>
               </div>
-              <div className="p-3 flex flex-col flex-grow">
+              <div className="p-3 pb-[42px] flex flex-col flex-grow">
                 <span className="text-[#eab308] font-bold text-[8px] md:text-[9px] tracking-wider uppercase mb-1.5 bg-[#fcfaf5] inline-block px-1.5 py-0.5 self-start border border-[#eab308]/20">
                   {book.type}
                 </span>
