@@ -122,19 +122,19 @@ export const BOOKS: Book[] = [
     desc: 'Manoharam is a collection of humorous and spontaneous speeches delivered by Sri Vallapureddy Manohara Reddy Garu. Known for his wit, eloquence, and engaging style. Sri Manohara Reddy is a respected advocate, a passionate patron of Telugu theatre, and a well-known personality in the Palamuru region. Through this book, Duppalli Sri Ramulu preserves these memorable speeches, allowing readers to enjoy the humor, wisdom, and vibrant personality of Sri Manohara Reddy while celebrating his contribution to Telugu literary and cultural traditions.'
   },
   {
-    id: 'mouna-ragam',
-    title: 'Mouna Ragam',
-    subtitle: 'The Silent Melody',
-    category: 'Novel',
-    year: '1995',
-    pages: '312',
+    id: 'palamuru-prasasthyamu',
+    title: 'Palamuru Prasasthyamu',
+    subtitle: '',
+    category: 'Cultural Heritage',
+    year: '2023',
+    pages: '---',
     language: 'Telugu',
-    publisher: 'Navodaya Publishers',
-    genre: 'Literary Fiction',
+    publisher: 'Self Published',
+    genre: 'Cultural Heritage',
     image: '/images/bk2.png',
     isFeatured: false,
-    shortDesc: 'An introspective novel exploring the complex relationship between a fading classical musician and his rebellious daughter in modern Hyderabad.',
-    desc: 'An introspective novel exploring the complex relationship between a fading classical musician and his rebellious daughter in modern Hyderabad.'
+    shortDesc: 'Palamuru Prasasthyamu is a tribute to the rich history, culture, and distinguished heritage of the Palamuru region. The book introduces readers to the eminent personalities who have contributed to the development of Palamuru through literature, social service, education, culture, and other significant fields. It also records important historical moments, including the visit of M. S. Golwalkar (reverently known as *Guruji*) to Palamuru, highlighting its significance in the region\'s history. This work serves as a valuable reference for anyone seeking to understand the people, heritage, and cultural legacy of Palamuru.',
+    desc: 'Palamuru Prasasthyamu is a tribute to the rich history, culture, and distinguished heritage of the Palamuru region. The book introduces readers to the eminent personalities who have contributed to the development of Palamuru through literature, social service, education, culture, and other significant fields. It also records important historical moments, including the visit of M. S. Golwalkar (reverently known as *Guruji*) to Palamuru, highlighting its significance in the region\'s history. This work serves as a valuable reference for anyone seeking to understand the people, heritage, and cultural legacy of Palamuru.'
   }
 ];
 
