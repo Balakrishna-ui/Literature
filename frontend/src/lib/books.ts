@@ -101,7 +101,7 @@ export const BOOKS: Book[] = [
     language: 'Telugu',
     publisher: 'Self Published',
     genre: 'Religious Poetry',
-    image: '/images/bk2.png',
+    images: ['/images/kam0.jpeg', '/images/kam1.jpeg', '/images/kam2.jpeg'],
     isFeatured: false,
     shortDesc: 'Kambagiri Lakshmi Narasimha Swamy Paruveta Padyalu was written by Duppalli Sri Ramulu at the order of Sri Swamy Rammohana Acharya. The book is associated with the revered Kambagiri Lakshmi Narasimha Swamy Temple, a renowned temple celebrated for its annual Rathotsavam. During the festival, the sacred *Paruveta Padyalu* are traditionally recited in Sanskrit. Since their meaning is not easily understood by many devotees, Duppalli Sri Ramulu prepared clear and accessible explanations in Telugu, enabling ordinary readers to appreciate the spiritual significance and literary beauty of these verses. This work reflects his commitment to making sacred literature understandable and accessible to the wider public.',
     desc: 'Kambagiri Lakshmi Narasimha Swamy Paruveta Padyalu was written by Duppalli Sri Ramulu at the order of Sri Swamy Rammohana Acharya. The book is associated with the revered Kambagiri Lakshmi Narasimha Swamy Temple, a renowned temple celebrated for its annual Rathotsavam. During the festival, the sacred *Paruveta Padyalu* are traditionally recited in Sanskrit. Since their meaning is not easily understood by many devotees, Duppalli Sri Ramulu prepared clear and accessible explanations in Telugu, enabling ordinary readers to appreciate the spiritual significance and literary beauty of these verses. This work reflects his commitment to making sacred literature understandable and accessible to the wider public.'
