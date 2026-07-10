@@ -92,19 +92,19 @@ export const BOOKS: Book[] = [
     desc: 'Swayambhu Sri Lakshmi Venkateshwareeyamu chronicles the history of the revered Sri Lakshmi Venkateswara Swamy Temple, Amadabakula and the devotion behind its construction. The book narrates how the temple was built through the generous contributions and collective efforts of devotees. One of its most memorable chapters recounts the sacred journey of the temple\'s principal deity (Moola Virat), which was ceremoniously brought from Tirumala Venkateswara Swamy Temple, Tirupati to Amadabakula. Placed on a beautifully decorated chariot adorned with flowers, the deity was taken in a devotional procession that lasted nearly two months. Accompanied by bhajans and continuous worship, the yatra inspired and united countless villages along its route. Duppalli Sri Ramulu played a significant role in this sacred movement, and through this book he preserves the history, devotion, and collective spirit that gave rise to this remarkable temple.'
   },
   {
-    id: 'prabhata-ragalu',
-    title: 'Prabhata Ragalu',
-    subtitle: 'Morning Melodies',
-    category: 'Poetry Collection',
-    year: '1956',
-    pages: '88',
+    id: 'kambagiri-lakshmi-narasimha-swamy-paruveta-padyalu',
+    title: 'Kambagiri Lakshmi Narasimha Swamy Paruveta Padyalu',
+    subtitle: '',
+    category: 'Spiritual',
+    year: '2020',
+    pages: '---',
     language: 'Telugu',
-    publisher: 'Andhra Pradesh Sahitya Akademi',
-    genre: 'Poetry',
+    publisher: 'Self Published',
+    genre: 'Religious Poetry',
     image: '/images/bk2.png',
     isFeatured: false,
-    shortDesc: 'His debut poetry collection, filled with youthful exuberance and a profound connection to the rural landscapes of his childhood.',
-    desc: 'His debut poetry collection, filled with youthful exuberance and a profound connection to the rural landscapes of his childhood.'
+    shortDesc: 'Kambagiri Lakshmi Narasimha Swamy Paruveta Padyalu was written by Duppalli Sri Ramulu at the order of Sri Swamy Rammohana Acharya. The book is associated with the revered Kambagiri Lakshmi Narasimha Swamy Temple, a renowned temple celebrated for its annual Rathotsavam. During the festival, the sacred *Paruveta Padyalu* are traditionally recited in Sanskrit. Since their meaning is not easily understood by many devotees, Duppalli Sri Ramulu prepared clear and accessible explanations in Telugu, enabling ordinary readers to appreciate the spiritual significance and literary beauty of these verses. This work reflects his commitment to making sacred literature understandable and accessible to the wider public.',
+    desc: 'Kambagiri Lakshmi Narasimha Swamy Paruveta Padyalu was written by Duppalli Sri Ramulu at the order of Sri Swamy Rammohana Acharya. The book is associated with the revered Kambagiri Lakshmi Narasimha Swamy Temple, a renowned temple celebrated for its annual Rathotsavam. During the festival, the sacred *Paruveta Padyalu* are traditionally recited in Sanskrit. Since their meaning is not easily understood by many devotees, Duppalli Sri Ramulu prepared clear and accessible explanations in Telugu, enabling ordinary readers to appreciate the spiritual significance and literary beauty of these verses. This work reflects his commitment to making sacred literature understandable and accessible to the wider public.'
   },
   {
     id: 'grama-kathalu',
