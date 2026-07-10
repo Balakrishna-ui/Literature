@@ -86,7 +86,7 @@ export const BOOKS: Book[] = [
     language: 'Telugu',
     publisher: 'Navodaya Publishers',
     genre: 'Historical Fiction',
-    image: '/images/bk1.png',
+    images: ['/images/kal0.jpeg', '/images/kal1.jpeg', '/images/kal2.jpeg', '/images/kal3.jpeg', '/images/kal4.jpeg'],
     isFeatured: false,
     shortDesc: 'A historical novel set during the Indian independence movement, following a young Telugu poet who travels to Varanasi seeking spiritual awakening.',
     desc: 'A historical novel set during the Indian independence movement, following a young Telugu poet who travels to Varanasi seeking spiritual awakening.'
