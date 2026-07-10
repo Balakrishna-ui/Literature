@@ -107,19 +107,19 @@ export const BOOKS: Book[] = [
     desc: 'Kambagiri Lakshmi Narasimha Swamy Paruveta Padyalu was written by Duppalli Sri Ramulu at the order of Sri Swamy Rammohana Acharya. The book is associated with the revered Kambagiri Lakshmi Narasimha Swamy Temple, a renowned temple celebrated for its annual Rathotsavam. During the festival, the sacred *Paruveta Padyalu* are traditionally recited in Sanskrit. Since their meaning is not easily understood by many devotees, Duppalli Sri Ramulu prepared clear and accessible explanations in Telugu, enabling ordinary readers to appreciate the spiritual significance and literary beauty of these verses. This work reflects his commitment to making sacred literature understandable and accessible to the wider public.'
   },
   {
-    id: 'grama-kathalu',
-    title: 'Grama Kathalu',
-    subtitle: 'Village Stories',
-    category: 'Short Stories',
-    year: '1968',
-    pages: '210',
+    id: 'manoharam',
+    title: 'Manoharam',
+    subtitle: '',
+    category: 'Speeches',
+    year: '2018',
+    pages: '---',
     language: 'Telugu',
-    publisher: 'Visalandhra Publishing House',
-    genre: 'Fiction',
+    publisher: 'Self Published',
+    genre: 'Humor / Biography',
     image: '/images/bk1.png',
     isFeatured: false,
-    shortDesc: 'A brilliant collection of short fiction capturing the nuances, humor, and tragedies of rural life in mid-century Andhra Pradesh.',
-    desc: 'A brilliant collection of short fiction capturing the nuances, humor, and tragedies of rural life in mid-century Andhra Pradesh.'
+    shortDesc: 'Manoharam is a collection of humorous and spontaneous speeches delivered by Sri Vallapureddy Manohara Reddy Garu. Known for his wit, eloquence, and engaging style. Sri Manohara Reddy is a respected advocate, a passionate patron of Telugu theatre, and a well-known personality in the Palamuru region. Through this book, Duppalli Sri Ramulu preserves these memorable speeches, allowing readers to enjoy the humor, wisdom, and vibrant personality of Sri Manohara Reddy while celebrating his contribution to Telugu literary and cultural traditions.',
+    desc: 'Manoharam is a collection of humorous and spontaneous speeches delivered by Sri Vallapureddy Manohara Reddy Garu. Known for his wit, eloquence, and engaging style. Sri Manohara Reddy is a respected advocate, a passionate patron of Telugu theatre, and a well-known personality in the Palamuru region. Through this book, Duppalli Sri Ramulu preserves these memorable speeches, allowing readers to enjoy the humor, wisdom, and vibrant personality of Sri Manohara Reddy while celebrating his contribution to Telugu literary and cultural traditions.'
   },
   {
     id: 'mouna-ragam',
