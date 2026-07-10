@@ -77,19 +77,19 @@ export const BOOKS: Book[] = [
     desc: 'Vishwakarma Kula Deepakulu celebrates the rich heritage and outstanding contributions of the five traditional communities of the Vishwakarma lineage — Manu (Blacksmiths), Maya (Carpenters), Tvastar (Bronzesmiths), Shilpi (Stonemasons), and Visvajna (Goldsmiths). The book highlights distinguished artisans and skilled professionals from the Palamuru region, recognizing their craftsmanship, dedication, and lifelong service to their respective fields. It also documents numerous temples dedicated to Sri Veerabrahmendra Swamy across the Palamuru district, describing their history, construction, and the collective efforts of temple committees and local communities in establishing and preserving these sacred places. This work serves as both a tribute to the Vishwakarma community and a valuable record of Palamuru\'s cultural, spiritual, and architectural heritage.'
   },
   {
-    id: 'varanasi-ghat',
-    title: 'Varanasi Ghat',
-    subtitle: 'The Ghats of Varanasi',
-    category: 'Novel',
-    year: '1982',
-    pages: '384',
+    id: 'swayambhu-sri-lakshmi-venkateshwareeyamu',
+    title: 'Swayambhu Sri Lakshmi Venkateshwareeyamu',
+    subtitle: '',
+    category: 'History',
+    year: '2017',
+    pages: '---',
     language: 'Telugu',
-    publisher: 'Navodaya Publishers',
-    genre: 'Historical Fiction',
+    publisher: 'Self Published',
+    genre: 'Devotional History',
     images: ['/images/kal0.jpeg', '/images/kal1.jpeg', '/images/kal2.jpeg', '/images/kal3.jpeg', '/images/kal4.jpeg'],
     isFeatured: false,
-    shortDesc: 'A historical novel set during the Indian independence movement, following a young Telugu poet who travels to Varanasi seeking spiritual awakening.',
-    desc: 'A historical novel set during the Indian independence movement, following a young Telugu poet who travels to Varanasi seeking spiritual awakening.'
+    shortDesc: 'Swayambhu Sri Lakshmi Venkateshwareeyamu chronicles the history of the revered Sri Lakshmi Venkateswara Swamy Temple, Amadabakula and the devotion behind its construction. The book narrates how the temple was built through the generous contributions and collective efforts of devotees. One of its most memorable chapters recounts the sacred journey of the temple\'s principal deity (Moola Virat), which was ceremoniously brought from Tirumala Venkateswara Swamy Temple, Tirupati to Amadabakula. Placed on a beautifully decorated chariot adorned with flowers, the deity was taken in a devotional procession that lasted nearly two months. Accompanied by bhajans and continuous worship, the yatra inspired and united countless villages along its route. Duppalli Sri Ramulu played a significant role in this sacred movement, and through this book he preserves the history, devotion, and collective spirit that gave rise to this remarkable temple.',
+    desc: 'Swayambhu Sri Lakshmi Venkateshwareeyamu chronicles the history of the revered Sri Lakshmi Venkateswara Swamy Temple, Amadabakula and the devotion behind its construction. The book narrates how the temple was built through the generous contributions and collective efforts of devotees. One of its most memorable chapters recounts the sacred journey of the temple\'s principal deity (Moola Virat), which was ceremoniously brought from Tirumala Venkateswara Swamy Temple, Tirupati to Amadabakula. Placed on a beautifully decorated chariot adorned with flowers, the deity was taken in a devotional procession that lasted nearly two months. Accompanied by bhajans and continuous worship, the yatra inspired and united countless villages along its route. Duppalli Sri Ramulu played a significant role in this sacred movement, and through this book he preserves the history, devotion, and collective spirit that gave rise to this remarkable temple.'
   },
   {
     id: 'prabhata-ragalu',
